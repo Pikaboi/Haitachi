@@ -25,8 +25,17 @@ public class LeaderFollowingAI : MonoBehaviour
         float dist = Vector3.Distance(transform.position, target.position);
         Debug.Log("Distance to other: " + dist);
 
-        if (dist < 2.0f)
+        if (dist < 4.0f)
         { 
+            Vector3 dirToPlayer = transform.position - target.transform.position;
+            Vector3 newPos = transform.position + dirToPlayer;
+            Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+            transform.position += transform.right * speed * Time.deltaTime;
+            // transform.position += newPos;
+        }
+        else if(dist<6.0f)
+        {
             //Vector3 dirToPlayer = transform.position - target.transform.position;
             //Vector3 newPos = transform.position + dirToPlayer;
             //transform.position -= newPos;
@@ -34,8 +43,8 @@ public class LeaderFollowingAI : MonoBehaviour
         else
         {
             Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-            transform.position += transform.forward * 1f * Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+            transform.position += transform.forward * speed * Time.deltaTime;
         }
         //transform.LookAt(target.transform);
         //transform.position += transform.forward * 1f * Time.deltaTime;
