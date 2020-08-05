@@ -35,7 +35,7 @@ public class LeaderFollowingAI : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-            transform.position += transform.forward * 1f * Time.deltaTime;
+            transform.position += transform.forward * speed * Time.deltaTime;
         }
         //transform.LookAt(target.transform);
         //transform.position += transform.forward * 1f * Time.deltaTime;
