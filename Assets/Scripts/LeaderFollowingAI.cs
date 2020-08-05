@@ -25,7 +25,7 @@ public class LeaderFollowingAI : MonoBehaviour
         {
             //float distance = Vector2.Distance(transform.forward, target.transform.forward);
             float dist = Vector3.Distance(transform.position, target.position);
-            Debug.Log("Distance to other: " + dist);
+            //Debug.Log("Distance to other: " + dist);
 
             if (dist < 4.0f)
             {
@@ -53,6 +53,10 @@ public class LeaderFollowingAI : MonoBehaviour
 
         }
 
+    }
+    public bool getInfected()
+    {
+        return isInfected;
     }
     private void OnCollisionEnter(Collision collision)
     {
