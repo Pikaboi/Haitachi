@@ -6,23 +6,46 @@ public class Clamp : MonoBehaviour
 {
     Camera cam;
     Vector3 screenPos;
+
+    float height;
+
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
-        screenPos = cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-        Debug.Log("target is " + screenPos.x + " pixels from the left" + screenPos.y);
 
-        transform.position = screenPos;
+        height = cam.orthographicSize;
+        Debug.Log(height);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Vector3 view = transform.position;
+        Vector3 view = transform.position;
 
-        //view.x = Mathf.Clamp(view.x, screenPos.x, screenPos.x);
+        //view.z = Mathf.Clamp(view.z, height, -height);
 
+        if(view.z < -height)
+        {
+            view.z = -height;
+        }
+
+        if (view.z > height)
+        {
+            view.z = height;
+        }
+
+        if (view.x < -height)
+        {
+            view.x = -height;
+        }
+
+        if (view.x > height)
+        {
+            view.x = height;
+        }
+
+        transform.position = view;
 
         /*if(transform.position.x > (cam.fieldOfView / 4))
         {
