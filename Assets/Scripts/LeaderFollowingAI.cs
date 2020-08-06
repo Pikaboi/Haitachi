@@ -8,6 +8,8 @@ public class LeaderFollowingAI : MonoBehaviour
     public Rigidbody rb;
     private bool isInfected = false;
 
+    public ExtendCam counterScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,7 @@ public class LeaderFollowingAI : MonoBehaviour
         {
             Debug.Log("we hit something");
             isInfected = true;
+            counterScript.addInfected();
         }
         
     }

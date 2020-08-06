@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 0}
+  counterScript: {fileID: 1437627426}
 --- !u!54 &2179218
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -374,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 0}
+  counterScript: {fileID: 1437627426}
 --- !u!54 &336982050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -499,6 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 0}
+  counterScript: {fileID: 1437627426}
 --- !u!54 &440258440
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -624,6 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 0}
+  counterScript: {fileID: 1437627426}
 --- !u!54 &604746231
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -749,6 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 0}
+  counterScript: {fileID: 1437627426}
 --- !u!54 &826842660
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -874,6 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 0}
+  counterScript: {fileID: 1437627426}
 --- !u!54 &863319446
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -999,6 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rb: {fileID: 0}
+  counterScript: {fileID: 1437627426}
 --- !u!54 &1283503837
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1101,6 +1108,7 @@ GameObject:
   - component: {fileID: 1437627423}
   - component: {fileID: 1437627422}
   - component: {fileID: 1437627425}
+  - component: {fileID: 1437627426}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1182,6 +1190,18 @@ Skybox:
   m_GameObject: {fileID: 1437627421}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 0ffaa0b7117ba8c47a9d05ae701d4b4d, type: 2}
+--- !u!114 &1437627426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437627421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cde665dbb28b44ca23505dc7ad9b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1618163119
 GameObject:
   m_ObjectHideFlags: 0
