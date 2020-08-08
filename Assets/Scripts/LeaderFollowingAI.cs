@@ -13,6 +13,8 @@ public class LeaderFollowingAI : MonoBehaviour
     private bool isleader = false;
     private Movement moveScript;
 
+    private bool activeLeader = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,14 @@ public class LeaderFollowingAI : MonoBehaviour
 
         moveScript = GetComponent<Movement>();
 
-        moveScript.enabled = false;
-
+        if(gameObject.tag == "Player")
+        {
+            moveScript.enabled = true;
+            //activeLeader = true;
+        } else
+        {
+            moveScript.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -52,8 +60,14 @@ public class LeaderFollowingAI : MonoBehaviour
                     isleader = true;
                     isInfected = false;
                     moveScript.enabled = true;
+                    activeLeader = true;
                 }
             }
+        }
+
+        if(activeLeader == false)
+        {
+            moveScript.enabled = false;
         }
 
         if (isInfected)
@@ -96,6 +110,16 @@ public class LeaderFollowingAI : MonoBehaviour
             {
                 isInfected = true;
                 counterScript.addInfected();
+            }
+
+            if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>() != null)
+            {
+                if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>().activeLeader == true && isInfected == false)
+                {
+                    isInfected = true;
+                    counterScript.addInfected();
+                    target = collision.gameObject.GetComponent<Transform>();
+                }
             }
         }
         
