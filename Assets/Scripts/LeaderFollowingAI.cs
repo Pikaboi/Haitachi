@@ -15,6 +15,8 @@ public class LeaderFollowingAI : MonoBehaviour
 
     private bool activeLeader = false;
 
+    GameObject[] objs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +26,12 @@ public class LeaderFollowingAI : MonoBehaviour
 
         moveScript = GetComponent<Movement>();
 
+        objs = GameObject.FindGameObjectsWithTag("Enemy");
+
         if(gameObject.tag == "Player")
         {
             moveScript.enabled = true;
-            //activeLeader = true;
+            activeLeader = true;
         } else
         {
             moveScript.enabled = false;
@@ -39,7 +43,7 @@ public class LeaderFollowingAI : MonoBehaviour
     {
         rb.velocity = new Vector3(0,0,0);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && isInfected == true)
         {
             Plane plane = new Plane(Vector3.up, transform.position);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -61,6 +65,7 @@ public class LeaderFollowingAI : MonoBehaviour
                     isInfected = false;
                     moveScript.enabled = true;
                     activeLeader = true;
+                    Debug.Log("help");
                 }
             }
         }
