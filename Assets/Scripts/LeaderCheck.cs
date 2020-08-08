@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class LeaderCheck : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameObject Leader;
+
+    public void SetLeader(GameObject obj)
     {
-        
+        Leader = obj;
     }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject GetLeader()
     {
-        
+        return Leader;
     }
 }

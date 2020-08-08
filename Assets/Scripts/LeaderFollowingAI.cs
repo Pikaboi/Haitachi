@@ -13,7 +13,7 @@ public class LeaderFollowingAI : MonoBehaviour
     private bool isleader = false;
     private Movement moveScript;
 
-    private bool activeLeader = false;
+    public LeaderCheck checker;
 
     GameObject[] objs;
 
@@ -31,7 +31,9 @@ public class LeaderFollowingAI : MonoBehaviour
         if(gameObject.tag == "Player")
         {
             moveScript.enabled = true;
-            activeLeader = true;
+            checker.SetLeader(this.gameObject);
+            isInfected = true;
+
         } else
         {
             moveScript.enabled = false;
@@ -62,20 +64,25 @@ public class LeaderFollowingAI : MonoBehaviour
                 if(dis <= 1 && dis >= -1)
                 {
                     isleader = true;
-                    isInfected = false;
                     moveScript.enabled = true;
-                    activeLeader = true;
-                    Debug.Log("help");
+                    checker.SetLeader(this.gameObject);
+                    Debug.Log(this + "is now leader");
                 }
             }
         }
 
-        if(activeLeader == false)
+        if(this.gameObject == checker.GetLeader())
+        {
+            moveScript.enabled = true;
+            isleader = true;
+        }
+        else
         {
             moveScript.enabled = false;
+            isleader = false;
         }
 
-        if (isInfected)
+        if (isInfected && isleader == false)
         {
             //float distance = Vector2.Distance(transform.forward, target.transform.forward);
             float dist = Vector3.Distance(transform.position, target.position);
@@ -119,7 +126,7 @@ public class LeaderFollowingAI : MonoBehaviour
 
             if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>() != null)
             {
-                if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>().activeLeader == true && isInfected == false)
+                if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>().isleader == true && isInfected == false)
                 {
                     isInfected = true;
                     counterScript.addInfected();
