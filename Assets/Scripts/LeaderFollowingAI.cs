@@ -10,6 +10,9 @@ public class LeaderFollowingAI : MonoBehaviour
 
     public ExtendCam counterScript;
 
+    private bool isleader = false;
+    private Movement moveScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +20,46 @@ public class LeaderFollowingAI : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
+        moveScript = GetComponent<Movement>();
+
+        moveScript.enabled = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         rb.velocity = new Vector3(0,0,0);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Plane plane = new Plane(Vector3.up, transform.position);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            float point = 0f;
+
+            if (plane.Raycast(ray, out point))
+            {
+                Vector3 movePos = ray.GetPoint(point);
+
+                float dis = Vector3.Distance(movePos, transform.position);
+
+                //Debug.Log(dis);
+                //Debug.Log(movePos - transform.position);
+
+                if(dis <= 1 && dis >= -1)
+                {
+                    isleader = true;
+                    isInfected = false;
+                    moveScript.enabled = true;
+                }
+            }
+        }
+
         if (isInfected)
         {
             //float distance = Vector2.Distance(transform.forward, target.transform.forward);
             float dist = Vector3.Distance(transform.position, target.position);
-            Debug.Log("Distance to other: " + dist);
 
             if (dist < 4.0f)
             {
@@ -58,11 +90,13 @@ public class LeaderFollowingAI : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player" && isInfected == false)
+        if (isleader != true)
         {
-            Debug.Log("we hit something");
-            isInfected = true;
-            counterScript.addInfected();
+            if (collision.collider.tag == "Player" && isInfected == false)
+            {
+                isInfected = true;
+                counterScript.addInfected();
+            }
         }
         
     }
