@@ -4,20 +4,67 @@ using UnityEngine;
 
 public class Clamp : MonoBehaviour
 {
-    private Vector2 bounds;
+    Camera cam;
+    Vector3 screenPos;
+
+    float height;
 
     // Start is called before the first frame update
     void Start()
     {
-        bounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Camera.main.transform.position.z, Screen.height));
+        cam = Camera.main;
+
+        height = cam.orthographicSize;
+        Debug.Log(height);
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, bounds.x, bounds.x * -1);
-        viewPos.z = Mathf.Clamp(viewPos.z, bounds.y, bounds.y * -1);
-        transform.position = viewPos;
+        Vector3 view = transform.position;
+
+        //view.z = Mathf.Clamp(view.z, height, -height);
+
+        if(view.z < -height)
+        {
+            view.z = -height;
+        }
+
+        if (view.z > height)
+        {
+            view.z = height;
+        }
+
+        if (view.x < -height)
+        {
+            view.x = -height;
+        }
+
+        if (view.x > height)
+        {
+            view.x = height;
+        }
+
+        transform.position = view;
+
+        /*if(transform.position.x > (cam.fieldOfView / 4))
+        {
+            transform.position = new Vector3((cam.fieldOfView / 4), transform.position.y, transform.position.z);
+        }
+
+        if(transform.position.x < -(cam.fieldOfView / 4))
+        {
+            transform.position = new Vector3(-(cam.fieldOfView / 4), transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.z > (cam.fieldOfView / 4))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, (cam.fieldOfView / 4));
+        }
+
+        if (transform.position.z < -(cam.fieldOfView / 4))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -(cam.fieldOfView / 4));
+        }*/
     }
 }
