@@ -9,6 +9,7 @@ public class FleeAI : MonoBehaviour
     public Rigidbody rb;
 
     public LeaderFollowingAI AIscript;
+    public LeaderCheck leaderScript;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,9 @@ public class FleeAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        target = leaderScript.GetLeader().transform;
+
         if (!AIscript.getInfected())
         {
 
