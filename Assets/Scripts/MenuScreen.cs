@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class MenuScreen : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,7 +17,7 @@ public class MenuScreen : MonoBehaviour
         
     }
 
-    public void PlayGame()
+    public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
