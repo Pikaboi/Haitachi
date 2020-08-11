@@ -87,7 +87,7 @@ public class LeaderFollowingAI : MonoBehaviour
             //float distance = Vector2.Distance(transform.forward, target.transform.forward);
             float dist = Vector3.Distance(transform.position, target.position);
 
-            if (dist < 4.0f)
+            if (dist < 2.0f)
             {
                 Vector3 dirToPlayer = transform.position - target.transform.position;
                 Vector3 newPos = transform.position + dirToPlayer;
@@ -96,7 +96,7 @@ public class LeaderFollowingAI : MonoBehaviour
                 transform.position += transform.right * speed * Time.deltaTime;
                 // transform.position += newPos;
             }
-            else if (dist < 6.0f)
+            else if (dist < 4.0f)
             {
                 //Vector3 dirToPlayer = transform.position - target.transform.position;
                 //Vector3 newPos = transform.position + dirToPlayer;
