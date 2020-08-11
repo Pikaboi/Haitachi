@@ -15,17 +15,17 @@ public class Clamp : MonoBehaviour
         cam = Camera.main;
 
         height = cam.orthographicSize;
-        Debug.Log(height);
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 view = transform.position;
+        height = cam.orthographicSize;
 
         //view.z = Mathf.Clamp(view.z, height, -height);
 
-        if(view.z < -height)
+        if (view.z < -height)
         {
             view.z = -height;
         }
