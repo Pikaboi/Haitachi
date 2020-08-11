@@ -66,7 +66,6 @@ public class LeaderFollowingAI : MonoBehaviour
                     isleader = true;
                     moveScript.enabled = true;
                     checker.SetLeader(this.gameObject);
-                    Debug.Log(this + "is now leader");
                 }
             }
         }
@@ -82,7 +81,7 @@ public class LeaderFollowingAI : MonoBehaviour
             isleader = false;
         }
 
-        if (isInfected && isleader == false)
+        if (isInfected == true && isleader == false)
         {
             //float distance = Vector2.Distance(transform.forward, target.transform.forward);
             float dist = Vector3.Distance(transform.position, target.position);
