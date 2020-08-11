@@ -19,6 +19,11 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Plane plane = new Plane(Vector3.up, transform.position);
