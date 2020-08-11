@@ -30,7 +30,7 @@ public class FleeAI : MonoBehaviour
         {
 
             float dist = Vector3.Distance(transform.position, target.position);
-            Debug.Log("Distance to other: " + dist);
+
             if (dist < 6.0f)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(transform.position - target.transform.position);
