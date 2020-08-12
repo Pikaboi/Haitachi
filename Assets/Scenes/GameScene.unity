@@ -121,6 +121,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &97301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: counterScript
+      value: 
+      objectReference: {fileID: 1437627426}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_Name
+      value: crow animation (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
 --- !u!1 &2179216
 GameObject:
   m_ObjectHideFlags: 0
