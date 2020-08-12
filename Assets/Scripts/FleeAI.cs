@@ -9,7 +9,6 @@ public class FleeAI : MonoBehaviour
     public Rigidbody rb;
 
     public LeaderFollowingAI AIscript;
-    public LeaderCheck leaderScript;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +23,6 @@ public class FleeAI : MonoBehaviour
     void Update()
     {
 
-        target = leaderScript.GetLeader().transform;
-
         if (!AIscript.getInfected())
         {
 
@@ -34,8 +31,8 @@ public class FleeAI : MonoBehaviour
             if (dist < 6.0f)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(transform.position - target.transform.position);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5.0f * Time.deltaTime);
-                transform.position += transform.forward * 5.0f * Time.deltaTime;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
             }
         }
     }

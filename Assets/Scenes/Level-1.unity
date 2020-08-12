@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: leaderScript
       value: 
       objectReference: {fileID: 1172520280}
+    - target: {fileID: 5865775525134878230, guid: 4026302fb5bc8eb46a3afe01dbaaeb9f,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5865775525134878238, guid: 4026302fb5bc8eb46a3afe01dbaaeb9f,
         type: 3}
       propertyPath: m_Name
@@ -203,7 +208,13 @@ PrefabInstance:
       propertyPath: counterScript
       value: 
       objectReference: {fileID: 1172520278}
-    m_RemovedComponents: []
+    - target: {fileID: 5865775525134878239, guid: 4026302fb5bc8eb46a3afe01dbaaeb9f,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5865775525134878229, guid: 4026302fb5bc8eb46a3afe01dbaaeb9f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4026302fb5bc8eb46a3afe01dbaaeb9f, type: 3}
 --- !u!1001 &16393195
 PrefabInstance:
@@ -287,7 +298,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6703793471680177711, guid: a42419f19d636d64d8136c6dd288a413, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a42419f19d636d64d8136c6dd288a413, type: 3}
 --- !u!1 &638748043
 GameObject:
