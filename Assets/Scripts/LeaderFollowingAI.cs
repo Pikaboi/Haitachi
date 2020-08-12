@@ -16,6 +16,8 @@ public class LeaderFollowingAI : MonoBehaviour
 
     GameObject[] objs;
 
+    AudioSource hiFive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,10 @@ public class LeaderFollowingAI : MonoBehaviour
 
         m_Animator = gameObject.GetComponent<Animator>();
 
+        hiFive = gameObject.GetComponent<AudioSource>();
+
+        hiFive.Stop();
+
         if(gameObject.tag == "Follower")
         {
             isInfected = true;
@@ -39,6 +45,11 @@ public class LeaderFollowingAI : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector3(0,0,0);
+
+        if (gameObject.tag == "Follower")
+        {
+            Debug.Log(isInfected);
+        }
 
         if (isInfected == true && isleader == false)
         {
@@ -100,11 +111,9 @@ public class LeaderFollowingAI : MonoBehaviour
         {
             if (collision.collider.tag == "Player" && isInfected == false)
             {
-                
+                hiFive.PlayOneShot(hiFive.clip);
                 isInfected = true;
                 counterScript.addInfected();
-
-                collision.collider.gameObject.GetComponent<Animator>().SetBool("ishifive", true);
             }
         }
         

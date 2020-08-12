@@ -420,6 +420,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1302095049830340854, guid: 227ad0b6d9c484146b3e2d9d5538dc38,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302095049830340854, guid: 227ad0b6d9c484146b3e2d9d5538dc38,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9164022486833374028, guid: 227ad0b6d9c484146b3e2d9d5538dc38,
         type: 3}
       propertyPath: m_Name

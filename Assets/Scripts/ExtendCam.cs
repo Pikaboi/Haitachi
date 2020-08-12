@@ -9,10 +9,17 @@ public class ExtendCam : MonoBehaviour
     Camera cam;
     public float infectedGoal = 0;
     private float infectedCount = 0;
+
+    AudioSource music;
+
     void Start()
     {
        cam = Camera.main;
        infectedCount = 0;
+
+        music = gameObject.GetComponent<AudioSource>();
+
+        music.Play();
     }
 
     // Update is called once per frame

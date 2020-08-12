@@ -11,11 +11,17 @@ public class Movement : MonoBehaviour
     private Ray ray;
 
     private Animator m_Animator;
+
+    AudioSource move;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         movePos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         m_Animator = gameObject.GetComponent<Animator>();
+
+        move = gameObject.GetComponent<AudioSource>();
+
+        move.Stop();
     }
 
     // Update is called once per frame
@@ -43,6 +49,10 @@ public class Movement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, movePos, movespeed * Time.deltaTime);
 
         m_Animator.SetBool("Iswalking", true);
+        if (move.isPlaying == false)
+        {
+            move.PlayOneShot(move.clip);
+        }
 
         //rb.velocity = new Vector3(Input.GetAxis("Horizontal") * movespeed, rb.velocity.y, Input.GetAxis("Vertical") * movespeed);
     }

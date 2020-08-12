@@ -22,8 +22,7 @@ public class FleeAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (!AIscript.getInfected())
+        if (AIscript.getInfected() == false)
         {
 
             float dist = Vector3.Distance(transform.position, target.position);
