@@ -21,11 +21,5 @@ public class ExtendCam : MonoBehaviour
     public void addInfected()
     {
         infectedCount++;
-
-        if (infectedCount == 6)
-        {
-            Debug.Log("active");
-            cam.orthographicSize += 30;
-        }
     }
 }

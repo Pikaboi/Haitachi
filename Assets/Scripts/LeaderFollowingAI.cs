@@ -45,6 +45,7 @@ public class LeaderFollowingAI : MonoBehaviour
     {
         rb.velocity = new Vector3(0,0,0);
 
+        //Old Code, May revisit in later iterations
         /*if (Input.GetMouseButtonDown(0) && isInfected == true)
         {
             Plane plane = new Plane(Vector3.up, transform.position);
@@ -70,7 +71,7 @@ public class LeaderFollowingAI : MonoBehaviour
             }
         }*/
 
-        if(this.gameObject == checker.GetLeader())
+        /*if(this.gameObject == checker.GetLeader())
         {
             moveScript.enabled = true;
             isleader = true;
@@ -79,7 +80,7 @@ public class LeaderFollowingAI : MonoBehaviour
         {
             moveScript.enabled = false;
             isleader = false;
-        }
+        }*/
 
         if (isInfected == true && isleader == false)
         {
