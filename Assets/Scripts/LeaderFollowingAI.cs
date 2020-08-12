@@ -128,7 +128,7 @@ public class LeaderFollowingAI : MonoBehaviour
                 counterScript.addInfected();
             }
 
-            if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>() != null)
+            /*if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>() != null)
             {
                 if (collision.collider.gameObject.GetComponent<LeaderFollowingAI>().isleader == true && isInfected == false)
                 {
@@ -136,7 +136,7 @@ public class LeaderFollowingAI : MonoBehaviour
                     counterScript.addInfected();
                     target = collision.gameObject.GetComponent<Transform>();
                 }
-            }
+            }*/
         }
         
     }
