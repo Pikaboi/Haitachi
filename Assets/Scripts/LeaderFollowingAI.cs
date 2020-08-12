@@ -26,6 +26,11 @@ public class LeaderFollowingAI : MonoBehaviour
         objs = GameObject.FindGameObjectsWithTag("Enemy");
 
         m_Animator = gameObject.GetComponent<Animator>();
+
+        if(gameObject.tag == "Follower")
+        {
+            isInfected = true;
+        }
     }
 
     // Update is called once per frame
@@ -35,15 +40,20 @@ public class LeaderFollowingAI : MonoBehaviour
 
         if (isInfected == true && isleader == false)
         {
-            m_Animator.SetBool("ishifive", true);
-
+            if (m_Animator != null)
+            {
+                m_Animator.SetBool("ishifive", true);
+            }
 
             //float distance = Vector2.Distance(transform.forward, target.transform.forward);
             float dist = Vector3.Distance(transform.position, target.position);
 
             if (dist < 2.0f)
             {
-                m_Animator.SetBool("Iswalking", true);
+                if (m_Animator != null)
+                {
+                    m_Animator.SetBool("Iswalking", true);
+                }
                 Vector3 dirToPlayer = transform.position - target.transform.position;
                 Vector3 newPos = transform.position + dirToPlayer;
                 Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
@@ -53,15 +63,21 @@ public class LeaderFollowingAI : MonoBehaviour
             }
             else if (dist < 4.0f)
             {
-                m_Animator.SetBool("ishifive", false);
-                m_Animator.SetBool("Iswalking", false);
+                if (m_Animator != null)
+                {
+                    m_Animator.SetBool("ishifive", false);
+                    m_Animator.SetBool("Iswalking", false);
+                }
                 //Vector3 dirToPlayer = transform.position - target.transform.position;
                 //Vector3 newPos = transform.position + dirToPlayer;
                 //transform.position -= newPos;
             }
             else
             {
-                m_Animator.SetBool("Iswalking", true);
+                if (m_Animator != null)
+                {
+                    m_Animator.SetBool("Iswalking", true);
+                }
                 Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
                 transform.position += transform.forward * speed * Time.deltaTime;
