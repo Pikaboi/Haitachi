@@ -19,7 +19,7 @@ public class Level5 : MonoBehaviour
         {
             foreach (GameObject enemy in objs)
             {
-                enemy.GetComponent<FleeAI>().speed = 8;
+                enemy.GetComponent<FleeAI>().speed = 6;
             }
         }
     }

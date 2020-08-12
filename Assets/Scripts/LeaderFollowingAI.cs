@@ -23,6 +23,8 @@ public class LeaderFollowingAI : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
+        counterScript = Camera.main.GetComponent<ExtendCam>();
+
         objs = GameObject.FindGameObjectsWithTag("Enemy");
 
         m_Animator = gameObject.GetComponent<Animator>();
@@ -48,7 +50,7 @@ public class LeaderFollowingAI : MonoBehaviour
             //float distance = Vector2.Distance(transform.forward, target.transform.forward);
             float dist = Vector3.Distance(transform.position, target.position);
 
-            if (dist < 2.0f)
+            if (dist < 4.0f)
             {
                 if (m_Animator != null)
                 {
@@ -61,7 +63,7 @@ public class LeaderFollowingAI : MonoBehaviour
                 transform.position += transform.right * speed * Time.deltaTime;
                 // transform.position += newPos;
             }
-            else if (dist < 4.0f)
+            else if (dist < 6.0f)
             {
                 if (m_Animator != null)
                 {
@@ -101,6 +103,8 @@ public class LeaderFollowingAI : MonoBehaviour
                 
                 isInfected = true;
                 counterScript.addInfected();
+
+                collision.collider.gameObject.GetComponent<Animator>().SetBool("ishifive", true);
             }
         }
         
