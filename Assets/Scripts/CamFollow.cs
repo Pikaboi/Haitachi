@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CamFollow : MonoBehaviour
 {
@@ -10,11 +11,33 @@ public class CamFollow : MonoBehaviour
     private const float Y_ANGLE_MIN = 0.0f;
     private const float Y_ANGLE_MAX = 50.0f;
 
+    Xbox inputSys;
+
     public float distance = 10.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
 
     private Camera cam;
+
+    Vector2 movedata;
+
+    void Awake()
+    {
+        inputSys = new Xbox();
+
+        inputSys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        inputSys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+    }
+
+    void OnEnable()
+    {
+        inputSys.Game.Enable();
+    }
+
+    void OnDisable()
+    {
+        inputSys.Game.Disable();
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -25,8 +48,11 @@ public class CamFollow : MonoBehaviour
 
     private void Update()
     {
-        currentX += Input.GetAxis("Mouse X");
-        currentY += Input.GetAxis("Mouse Y");
+        //currentX += Input.GetAxis("Mouse X");
+        //currentY += Input.GetAxis("Mouse Y");
+        Vector2 m = new Vector2(movedata.x, movedata.y) * 10 * Time.deltaTime;
+        currentX += m.x;
+        currentY += m.y;
 
         Quaternion playRot = Quaternion.Euler(0, currentX, 0);
         player.transform.rotation = playRot;
