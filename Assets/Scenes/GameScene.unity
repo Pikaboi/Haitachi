@@ -1016,6 +1016,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6703793470074999704}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &870935606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870935599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7e3ac7987f8f342a03386c972f33fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 100
 --- !u!1 &1283503835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1276,6 @@ GameObject:
   - component: {fileID: 1437627423}
   - component: {fileID: 1437627422}
   - component: {fileID: 1437627425}
-  - component: {fileID: 1437627426}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1345,20 +1357,6 @@ Skybox:
   m_GameObject: {fileID: 1437627421}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 0ffaa0b7117ba8c47a9d05ae701d4b4d, type: 2}
---- !u!114 &1437627426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437627421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7e3ac7987f8f342a03386c972f33fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 870935599}
-  distance: 10
 --- !u!1 &1539652394
 GameObject:
   m_ObjectHideFlags: 0

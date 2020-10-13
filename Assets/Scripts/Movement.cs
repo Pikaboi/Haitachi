@@ -50,9 +50,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 100 * Time.deltaTime;
+        Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 10 * Time.deltaTime;
         transform.Translate(m, Space.World);
-
 
         m_Animator.SetBool("Iswalking", true);
         if (move.isPlaying == false)
