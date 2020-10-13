@@ -47,19 +47,18 @@ public class CamFollow : MonoBehaviour
 
     private void Update()
     {
-        Vector2 m = new Vector2(movedata.x, movedata.y) * 10 * Time.deltaTime;
-        currentX += m.x;
-        currentY += m.y;
+        Vector2 m = new Vector2(movedata.x, movedata.y) * 100 * Time.deltaTime;
+        currentX = m.x;
+        currentY = m.y;
 
-        currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+        transform.Rotate(Vector3.up * currentX);
+
+        //currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+        cam.transform.Rotate(Vector3.left * currentY);
     }
 
     // Update is called once per frame
     private void LateUpdate()
     {
-        Vector3 dir = new Vector3(0,0, -distance);
-        Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        cam.transform.position = transform.position + rotation * dir;
-        cam.transform.LookAt(transform.position);
     }
 }
