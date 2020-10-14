@@ -132,7 +132,7 @@ public class WorkerAI : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("exit");
+           // Debug.Log("exit");
             agent.isStopped = false;
             m_Animator.SetBool("Iswalking", true);
         }
