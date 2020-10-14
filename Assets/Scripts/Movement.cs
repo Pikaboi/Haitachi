@@ -11,13 +11,6 @@ public class Movement : MonoBehaviour
     public float movespeed;
     public Rigidbody rb;
 
-    private Vector3 movePos;
-    private Ray ray;
-
-    private Animator m_Animator;
-
-    AudioSource move;
-
     private Vector2 movedata;
 
     bool onController = true;
@@ -52,12 +45,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        movePos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        m_Animator = gameObject.GetComponent<Animator>();
-
-        move = gameObject.GetComponent<AudioSource>();
-
-        move.Stop();
+        //movePos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
@@ -65,13 +53,5 @@ public class Movement : MonoBehaviour
     {
         Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 10 * Time.deltaTime;
         transform.Translate(m, Space.Self);
-
-        m_Animator.SetBool("Iswalking", true);
-        if (move.isPlaying == false)
-        {
-            move.PlayOneShot(move.clip);
-        }
-
-        
     }
 }
