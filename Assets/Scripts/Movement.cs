@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
+
+    Keyboard keys;
+    Xbox controller;
     public float movespeed;
     public Rigidbody rb;
 
@@ -13,6 +17,38 @@ public class Movement : MonoBehaviour
     private Animator m_Animator;
 
     AudioSource move;
+
+    private Vector2 movedata;
+
+    bool onController = true;
+
+    void Awake()
+    {
+        keys = new Keyboard();
+        controller = new Xbox();
+
+        keys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
+        controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
+    }
+
+    void swapControl()
+    {
+        onController = !onController;
+    }
+
+    void OnEnable()
+    {
+      controller.Game.Enable();
+      keys.Game.Enable();
+    }
+
+    void OnDisable()
+    {
+      controller.Game.Disable();
+      keys.Game.Disable();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,26 +63,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Plane plane = new Plane(Vector3.up, transform.position);
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            float point = 0f;
-
-            if(plane.Raycast(ray, out point)) {
-                movePos = ray.GetPoint(point);
-            }
-        }
-
-        transform.LookAt(movePos);
-        transform.position = Vector3.MoveTowards(transform.position, movePos, movespeed * Time.deltaTime);
+        Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 10 * Time.deltaTime;
+        transform.Translate(m, Space.Self);
 
         m_Animator.SetBool("Iswalking", true);
         if (move.isPlaying == false)
@@ -54,6 +72,6 @@ public class Movement : MonoBehaviour
             move.PlayOneShot(move.clip);
         }
 
-        //rb.velocity = new Vector3(Input.GetAxis("Horizontal") * movespeed, rb.velocity.y, Input.GetAxis("Vertical") * movespeed);
+        
     }
 }

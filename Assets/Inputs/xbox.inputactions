@@ -1,0 +1,71 @@
+{
+    "name": "xbox",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "84cce86a-375b-40c0-ada3-9430392b3ecc",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "f808c4e1-8d7c-42e8-b6c3-107642467cc3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Cam",
+                    "type": "Button",
+                    "id": "b0dec24b-8975-4c41-97a5-846aab0ded12",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Swap",
+                    "type": "Button",
+                    "id": "6a471dbd-11e1-4294-9a1d-9a2b65d2eb03",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0d808e52-4336-40f7-bf28-7cf7cfb198e0",
+                    "path": "<GamePad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b48ed78-1a83-4432-a94d-3fe90e7912da",
+                    "path": "<GamePad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cam",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0eb40b88-908d-40a4-a1b6-e82d53cf2cf4",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
