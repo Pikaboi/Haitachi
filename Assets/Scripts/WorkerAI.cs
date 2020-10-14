@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-public class WanderAIscript : MonoBehaviour
+public class WorkerAI : MonoBehaviour
 {
     public float speed;
 
@@ -19,12 +18,15 @@ public class WanderAIscript : MonoBehaviour
     public float moveSpeed = 10.0f;
     public float rotSpeed = 100.0f;
 
-    private bool isWandering = false;
-    private bool isRotatingLeft = false;
-    private bool isRotatingRight = false;
-    private bool isWalking = false;
+    private bool isWalking = true;
+    private bool newdes = true;
+
+    public NavMeshAgent agent;
+    Vector3 movePos;
 
 
+    Vector3 First;
+    Vector3 Second;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,68 +38,44 @@ public class WanderAIscript : MonoBehaviour
 
         myself = GetComponent<Transform>();
 
-       
+        agent = GetComponent<NavMeshAgent>();
+
+
+        First = new Vector3(9.1f, -0.4166666f, 23.0f);
+        Second = new Vector3(-13.06f, -0.4166666f, -5.71f);
+        m_Animator.SetBool("Iswalking", true);
+        movePos = First;
+        agent.SetDestination(movePos);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isWandering ==false)
-        {
-            
-            StartCoroutine(Wander());
-        }
-        if(isRotatingRight == true)
-        {
-            transform.Rotate(transform.up, Time.deltaTime * rotSpeed);
-        }
-        if (isRotatingLeft == true)
-        {
-            transform.Rotate(transform.up, Time.deltaTime * -rotSpeed);
-        }
-        if(isWalking==true )
+        if (movePos == transform.position)
         {
             m_Animator.SetBool("Iswalking", true);
+            //movePos = target.transform.position;
+            if (newdes == false)
+            {
+                movePos = First;
+            }
+            else
+            {
+                movePos = Second;
+            }
+            newdes = !(newdes);
+            agent.SetDestination(movePos);
+
+        }
+        if (isWalking == true)
+        {
+
             //before
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            //transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+            //after
+            //agent.SetDestination(target.transform.position);
         }
-    }
-
-
-    IEnumerator Wander()
-    {
-        int rotTime = Random.Range(1, 3);
-        int rotateWait = Random.Range(1, 4);
-        int rotateLorR = Random.Range(0, 3);
-
-        int walkWait = Random.Range(1, 4);
-        int walkTime = Random.Range(1, 5);
-
-        isWandering = true;
-
-        yield return new WaitForSeconds(walkWait);
-        isWalking = true;
-        yield return new WaitForSeconds(walkTime);
-        m_Animator.SetBool("Iswalking", false);
-        isWalking = false;
-        yield return new WaitForSeconds(rotateWait);
-
-        if(rotateLorR==1)
-        {
-            isRotatingRight = true;
-            yield return new WaitForSeconds(rotTime);
-            isRotatingRight = false;
-        }
-        if (rotateLorR == 2)
-        {
-            isRotatingLeft =true;
-            yield return new WaitForSeconds(rotTime);
-            isRotatingLeft = false;
-        }
-
-        isWandering = false;
-        
-
     }
 
     private void RotationDirection()
@@ -111,11 +89,14 @@ public class WanderAIscript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+
         if (collision.collider.tag == "Player")
         {
             //RotationDirection();
+            //agent.SetDestination(target.transform.position);
             m_Animator.SetBool("ishifive", true);
+            //m_Animator.SetBool("Iswalking", false);
+            //agent.isStopped = true;
 
         }
         if (collision.collider.tag == "Block")
@@ -132,9 +113,28 @@ public class WanderAIscript : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
+            
+           // 
+            //agent.isStopped = false;
             m_Animator.SetBool("ishifive", false);
-
         }
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            m_Animator.SetBool("Iswalking", false);
+            agent.isStopped = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("exit");
+            agent.isStopped = false;
+            m_Animator.SetBool("Iswalking", true);
+        }
     }
 }
