@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 10 * Time.deltaTime;
-        transform.Translate(m, Space.World);
+        transform.Translate(m, Space.Self);
 
         m_Animator.SetBool("Iswalking", true);
         if (move.isPlaying == false)

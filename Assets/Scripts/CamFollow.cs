@@ -52,7 +52,6 @@ public class CamFollow : MonoBehaviour
         currentY = m.y;
 
         transform.Rotate(Vector3.up * currentX);
-
         //currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
         cam.transform.Rotate(Vector3.left * currentY);
     }
@@ -60,5 +59,6 @@ public class CamFollow : MonoBehaviour
     // Update is called once per frame
     private void LateUpdate()
     {
+
     }
 }
