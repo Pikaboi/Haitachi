@@ -33,6 +33,14 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Swap"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a471dbd-11e1-4294-9a1d-9a2b65d2eb03"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -57,6 +65,17 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""action"": ""Cam"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0eb40b88-908d-40a4-a1b6-e82d53cf2cf4"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -67,6 +86,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
         m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
         m_Game_Cam = m_Game.FindAction("Cam", throwIfNotFound: true);
+        m_Game_Swap = m_Game.FindAction("Swap", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -118,12 +138,14 @@ public class @Xbox : IInputActionCollection, IDisposable
     private IGameActions m_GameActionsCallbackInterface;
     private readonly InputAction m_Game_Move;
     private readonly InputAction m_Game_Cam;
+    private readonly InputAction m_Game_Swap;
     public struct GameActions
     {
         private @Xbox m_Wrapper;
         public GameActions(@Xbox wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Game_Move;
         public InputAction @Cam => m_Wrapper.m_Game_Cam;
+        public InputAction @Swap => m_Wrapper.m_Game_Swap;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -139,6 +161,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Cam.started -= m_Wrapper.m_GameActionsCallbackInterface.OnCam;
                 @Cam.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnCam;
                 @Cam.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnCam;
+                @Swap.started -= m_Wrapper.m_GameActionsCallbackInterface.OnSwap;
+                @Swap.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnSwap;
+                @Swap.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnSwap;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -149,6 +174,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Cam.started += instance.OnCam;
                 @Cam.performed += instance.OnCam;
                 @Cam.canceled += instance.OnCam;
+                @Swap.started += instance.OnSwap;
+                @Swap.performed += instance.OnSwap;
+                @Swap.canceled += instance.OnSwap;
             }
         }
     }
@@ -157,5 +185,6 @@ public class @Xbox : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnCam(InputAction.CallbackContext context);
+        void OnSwap(InputAction.CallbackContext context);
     }
 }

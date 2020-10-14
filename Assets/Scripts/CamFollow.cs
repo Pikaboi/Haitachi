@@ -10,7 +10,9 @@ public class CamFollow : MonoBehaviour
     private const float Y_ANGLE_MIN = 0.0f;
     private const float Y_ANGLE_MAX = 50.0f;
 
-    Xbox inputSys;
+
+    Xbox controller;
+    Keyboard keys;
 
     public float distance = 0.0f;
     private float currentX = 0.0f;
@@ -20,22 +22,36 @@ public class CamFollow : MonoBehaviour
 
     Vector2 movedata;
 
+    bool onController = true;
+
     void Awake()
     {
-        inputSys = new Xbox();
+        controller = new Xbox();
+        keys = new Keyboard();
 
-        inputSys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        inputSys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+        keys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        keys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+           
+        controller.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        controller.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+    }
+
+    void swapControl()
+    {
+        onController = !onController;
+        Debug.Log(onController);
     }
 
     void OnEnable()
-    {
-        inputSys.Game.Enable();
+    { 
+        controller.Game.Enable();
+        keys.Game.Enable();
     }
 
     void OnDisable()
     {
-        inputSys.Game.Disable();
+        controller.Game.Disable();
+        keys.Game.Enable();
     }
 
     // Start is called before the first frame update

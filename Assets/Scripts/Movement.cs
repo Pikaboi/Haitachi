@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
-    Xbox inputSys;
+    Keyboard keys;
+    Xbox controller;
     public float movespeed;
     public Rigidbody rb;
 
@@ -19,22 +20,34 @@ public class Movement : MonoBehaviour
 
     private Vector2 movedata;
 
+    bool onController = true;
+
     void Awake()
     {
-        inputSys = new Xbox();
+        keys = new Keyboard();
+        controller = new Xbox();
 
-        inputSys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        inputSys.Game.Move.canceled += ctx => movedata = Vector2.zero;
+        keys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
+        controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
+    }
+
+    void swapControl()
+    {
+        onController = !onController;
     }
 
     void OnEnable()
     {
-        inputSys.Game.Enable();
+      controller.Game.Enable();
+      keys.Game.Enable();
     }
 
     void OnDisable()
     {
-        inputSys.Game.Disable();
+      controller.Game.Disable();
+      keys.Game.Disable();
     }
     void Start()
     {
