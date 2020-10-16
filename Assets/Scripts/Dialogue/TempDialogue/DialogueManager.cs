@@ -50,14 +50,14 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("Z button was pressed - continue");
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    Debug.Log("Z button was pressed - continue");
             //DisplayNextSentence();
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("X button was pressed - start event");
-        }
+        //}
+       // if (Input.GetKeyDown(KeyCode.X))
+       // {
+       //     Debug.Log("X button was pressed - start event");
+       // }
     }
 }

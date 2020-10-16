@@ -17,6 +17,12 @@ public class DialogueActivated : MonoBehaviour
     public Text dialogueText;
 
     public Queue<string> sentences;
+
+    //this is for new input
+    Keyboard keys;
+    Xbox controller;
+    bool interactSuccess = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +36,31 @@ public class DialogueActivated : MonoBehaviour
 
         CanTalk = false;
 
+    }
+
+    //For input system
+    void Awake()
+    {
+        keys = new Keyboard();
+        controller = new Xbox();
+
+        keys.Game.Move.started += ctx => interactSuccess = true;
+        keys.Game.Move.canceled += ctx => interactSuccess = false;
+        controller.Game.Move.started += ctx => interactSuccess = true;
+        controller.Game.Move.canceled += ctx => interactSuccess = false;
+    }
+
+    //These turn the controls off when not in use.
+    void OnEnable()
+    {
+        controller.Game.Enable();
+        keys.Game.Enable();
+    }
+
+    void OnDisable()
+    {
+        controller.Game.Disable();
+        keys.Game.Disable();
     }
 
     /*
@@ -74,8 +105,9 @@ public class DialogueActivated : MonoBehaviour
         if (CanTalk == true)
         {
             // Pressess the Z button to interact
-            if (Input.GetKeyDown(KeyCode.E))
+            if (interactSuccess)
             {
+                Debug.Log("interact");
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);

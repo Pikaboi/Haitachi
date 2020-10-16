@@ -8,6 +8,35 @@ public class CollisionText : MonoBehaviour
     //The Script that controls the menu
     private DialogueActivated Menu;
 
+    //this is for new input
+    Keyboard keys;
+    Xbox controller;
+    bool interactSuccess = false;
+
+    //For input system
+    void Awake()
+    {
+        keys = new Keyboard();
+        controller = new Xbox();
+
+        keys.Game.Move.started += ctx => interactSuccess = true;
+        keys.Game.Move.canceled += ctx => interactSuccess = false;
+        controller.Game.Move.started += ctx => interactSuccess = true;
+        controller.Game.Move.canceled += ctx => interactSuccess = false;
+    }
+
+    //These turn the controls off when not in use.
+    void OnEnable()
+    {
+        controller.Game.Enable();
+        keys.Game.Enable();
+    }
+
+    void OnDisable()
+    {
+        controller.Game.Disable();
+        keys.Game.Disable();
+    }
 
     void Start()
     {
@@ -21,7 +50,7 @@ public class CollisionText : MonoBehaviour
     {
         
         //testing  the event activates it shall go through the talk event
-        if (Input.GetKeyDown(KeyCode.X))
+        if (interactSuccess)
         {
             Menu.setToTalk();
             //Find Who Made the message based on tag
@@ -29,9 +58,9 @@ public class CollisionText : MonoBehaviour
         }
         //if (Input.GetKeyDown(KeyCode.Space)
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("we collided");
+        Debug.Log("we collided");
         //Allow the Z talk button to be active
         Menu.setToTalk();
         //Find Who Made the message based on tag
@@ -39,7 +68,7 @@ public class CollisionText : MonoBehaviour
         //Menu.setTag(other.gameObject.tag);
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit(Collider other)
     {
         //Turn off the talk button
         Menu.stopTalk();
