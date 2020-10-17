@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor.UI;
 
 public class LockPuzzle : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
