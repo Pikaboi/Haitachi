@@ -72,7 +72,7 @@ public class DialogueActivated : MonoBehaviour
         hideDialouge();
 
         CanTalk = false;
-
+        stopTalk();
     }
 
     /*
@@ -107,7 +107,7 @@ public class DialogueActivated : MonoBehaviour
         Debug.Log("End of conversation.");
         Time.timeScale = 1;
         isTalk = false;
-        hideDialouge();
+        //hideDialouge();
     }
 
     // Update is called once per frame
@@ -137,7 +137,7 @@ public class DialogueActivated : MonoBehaviour
                     else if (Time.timeScale == 0)
                     {
                         Time.timeScale = 1;
-                        hideDialouge();
+                        //hideDialouge();
                     }
                 }
                 else

@@ -8,6 +8,7 @@ TagManager:
   - Follower
   - Block
   - DialogueUI
+  - dialougeManager
   layers:
   - Default
   - TransparentFX
