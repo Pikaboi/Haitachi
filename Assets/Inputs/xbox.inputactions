@@ -84,6 +84,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "LockPuzzle",
+            "id": "ff965797-28c9-41f6-a472-75c1557d4e15",
+            "actions": [
+                {
+                    "name": "Control",
+                    "type": "Button",
+                    "id": "ad8c3ea2-6fcd-4873-9d76-353708680c52",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fc1599a2-1f60-48b0-9348-04dbad784e7b",
+                    "path": "<GamePad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Control",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
