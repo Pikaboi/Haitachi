@@ -88,7 +88,7 @@ public class @Xbox : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8aa3a989-94ae-4c35-8c58-7f50195a4a66"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<GamePad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

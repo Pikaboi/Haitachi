@@ -11,7 +11,8 @@ public class CamFollow : MonoBehaviour
     private const float Y_ANGLE_MAX = 50.0f;
 
 
-    GlobalController cont;
+    Xbox controller;
+    Keyboard keys;
 
     public float distance = 0.0f;
     private float currentX = 0.0f;
@@ -25,20 +26,32 @@ public class CamFollow : MonoBehaviour
 
     void Awake()
     {
-        cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
+        controller = new Xbox();
+        keys = new Keyboard();
 
-
-        cont.keys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        cont.keys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+        keys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        keys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
            
-        cont.controller.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        cont.controller.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+        controller.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        controller.Game.Cam.canceled += ctx => movedata = Vector2.zero;
     }
 
     void swapControl()
     {
         onController = !onController;
         Debug.Log(onController);
+    }
+
+    void OnEnable()
+    { 
+        controller.Game.Enable();
+        keys.Game.Enable();
+    }
+
+    void OnDisable()
+    {
+        controller.Game.Disable();
+        keys.Game.Enable();
     }
 
     // Start is called before the first frame update
@@ -53,6 +66,8 @@ public class CamFollow : MonoBehaviour
         Vector2 m = new Vector2(movedata.x, movedata.y) * 100 * Time.deltaTime;
         currentX = m.x;
         currentY = m.y;
+
+        Debug.Log(currentY);
 
         transform.Rotate(Vector3.up * currentX);
         cam.transform.Rotate(Vector3.left * currentY);

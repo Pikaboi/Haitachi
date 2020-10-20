@@ -10,7 +10,6 @@ TagManager:
   - DialogueUI
   - dialougeManager
   - LockPuzzleUI
-  - GlobalController
   layers:
   - Default
   - TransparentFX
