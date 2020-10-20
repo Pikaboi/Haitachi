@@ -141,6 +141,77 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""LockPuzzle"",
+            ""id"": ""75976ec2-895c-4d6a-b5eb-7b0e7026986c"",
+            ""actions"": [
+                {
+                    ""name"": ""Control"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""c274b44a-9e40-4c29-86e8-7544a76f0b1a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""626bcf2c-632b-4714-830e-4242f3bb3a4a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Control"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6936b21a-c58a-4b10-82b1-6287fe9d4f98"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Control"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""724c8236-d2fe-4835-9e5e-e4f0cfe5f61a"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Control"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e1bc68a4-795f-49ab-88de-09415fff6606"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Control"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8ec5854e-1ff7-45b6-8d7a-1a0267455036"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Control"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -151,6 +222,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
         m_Game_Cam = m_Game.FindAction("Cam", throwIfNotFound: true);
         m_Game_Swap = m_Game.FindAction("Swap", throwIfNotFound: true);
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
+        // LockPuzzle
+        m_LockPuzzle = asset.FindActionMap("LockPuzzle", throwIfNotFound: true);
+        m_LockPuzzle_Control = m_LockPuzzle.FindAction("Control", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -253,11 +327,48 @@ public class @Keyboard : IInputActionCollection, IDisposable
         }
     }
     public GameActions @Game => new GameActions(this);
+
+    // LockPuzzle
+    private readonly InputActionMap m_LockPuzzle;
+    private ILockPuzzleActions m_LockPuzzleActionsCallbackInterface;
+    private readonly InputAction m_LockPuzzle_Control;
+    public struct LockPuzzleActions
+    {
+        private @Keyboard m_Wrapper;
+        public LockPuzzleActions(@Keyboard wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Control => m_Wrapper.m_LockPuzzle_Control;
+        public InputActionMap Get() { return m_Wrapper.m_LockPuzzle; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LockPuzzleActions set) { return set.Get(); }
+        public void SetCallbacks(ILockPuzzleActions instance)
+        {
+            if (m_Wrapper.m_LockPuzzleActionsCallbackInterface != null)
+            {
+                @Control.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
+                @Control.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
+                @Control.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
+            }
+            m_Wrapper.m_LockPuzzleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Control.started += instance.OnControl;
+                @Control.performed += instance.OnControl;
+                @Control.canceled += instance.OnControl;
+            }
+        }
+    }
+    public LockPuzzleActions @LockPuzzle => new LockPuzzleActions(this);
     public interface IGameActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnCam(InputAction.CallbackContext context);
         void OnSwap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface ILockPuzzleActions
+    {
+        void OnControl(InputAction.CallbackContext context);
     }
 }

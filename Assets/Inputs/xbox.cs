@@ -97,6 +97,33 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""LockPuzzle"",
+            ""id"": ""ff965797-28c9-41f6-a472-75c1557d4e15"",
+            ""actions"": [
+                {
+                    ""name"": ""Control"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad8c3ea2-6fcd-4873-9d76-353708680c52"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fc1599a2-1f60-48b0-9348-04dbad784e7b"",
+                    ""path"": ""<GamePad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Control"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -107,6 +134,9 @@ public class @Xbox : IInputActionCollection, IDisposable
         m_Game_Cam = m_Game.FindAction("Cam", throwIfNotFound: true);
         m_Game_Swap = m_Game.FindAction("Swap", throwIfNotFound: true);
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
+        // LockPuzzle
+        m_LockPuzzle = asset.FindActionMap("LockPuzzle", throwIfNotFound: true);
+        m_LockPuzzle_Control = m_LockPuzzle.FindAction("Control", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -209,11 +239,48 @@ public class @Xbox : IInputActionCollection, IDisposable
         }
     }
     public GameActions @Game => new GameActions(this);
+
+    // LockPuzzle
+    private readonly InputActionMap m_LockPuzzle;
+    private ILockPuzzleActions m_LockPuzzleActionsCallbackInterface;
+    private readonly InputAction m_LockPuzzle_Control;
+    public struct LockPuzzleActions
+    {
+        private @Xbox m_Wrapper;
+        public LockPuzzleActions(@Xbox wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Control => m_Wrapper.m_LockPuzzle_Control;
+        public InputActionMap Get() { return m_Wrapper.m_LockPuzzle; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LockPuzzleActions set) { return set.Get(); }
+        public void SetCallbacks(ILockPuzzleActions instance)
+        {
+            if (m_Wrapper.m_LockPuzzleActionsCallbackInterface != null)
+            {
+                @Control.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
+                @Control.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
+                @Control.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
+            }
+            m_Wrapper.m_LockPuzzleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Control.started += instance.OnControl;
+                @Control.performed += instance.OnControl;
+                @Control.canceled += instance.OnControl;
+            }
+        }
+    }
+    public LockPuzzleActions @LockPuzzle => new LockPuzzleActions(this);
     public interface IGameActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnCam(InputAction.CallbackContext context);
         void OnSwap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface ILockPuzzleActions
+    {
+        void OnControl(InputAction.CallbackContext context);
     }
 }
