@@ -8,8 +8,7 @@ public class LockPuzzle : MonoBehaviour
 {
     public Text[] texts;
 
-    Keyboard keys;
-    Xbox controller;
+    GlobalController cont;
 
     private float num;
     private float lockNum;
@@ -18,29 +17,13 @@ public class LockPuzzle : MonoBehaviour
 
     void Awake()
     {
-        keys = new Keyboard();
-        controller = new Xbox();
-        keys.LockPuzzle.Control.started += ctx => num++;
-        //keys.LockPuzzle.Control.canceled += ctx => num = num;
-        controller.LockPuzzle.NumUp.started += ctx => num++;
-        controller.LockPuzzle.NumDown.started += ctx => num--;
-        controller.LockPuzzle.LockLeft.started += ctx => lockNum--;
-        controller.LockPuzzle.Lockright.started += ctx => lockNum++;
-        //controller.LockPuzzle.Control.canceled += ctx => num = num;
+        cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
+        cont.keys.LockPuzzle.Control.started += ctx => num++;
+        cont.controller.LockPuzzle.NumUp.started += ctx => num++;
+        cont.controller.LockPuzzle.NumDown.started += ctx => num--;
+        cont.controller.LockPuzzle.LockLeft.started += ctx => lockNum--;
+        cont.controller.LockPuzzle.Lockright.started += ctx => lockNum++;
     }
-
-    void OnEnable()
-    {
-        controller.LockPuzzle.Enable();
-        keys.LockPuzzle.Enable();
-    }
-
-    void OnDisable()
-    {
-        controller.LockPuzzle.Disable();
-        keys.LockPuzzle.Disable();
-    }
-
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +47,15 @@ public class LockPuzzle : MonoBehaviour
 
         if(answerstr == answer)
         {
-            
+            GameObject[] puzzobjs = GameObject.FindGameObjectsWithTag("LockPuzzleUI");
+
+            foreach (GameObject go in puzzobjs)
+            {
+                go.SetActive(false);
+            }
+
+            cont.controller.LockPuzzle.Disable();
+            cont.controller.Game.Enable();
         }
     }
 }
