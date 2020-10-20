@@ -151,7 +151,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 38.571022
+  field of view: 80
   orthographic: 0
   orthographic size: 30
   m_Depth: -1
@@ -193,15 +193,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 94733965173362656}
     m_Modifications:
+    - target: {fileID: -5178661895559278292, guid: 2c6397ede7ca4b04f8aee79baab07f66,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3989954872861045699, guid: d0ef99208c3d17a45a09ed6050d167f7,
+        type: 3}
     - target: {fileID: -4216859302048453862, guid: 2c6397ede7ca4b04f8aee79baab07f66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.032
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c6397ede7ca4b04f8aee79baab07f66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5778148
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c6397ede7ca4b04f8aee79baab07f66,
         type: 3}
