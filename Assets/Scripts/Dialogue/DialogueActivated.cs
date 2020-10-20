@@ -24,7 +24,9 @@ public class DialogueActivated : MonoBehaviour
     Xbox controller;
     //Use this to check the button is pressed
     bool interactSuccess = false;
+    bool contDialogue = true;
 
+    float dialSpeed = 0.1f;
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -75,7 +77,7 @@ public class DialogueActivated : MonoBehaviour
         stopTalk();
     }
 
-    /*
+    
     public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("Starting conversation with " + dialogue.Name);
@@ -89,24 +91,44 @@ public class DialogueActivated : MonoBehaviour
 
         DisplayNextSentence();
     }
-    */
+
     public void DisplayNextSentence()
     {
+        contDialogue = false;
         if (sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
-        dialogueText.text = sentence;
+       // Debug.Log(sentence);
+        // dialogueText.text = sentence;
+        
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+       
     }
-
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            //Debug.Log("new letter");
+            yield return new WaitForSeconds(dialSpeed);
+            SpeedtheDialogue();
+        }
+       // Debug.Log("checking on loop");
+        contDialogue = true;
+    }
     void EndDialogue()
     {
-        Debug.Log("End of conversation.");
-        Time.timeScale = 1;
+        //Debug.Log("End of conversation.");
+        //Time.timeScale = 1;
         isTalk = false;
+        CanTalk = false;
+        contDialogue = false;
         //hideDialouge();
     }
 
@@ -117,33 +139,31 @@ public class DialogueActivated : MonoBehaviour
         if (CanTalk == true)
         {
             // Pressess the Z button to interact
-            if (interactSuccess)
+            if (interactSuccess && contDialogue)
             {
-                Debug.Log("interact");
+                //Debug.Log("interact");
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
                 }
                 if (isTalk == false)
                 {
-                    if (Time.timeScale == 1)
-                    {
-                        Time.timeScale = 0;
-                        showDialouge();
-                        ProcessDialouge(CurrentSpeech);
-                        isTalk = true;
 
-                    }
-                    else if (Time.timeScale == 0)
-                    {
-                        Time.timeScale = 1;
-                        //hideDialouge();
-                    }
+                    //Time.timeScale = 0;
+                    showDialouge();
+                    ProcessDialouge(CurrentSpeech);
+                    isTalk = true;
                 }
                 else
                 {
                     //Debug.Log("Z button was pressed - continue");
+                    //if (contDialogue == true)
+                    //{
+
+                    //contDialogue = false;
                     DisplayNextSentence();
+                    //contDialogue=
+                    // }
                 }
             }
 
@@ -223,5 +243,12 @@ public class DialogueActivated : MonoBehaviour
     {
         CurrentSpeech = dialouge;
     }
-
+    private void SpeedtheDialogue()
+    {
+        dialSpeed = 0.1f;
+        if (interactSuccess)
+        {
+            dialSpeed = 0.01f;
+        }
+    }
 }

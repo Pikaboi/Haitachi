@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 355.2, y: 2.25}
-  m_SizeDelta: {x: 935.4, y: 113.2}
+  m_AnchoredPosition: {x: 355.2, y: -2.4}
+  m_SizeDelta: {x: 935.4, y: 104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58707407
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: dc787cab9557731419989b015d812c80, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 57
     m_Alignment: 3
@@ -471,6 +471,8 @@ MonoBehaviour:
     Name: '!'
     sentences:
     - Water the plants
+    - do the home
+    - owo yu did
 --- !u!4 &1069906402
 Transform:
   m_ObjectHideFlags: 0
@@ -858,7 +860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162.5, y: 0.000038146973}
+  m_AnchoredPosition: {x: -139.7, y: 2.25}
   m_SizeDelta: {x: 99.9, y: 117.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895628226
@@ -881,11 +883,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dc787cab9557731419989b015d812c80, type: 3}
-    m_FontSize: 57
+    m_FontSize: 82
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 57
+    m_MaxSize: 109
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -937,7 +939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299.55, y: 325.15002}
+  m_AnchoredPosition: {x: -60.55002, y: 209.65}
   m_SizeDelta: {x: 424.9, y: 117.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072367736

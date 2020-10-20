@@ -15,6 +15,7 @@ public class CollisionText : MonoBehaviour
     //Use this to check the button is pressed
     bool interactSuccess = false;
 
+    bool OnlyOnce = true;
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -30,6 +31,7 @@ public class CollisionText : MonoBehaviour
         keys.Game.Interact.started += ctx => interactSuccess = true;
         //Canceled is when the button isnt being pressed.
         keys.Game.Interact.canceled += ctx => interactSuccess = false;
+
         //Same as above for controller mapping
         controller.Game.Interact.started += ctx => interactSuccess = true;
         controller.Game.Interact.canceled += ctx => interactSuccess = false;
@@ -61,11 +63,13 @@ public class CollisionText : MonoBehaviour
     {
         
         //testing  the event activates it shall go through the talk event
-        if (interactSuccess)
+        if (interactSuccess && OnlyOnce)
         {
+            Debug.Log("Talk to once");
             Menu.setToTalk();
             //Find Who Made the message based on tag
             Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
+            OnlyOnce = false;
         }
         //if (Input.GetKeyDown(KeyCode.Space)
     }
