@@ -9,6 +9,7 @@ TagManager:
   - Block
   - DialogueUI
   - dialougeManager
+  - LockPuzzleUI
   layers:
   - Default
   - TransparentFX
