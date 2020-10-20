@@ -90,9 +90,33 @@
             "id": "ff965797-28c9-41f6-a472-75c1557d4e15",
             "actions": [
                 {
-                    "name": "Control",
+                    "name": "NumUp",
                     "type": "Button",
                     "id": "ad8c3ea2-6fcd-4873-9d76-353708680c52",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "NumDown",
+                    "type": "Button",
+                    "id": "7fe64353-3c26-4f4c-8d21-449ad53a6444",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LockLeft",
+                    "type": "Button",
+                    "id": "408cec46-61c5-47d0-8b25-a2922ca4064f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Lockright",
+                    "type": "Button",
+                    "id": "9aa802f7-33e6-4bd8-b4c1-984e2c1b061d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -101,12 +125,45 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "fc1599a2-1f60-48b0-9348-04dbad784e7b",
-                    "path": "<GamePad>/leftStick",
+                    "id": "302f1e0d-428c-48af-9255-dc0b6620c315",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Control",
+                    "action": "NumUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f85cc41a-7900-4b36-9e18-93f7da78c7f4",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NumDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff51e954-52b5-4a8c-88a4-b3c3d418ff38",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LockLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ada8280-bb51-49ca-a2fd-1f6ef539f315",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lockright",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

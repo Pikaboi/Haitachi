@@ -11,20 +11,22 @@ public class LockPuzzle : MonoBehaviour
     Keyboard keys;
     Xbox controller;
 
-    private Vector2 movedata;
+    private float num;
+    private float lockNum;
 
-    float value = 0;
-    float slot = 0;
+    public string answer;
 
     void Awake()
     {
         keys = new Keyboard();
         controller = new Xbox();
-
-        keys.LockPuzzle.Control.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        keys.LockPuzzle.Control.canceled += ctx => movedata = Vector2.zero;
-        controller.LockPuzzle.Control.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        controller.LockPuzzle.Control.canceled += ctx => movedata = Vector2.zero;
+        keys.LockPuzzle.Control.started += ctx => num++;
+        //keys.LockPuzzle.Control.canceled += ctx => num = num;
+        controller.LockPuzzle.NumUp.started += ctx => num++;
+        controller.LockPuzzle.NumDown.started += ctx => num--;
+        controller.LockPuzzle.LockLeft.started += ctx => lockNum--;
+        controller.LockPuzzle.Lockright.started += ctx => lockNum++;
+        //controller.LockPuzzle.Control.canceled += ctx => num = num;
     }
 
     void OnEnable()
@@ -49,17 +51,20 @@ public class LockPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        value += Mathf.Ceil(movedata.x);
+        num = Mathf.Clamp(num, 0.0f, 9.0f);
+        lockNum = Mathf.Clamp(lockNum, 0.0f, 3.0f);
 
-        Mathf.Clamp(value, 0, 9);
+        texts[(int)lockNum].text = "" + (int)num;
 
-        Debug.Log(value);
-        slot += Mathf.Ceil(movedata.y);
+        string answerstr = "";
+        for (int i = 0; i < texts.Length; i++)
+        {
+            answerstr += texts[i].text;
+        }
 
-        Mathf.Clamp(slot, 0, 4);
-
-        int x = (int)slot;
-
-        texts[x].text = "" + value;
+        if(answerstr == answer)
+        {
+            
+        }
     }
 }
