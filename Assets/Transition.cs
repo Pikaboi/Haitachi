@@ -8,6 +8,6 @@ public class Transition : MonoBehaviour
     public Transform warpPos;
     void OnTriggerEnter(Collider other)
     {
-        other.gameObject.transform.position = warpPos;
+        other.gameObject.transform.position = warpPos.position;
     }
 }
