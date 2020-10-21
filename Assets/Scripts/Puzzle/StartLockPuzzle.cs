@@ -45,6 +45,8 @@ public class StartLockPuzzle : MonoBehaviour
                 showPaused();
                 cont.controller.Game.Disable();
                 cont.controller.LockPuzzle.Enable();
+                cont.keys.Game.Disable();
+                cont.keys.LockPuzzle.Enable();
                 interacted = false;
             }
         }

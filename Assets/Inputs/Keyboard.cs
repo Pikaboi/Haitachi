@@ -49,6 +49,14 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Hi5"",
+                    ""type"": ""Button"",
+                    ""id"": ""9da61066-77f7-4fb0-8b86-c90bbdc50700"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -139,6 +147,17 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c26149c1-5dee-472c-a67e-0027920ec4a6"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hi5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -147,69 +166,82 @@ public class @Keyboard : IInputActionCollection, IDisposable
             ""id"": ""75976ec2-895c-4d6a-b5eb-7b0e7026986c"",
             ""actions"": [
                 {
-                    ""name"": ""Control"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""c274b44a-9e40-4c29-86e8-7544a76f0b1a"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""NumUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""52a5e378-e728-463b-9ccc-6be086ff89fb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NumDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""8505515f-b08b-45c6-801d-d47a6f27cabd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LockLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""e6a4c3d4-1edf-40ad-bd0e-3f8124ddef2f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Lockright"",
+                    ""type"": ""Button"",
+                    ""id"": ""6016b7f6-2ad5-410c-81e5-5543fa3ef0da"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""626bcf2c-632b-4714-830e-4242f3bb3a4a"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Control"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""6936b21a-c58a-4b10-82b1-6287fe9d4f98"",
+                    ""name"": """",
+                    ""id"": ""6b7c563e-81e1-4148-adff-09f024fa3abc"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Control"",
+                    ""action"": ""NumUp"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""724c8236-d2fe-4835-9e5e-e4f0cfe5f61a"",
+                    ""name"": """",
+                    ""id"": ""e8112d72-3940-4e3c-ad18-f129b23bf9d2"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Control"",
+                    ""action"": ""NumDown"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""e1bc68a4-795f-49ab-88de-09415fff6606"",
+                    ""name"": """",
+                    ""id"": ""ea377ae6-5ca2-437f-9fb8-979e90396ba1"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Control"",
+                    ""action"": ""LockLeft"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""8ec5854e-1ff7-45b6-8d7a-1a0267455036"",
+                    ""name"": """",
+                    ""id"": ""bcd6f8ed-035b-4dad-924c-529b69e17b9d"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Control"",
+                    ""action"": ""Lockright"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -222,9 +254,13 @@ public class @Keyboard : IInputActionCollection, IDisposable
         m_Game_Cam = m_Game.FindAction("Cam", throwIfNotFound: true);
         m_Game_Swap = m_Game.FindAction("Swap", throwIfNotFound: true);
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
+        m_Game_Hi5 = m_Game.FindAction("Hi5", throwIfNotFound: true);
         // LockPuzzle
         m_LockPuzzle = asset.FindActionMap("LockPuzzle", throwIfNotFound: true);
-        m_LockPuzzle_Control = m_LockPuzzle.FindAction("Control", throwIfNotFound: true);
+        m_LockPuzzle_NumUp = m_LockPuzzle.FindAction("NumUp", throwIfNotFound: true);
+        m_LockPuzzle_NumDown = m_LockPuzzle.FindAction("NumDown", throwIfNotFound: true);
+        m_LockPuzzle_LockLeft = m_LockPuzzle.FindAction("LockLeft", throwIfNotFound: true);
+        m_LockPuzzle_Lockright = m_LockPuzzle.FindAction("Lockright", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -278,6 +314,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Cam;
     private readonly InputAction m_Game_Swap;
     private readonly InputAction m_Game_Interact;
+    private readonly InputAction m_Game_Hi5;
     public struct GameActions
     {
         private @Keyboard m_Wrapper;
@@ -286,6 +323,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
         public InputAction @Cam => m_Wrapper.m_Game_Cam;
         public InputAction @Swap => m_Wrapper.m_Game_Swap;
         public InputAction @Interact => m_Wrapper.m_Game_Interact;
+        public InputAction @Hi5 => m_Wrapper.m_Game_Hi5;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -307,6 +345,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_GameActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnInteract;
+                @Hi5.started -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
+                @Hi5.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
+                @Hi5.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -323,6 +364,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Hi5.started += instance.OnHi5;
+                @Hi5.performed += instance.OnHi5;
+                @Hi5.canceled += instance.OnHi5;
             }
         }
     }
@@ -331,12 +375,18 @@ public class @Keyboard : IInputActionCollection, IDisposable
     // LockPuzzle
     private readonly InputActionMap m_LockPuzzle;
     private ILockPuzzleActions m_LockPuzzleActionsCallbackInterface;
-    private readonly InputAction m_LockPuzzle_Control;
+    private readonly InputAction m_LockPuzzle_NumUp;
+    private readonly InputAction m_LockPuzzle_NumDown;
+    private readonly InputAction m_LockPuzzle_LockLeft;
+    private readonly InputAction m_LockPuzzle_Lockright;
     public struct LockPuzzleActions
     {
         private @Keyboard m_Wrapper;
         public LockPuzzleActions(@Keyboard wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Control => m_Wrapper.m_LockPuzzle_Control;
+        public InputAction @NumUp => m_Wrapper.m_LockPuzzle_NumUp;
+        public InputAction @NumDown => m_Wrapper.m_LockPuzzle_NumDown;
+        public InputAction @LockLeft => m_Wrapper.m_LockPuzzle_LockLeft;
+        public InputAction @Lockright => m_Wrapper.m_LockPuzzle_Lockright;
         public InputActionMap Get() { return m_Wrapper.m_LockPuzzle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -346,16 +396,34 @@ public class @Keyboard : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_LockPuzzleActionsCallbackInterface != null)
             {
-                @Control.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
-                @Control.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
-                @Control.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnControl;
+                @NumUp.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnNumUp;
+                @NumUp.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnNumUp;
+                @NumUp.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnNumUp;
+                @NumDown.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnNumDown;
+                @NumDown.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnNumDown;
+                @NumDown.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnNumDown;
+                @LockLeft.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockLeft;
+                @LockLeft.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockLeft;
+                @LockLeft.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockLeft;
+                @Lockright.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
+                @Lockright.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
+                @Lockright.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
             }
             m_Wrapper.m_LockPuzzleActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Control.started += instance.OnControl;
-                @Control.performed += instance.OnControl;
-                @Control.canceled += instance.OnControl;
+                @NumUp.started += instance.OnNumUp;
+                @NumUp.performed += instance.OnNumUp;
+                @NumUp.canceled += instance.OnNumUp;
+                @NumDown.started += instance.OnNumDown;
+                @NumDown.performed += instance.OnNumDown;
+                @NumDown.canceled += instance.OnNumDown;
+                @LockLeft.started += instance.OnLockLeft;
+                @LockLeft.performed += instance.OnLockLeft;
+                @LockLeft.canceled += instance.OnLockLeft;
+                @Lockright.started += instance.OnLockright;
+                @Lockright.performed += instance.OnLockright;
+                @Lockright.canceled += instance.OnLockright;
             }
         }
     }
@@ -366,9 +434,13 @@ public class @Keyboard : IInputActionCollection, IDisposable
         void OnCam(InputAction.CallbackContext context);
         void OnSwap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnHi5(InputAction.CallbackContext context);
     }
     public interface ILockPuzzleActions
     {
-        void OnControl(InputAction.CallbackContext context);
+        void OnNumUp(InputAction.CallbackContext context);
+        void OnNumDown(InputAction.CallbackContext context);
+        void OnLockLeft(InputAction.CallbackContext context);
+        void OnLockright(InputAction.CallbackContext context);
     }
 }

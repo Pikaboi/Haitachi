@@ -29,6 +29,10 @@ public class LockPuzzle : MonoBehaviour
         cont.controller.LockPuzzle.NumDown.started += ctx => num--;
         cont.controller.LockPuzzle.LockLeft.started += ctx => lockNum--;
         cont.controller.LockPuzzle.Lockright.started += ctx => lockNum++;
+        cont.keys.LockPuzzle.NumUp.started += ctx => num++;
+        cont.keys.LockPuzzle.NumDown.started += ctx => num--;
+        cont.keys.LockPuzzle.LockLeft.started += ctx => lockNum--;
+        cont.keys.LockPuzzle.Lockright.started += ctx => lockNum++;
     }
 
     // Start is called before the first frame update
@@ -55,6 +59,8 @@ public class LockPuzzle : MonoBehaviour
         {
             cont.controller.LockPuzzle.Disable();
             cont.controller.Game.Enable();
+            cont.keys.LockPuzzle.Disable();
+            cont.keys.Game.Enable();
             starter.complete = true;
         }
     }
