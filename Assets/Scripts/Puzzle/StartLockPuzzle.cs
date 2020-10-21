@@ -11,6 +11,8 @@ public class StartLockPuzzle : MonoBehaviour
     bool interacted = false;
     bool inZone = false;
 
+    public bool complete = false;
+
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
@@ -26,6 +28,14 @@ public class StartLockPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(inZone);
+        if(complete == true)
+        {
+            GetComponent<BoxCollider>().isTrigger = false;
+            inZone = false;
+            hidePaused();
+        }
+
         if (inZone)
         {
             cont.keys.Game.Interact.started += ctx => interacted = !interacted;
@@ -36,6 +46,7 @@ public class StartLockPuzzle : MonoBehaviour
                 showPaused();
                 cont.controller.Game.Disable();
                 cont.controller.LockPuzzle.Enable();
+                interacted = false;
             }
         }
     }

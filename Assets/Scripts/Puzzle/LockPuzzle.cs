@@ -8,6 +8,8 @@ public class LockPuzzle : MonoBehaviour
 {
     public Text[] texts;
 
+    public StartLockPuzzle starter;
+
     GlobalController cont;
 
     private float num;
@@ -51,15 +53,9 @@ public class LockPuzzle : MonoBehaviour
 
         if(answerstr == answer)
         {
-            GameObject[] puzzobjs = GameObject.FindGameObjectsWithTag("LockPuzzleUI");
-
-            foreach (GameObject go in puzzobjs)
-            {
-                go.SetActive(false);
-            }
-
             cont.controller.LockPuzzle.Disable();
             cont.controller.Game.Enable();
+            starter.complete = true;
         }
     }
 }
