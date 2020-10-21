@@ -213,6 +213,7 @@ public class TaskActivated : MonoBehaviour
     public void setToTalk()
     {
         CanTalk = true;
+        contDialogue = true;
     }
 
     public void stopTalk()

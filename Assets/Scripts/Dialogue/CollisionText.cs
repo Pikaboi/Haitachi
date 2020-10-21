@@ -78,6 +78,7 @@ public class CollisionText : MonoBehaviour
                 Menu.setToTalk();
                 //Find Who Made the message based on tag
                 Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
+                Menu.setTag(gameObject.tag);
                 OnlyOnce = false;
                 Isinteractable = false;
                 Menu.SetTheTask(tasktransfer);

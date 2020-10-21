@@ -29,6 +29,9 @@ public class DialogueActivated : MonoBehaviour
 
     float dialSpeed = 0.1f;
 
+    int TaskNum = 0;
+    bool TaskComplete = true;
+
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -102,10 +105,12 @@ public class DialogueActivated : MonoBehaviour
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
-       // Debug.Log(sentence);
+       
+        // Debug.Log(sentence);
         // dialogueText.text = sentence;
-        
+       
+        string sentence = sentences.Dequeue();
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
        
@@ -243,6 +248,21 @@ public class DialogueActivated : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        //if (Intertag == "Boss")
+        // {
+
+        //    if (TaskComplete == true)
+        //     {
+        //         sentences.Enqueue("Well done");
+        //         sentences.Enqueue("Have a cookie");
+        //
+        //         TaskComplete = false;
+        //     }
+
+
+
+        //}
+        ProgressionOnLevel();
         DisplayNextSentence();
     }
     
@@ -266,6 +286,36 @@ public class DialogueActivated : MonoBehaviour
         {
             taskText = tasktransfer;
             
+        }
+    }
+    private void ProgressionOnLevel()
+    {
+        switch (TaskNum)
+        {
+            case 0: //talking to boss
+                if (Intertag == "Boss")
+                {
+                    sentences.Enqueue("Go find Lucas");
+                    sentences.Enqueue("I need some papers");
+                    TaskNum = 1;
+
+                }
+
+
+                    break;
+            case 1: //get papers from Lucas
+
+                break;
+
+            case 2: //talking to boss again
+
+                break;
+            case 3: //talking to boss again
+                break;
+
+
+            default:
+                break;
         }
     }
 }
