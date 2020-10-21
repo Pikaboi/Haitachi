@@ -9,8 +9,11 @@ TagManager:
   - Block
   - DialogueUI
   - dialougeManager
+
   - taskManager
   - TaskUI
+  - LockPuzzleUI
+  - GlobalController
   layers:
   - Default
   - TransparentFX

@@ -5,9 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-
-    Keyboard keys;
-    Xbox controller;
+    GlobalController cont;
     public float movespeed;
     public Rigidbody rb;
 
@@ -17,30 +15,12 @@ public class Movement : MonoBehaviour
 
     void Awake()
     {
-        keys = new Keyboard();
-        controller = new Xbox();
-
-        keys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
-        controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
+        cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
     }
 
     void swapControl()
     {
         onController = !onController;
-    }
-
-    void OnEnable()
-    {
-      controller.Game.Enable();
-      keys.Game.Enable();
-    }
-
-    void OnDisable()
-    {
-      controller.Game.Disable();
-      keys.Game.Disable();
     }
     void Start()
     {
@@ -51,6 +31,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cont.keys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
+        cont.controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
+
         Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 10 * Time.deltaTime;
         transform.Translate(m, Space.Self);
     }

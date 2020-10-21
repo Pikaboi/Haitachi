@@ -8,37 +8,28 @@ public class LockPuzzle : MonoBehaviour
 {
     public Text[] texts;
 
-    Keyboard keys;
-    Xbox controller;
+    public StartLockPuzzle starter;
 
-    private Vector2 movedata;
+    GlobalController cont;
 
-    float value = 0;
-    float slot = 0;
+    private float num;
+    private float lockNum;
+
+    public string answer;
 
     void Awake()
     {
-        keys = new Keyboard();
-        controller = new Xbox();
-
-        keys.LockPuzzle.Control.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        keys.LockPuzzle.Control.canceled += ctx => movedata = Vector2.zero;
-        controller.LockPuzzle.Control.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        controller.LockPuzzle.Control.canceled += ctx => movedata = Vector2.zero;
+        cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
+        //cont.keys.LockPuzzle.Control.started += ctx => num++;
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
-        controller.LockPuzzle.Enable();
-        keys.LockPuzzle.Enable();
+        cont.controller.LockPuzzle.NumUp.started += ctx => num++;
+        cont.controller.LockPuzzle.NumDown.started += ctx => num--;
+        cont.controller.LockPuzzle.LockLeft.started += ctx => lockNum--;
+        cont.controller.LockPuzzle.Lockright.started += ctx => lockNum++;
     }
-
-    void OnDisable()
-    {
-        controller.LockPuzzle.Disable();
-        keys.LockPuzzle.Disable();
-    }
-
 
     // Start is called before the first frame update
     void Start()
@@ -49,17 +40,22 @@ public class LockPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        value += Mathf.Ceil(movedata.x);
+        num = Mathf.Clamp(num, 0.0f, 9.0f);
+        lockNum = Mathf.Clamp(lockNum, 0.0f, 3.0f);
 
-        Mathf.Clamp(value, 0, 9);
+        texts[(int)lockNum].text = "" + (int)num;
 
-        Debug.Log(value);
-        slot += Mathf.Ceil(movedata.y);
+        string answerstr = "";
+        for (int i = 0; i < texts.Length; i++)
+        {
+            answerstr += texts[i].text;
+        }
 
-        Mathf.Clamp(slot, 0, 4);
-
-        int x = (int)slot;
-
-        texts[x].text = "" + value;
+        if(answerstr == answer)
+        {
+            cont.controller.LockPuzzle.Disable();
+            cont.controller.Game.Enable();
+            starter.complete = true;
+        }
     }
 }
