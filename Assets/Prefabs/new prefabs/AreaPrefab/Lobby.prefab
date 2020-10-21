@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: 1
   warpPos: {fileID: 0}
---- !u!64 &234119199131214707
+--- !u!64 &114344362
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +194,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3369316746193770658, guid: 313375385da3ab5418ccc2e3d0e01333, type: 3}
+  m_Mesh: {fileID: -380938075013554337, guid: 313375385da3ab5418ccc2e3d0e01333, type: 3}
 --- !u!1 &8078946724132993950
 GameObject:
   m_ObjectHideFlags: 0
