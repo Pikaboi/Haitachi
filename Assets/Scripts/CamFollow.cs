@@ -67,7 +67,7 @@ public class CamFollow : MonoBehaviour
         currentX = m.x;
         currentY = m.y;
 
-        Debug.Log(currentY);
+        //Debug.Log(currentY);
 
         transform.Rotate(Vector3.up * currentX);
         cam.transform.Rotate(Vector3.left * currentY);

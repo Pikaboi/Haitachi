@@ -74,7 +74,7 @@ public class CollisionText : MonoBehaviour
         {
             if (Isinteractable)
             {
-                Debug.Log("Talk to once");
+                //Debug.Log("Talk to once");
                 Menu.setToTalk();
                 //Find Who Made the message based on tag
                 Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
@@ -87,7 +87,10 @@ public class CollisionText : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Isinteractable = true;
+        if (other.gameObject.tag == "Player")
+        {
+            Isinteractable = true;
+        }
         //Debug.Log("we collided");
         //Allow the Z talk button to be active
         //Menu.setToTalk();
@@ -98,7 +101,12 @@ public class CollisionText : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        //Turn off the talk button
-        Menu.stopTalk();
+        if (other.gameObject.tag == "Player")
+        {
+            //Turn off the talk button
+            Menu.stopTalk();
+            OnlyOnce = true;
+            Isinteractable = false;
+        }
     }
 }

@@ -79,7 +79,7 @@ public class TaskText : MonoBehaviour
     {
         if (OnlyOnce)
         {
-            Debug.Log("Talk to once");
+           // Debug.Log("Talk to once");
             Menu.setToTalk();
             //Find Who Made the message based on tag
             Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);

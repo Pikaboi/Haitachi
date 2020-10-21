@@ -126,7 +126,7 @@ public class DialogueActivated : MonoBehaviour
     }
     void EndDialogue()
     {
-        Debug.Log("End of conversation.");
+     //   Debug.Log("End of conversation.");
         //Time.timeScale = 1;
         isTalk = false;
         CanTalk = false;
@@ -136,7 +136,7 @@ public class DialogueActivated : MonoBehaviour
             taskText.GiveTask();
 
         }
-        //hideDialouge();
+        hideDialouge();
     }
 
     // Update is called once per frame
@@ -148,7 +148,7 @@ public class DialogueActivated : MonoBehaviour
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                //Debug.Log("interact");
+               // Debug.Log("interact");
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
@@ -218,6 +218,7 @@ public class DialogueActivated : MonoBehaviour
     public void setToTalk()
     {
         CanTalk = true;
+        contDialogue = true;
     }
 
     public void stopTalk()
