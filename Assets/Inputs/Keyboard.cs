@@ -244,6 +244,33 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CompPuzzle"",
+            ""id"": ""52bfb9b6-6bdb-4d17-9a8f-b06e170705c0"",
+            ""actions"": [
+                {
+                    ""name"": ""Held"",
+                    ""type"": ""Button"",
+                    ""id"": ""c811a3a9-7828-43fe-b438-d8169d1f29b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e018d672-5848-46e8-ada2-3eecee578ba1"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Held"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -261,6 +288,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
         m_LockPuzzle_NumDown = m_LockPuzzle.FindAction("NumDown", throwIfNotFound: true);
         m_LockPuzzle_LockLeft = m_LockPuzzle.FindAction("LockLeft", throwIfNotFound: true);
         m_LockPuzzle_Lockright = m_LockPuzzle.FindAction("Lockright", throwIfNotFound: true);
+        // CompPuzzle
+        m_CompPuzzle = asset.FindActionMap("CompPuzzle", throwIfNotFound: true);
+        m_CompPuzzle_Held = m_CompPuzzle.FindAction("Held", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -428,6 +458,39 @@ public class @Keyboard : IInputActionCollection, IDisposable
         }
     }
     public LockPuzzleActions @LockPuzzle => new LockPuzzleActions(this);
+
+    // CompPuzzle
+    private readonly InputActionMap m_CompPuzzle;
+    private ICompPuzzleActions m_CompPuzzleActionsCallbackInterface;
+    private readonly InputAction m_CompPuzzle_Held;
+    public struct CompPuzzleActions
+    {
+        private @Keyboard m_Wrapper;
+        public CompPuzzleActions(@Keyboard wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Held => m_Wrapper.m_CompPuzzle_Held;
+        public InputActionMap Get() { return m_Wrapper.m_CompPuzzle; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CompPuzzleActions set) { return set.Get(); }
+        public void SetCallbacks(ICompPuzzleActions instance)
+        {
+            if (m_Wrapper.m_CompPuzzleActionsCallbackInterface != null)
+            {
+                @Held.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHeld;
+                @Held.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHeld;
+                @Held.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHeld;
+            }
+            m_Wrapper.m_CompPuzzleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Held.started += instance.OnHeld;
+                @Held.performed += instance.OnHeld;
+                @Held.canceled += instance.OnHeld;
+            }
+        }
+    }
+    public CompPuzzleActions @CompPuzzle => new CompPuzzleActions(this);
     public interface IGameActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -442,5 +505,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
         void OnNumDown(InputAction.CallbackContext context);
         void OnLockLeft(InputAction.CallbackContext context);
         void OnLockright(InputAction.CallbackContext context);
+    }
+    public interface ICompPuzzleActions
+    {
+        void OnHeld(InputAction.CallbackContext context);
     }
 }

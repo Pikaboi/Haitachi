@@ -231,6 +231,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CompPuzzle",
+            "id": "52bfb9b6-6bdb-4d17-9a8f-b06e170705c0",
+            "actions": [
+                {
+                    "name": "Held",
+                    "type": "Button",
+                    "id": "c811a3a9-7828-43fe-b438-d8169d1f29b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e018d672-5848-46e8-ada2-3eecee578ba1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Held",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
