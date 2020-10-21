@@ -18,7 +18,11 @@ public class LockPuzzle : MonoBehaviour
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
-        cont.keys.LockPuzzle.Control.started += ctx => num++;
+        //cont.keys.LockPuzzle.Control.started += ctx => num++;
+    }
+
+    private void OnEnable()
+    {
         cont.controller.LockPuzzle.NumUp.started += ctx => num++;
         cont.controller.LockPuzzle.NumDown.started += ctx => num--;
         cont.controller.LockPuzzle.LockLeft.started += ctx => lockNum--;

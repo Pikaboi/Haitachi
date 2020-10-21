@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-
     GlobalController cont;
     public float movespeed;
     public Rigidbody rb;
@@ -17,11 +16,6 @@ public class Movement : MonoBehaviour
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
-
-        cont.keys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        cont.keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
-        cont.controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        cont.controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
     }
 
     void swapControl()
@@ -37,6 +31,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cont.keys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
+        cont.controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
+
         Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 10 * Time.deltaTime;
         transform.Translate(m, Space.Self);
     }

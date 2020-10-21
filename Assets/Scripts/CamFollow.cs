@@ -26,13 +26,6 @@ public class CamFollow : MonoBehaviour
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
-
-
-        cont.keys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        cont.keys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
-           
-        cont.controller.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
-        cont.controller.Game.Cam.canceled += ctx => movedata = Vector2.zero;
     }
 
     void swapControl()
@@ -50,6 +43,12 @@ public class CamFollow : MonoBehaviour
 
     private void Update()
     {
+        cont.keys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.keys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+
+        cont.controller.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.controller.Game.Cam.canceled += ctx => movedata = Vector2.zero;
+
         Vector2 m = new Vector2(movedata.x, movedata.y) * 100 * Time.deltaTime;
         currentX = m.x;
         currentY = m.y;
