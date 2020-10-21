@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueActivated : MonoBehaviour
+public class TaskActivated : MonoBehaviour
 {
+
     GameObject[] DialougeBoxes;
     GameObject[] MenuBoxes;
     private bool CanTalk;
@@ -18,7 +19,6 @@ public class DialogueActivated : MonoBehaviour
 
     public Queue<string> sentences;
 
-    private TaskText taskText;
     //this is for new input
     //Access to class
     Keyboard keys;
@@ -27,7 +27,7 @@ public class DialogueActivated : MonoBehaviour
     bool interactSuccess = false;
     bool contDialogue = true;
 
-    float dialSpeed = 0.1f;
+
 
     //For input system
     //Does it as long as its enabled
@@ -72,14 +72,14 @@ public class DialogueActivated : MonoBehaviour
         // Unpauses game if paused
         Time.timeScale = 1;
 
-        DialougeBoxes = GameObject.FindGameObjectsWithTag("DialogueUI");
+        DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
         hideDialouge();
 
         CanTalk = false;
         stopTalk();
     }
 
-    
+
     public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("Starting conversation with " + dialogue.Name);
@@ -103,46 +103,41 @@ public class DialogueActivated : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-       // Debug.Log(sentence);
+        // Debug.Log(sentence);
         // dialogueText.text = sentence;
-        
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-       
+
     }
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             //Debug.Log("new letter");
-            yield return new WaitForSeconds(dialSpeed);
-            SpeedtheDialogue();
+            yield return new WaitForSeconds(0.01f);
+            
         }
-       // Debug.Log("checking on loop");
+        // Debug.Log("checking on loop");
         contDialogue = true;
     }
     void EndDialogue()
     {
-        Debug.Log("End of conversation.");
+        //Debug.Log("End of conversation.");
         //Time.timeScale = 1;
         isTalk = false;
         CanTalk = false;
         contDialogue = false;
-        if (taskText != null)
-        {
-            taskText.GiveTask();
-
-        }
         //hideDialouge();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
         if (CanTalk == true)
         {
             // Pressess the Z button to interact
@@ -244,27 +239,11 @@ public class DialogueActivated : MonoBehaviour
 
         DisplayNextSentence();
     }
-    
+
 
     public void GetDialouge(Dialogue dialouge)
     {
         CurrentSpeech = dialouge;
     }
-    private void SpeedtheDialogue()
-    {
-        dialSpeed = 0.1f;
-        if (interactSuccess)
-        {
-            dialSpeed = 0.01f;
-        }
-    }
 
-        public void SetTheTask(TaskText tasktransfer)
-    {
-        if (tasktransfer != null)
-        {
-            taskText = tasktransfer;
-            
-        }
-    }
 }

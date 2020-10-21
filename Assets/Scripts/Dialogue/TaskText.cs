@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CollisionText : MonoBehaviour
+public class TaskText : MonoBehaviour
 {
     //The Script that controls the menu
-    private DialogueActivated Menu;
-    public TaskText taskScript;
-    private TaskText tasktransfer;
+    private TaskActivated Menu;
+
     //this is for new input
     //Access to class
     Keyboard keys;
@@ -17,7 +15,7 @@ public class CollisionText : MonoBehaviour
     bool interactSuccess = false;
 
     bool OnlyOnce = true;
-    bool Isinteractable = false;
+    
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -58,41 +56,44 @@ public class CollisionText : MonoBehaviour
         //Menu.setToTalk();
         //Find Who Made the message based on tag
         //Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
-        GameObject MenuObj = GameObject.FindGameObjectWithTag("dialougeManager");
-        Menu = MenuObj.GetComponent<DialogueActivated>();
-
-        if(taskScript != null)
-        {
-            tasktransfer = taskScript;
-        }
+        GameObject MenuObj = GameObject.FindGameObjectWithTag("taskManager");
+        Menu = MenuObj.GetComponent<TaskActivated>();
     }
     void Update()
     {
-        
+        /*
         //testing  the event activates it shall go through the talk event
         if (interactSuccess && OnlyOnce)
         {
-            if (Isinteractable)
-            {
-                Debug.Log("Talk to once");
-                Menu.setToTalk();
-                //Find Who Made the message based on tag
-                Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
-                OnlyOnce = false;
-                Isinteractable = false;
-                Menu.SetTheTask(tasktransfer);
-            }
+
+            Debug.Log("Talk to once");
+            Menu.setToTalk();
+            //Find Who Made the message based on tag
+            Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
+            OnlyOnce = false;
         }
+        */
         //if (Input.GetKeyDown(KeyCode.Space)
     }
+    public void GiveTask()
+    {
+        if (OnlyOnce)
+        {
+            Debug.Log("Talk to once");
+            Menu.setToTalk();
+            //Find Who Made the message based on tag
+            Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
+            OnlyOnce = false;
+        }
+        
+    } 
     void OnTriggerEnter(Collider other)
     {
-        Isinteractable = true;
         //Debug.Log("we collided");
         //Allow the Z talk button to be active
         //Menu.setToTalk();
         //Find Who Made the message based on tag
-       // Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
+        //Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
         //Menu.setTag(other.gameObject.tag);
     }
 

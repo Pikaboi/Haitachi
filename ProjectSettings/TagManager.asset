@@ -9,6 +9,8 @@ TagManager:
   - Block
   - DialogueUI
   - dialougeManager
+  - taskManager
+  - TaskUI
   layers:
   - Default
   - TransparentFX
