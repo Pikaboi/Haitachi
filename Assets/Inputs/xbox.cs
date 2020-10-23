@@ -49,6 +49,14 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Hi5"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1bdc74a-20ef-4888-8c1b-b26a61cb0377"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -93,6 +101,17 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed2c12ef-6198-44a2-a3b3-8c2a088dc50c"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hi5"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -191,6 +210,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         m_Game_Cam = m_Game.FindAction("Cam", throwIfNotFound: true);
         m_Game_Swap = m_Game.FindAction("Swap", throwIfNotFound: true);
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
+        m_Game_Hi5 = m_Game.FindAction("Hi5", throwIfNotFound: true);
         // LockPuzzle
         m_LockPuzzle = asset.FindActionMap("LockPuzzle", throwIfNotFound: true);
         m_LockPuzzle_NumUp = m_LockPuzzle.FindAction("NumUp", throwIfNotFound: true);
@@ -250,6 +270,7 @@ public class @Xbox : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Cam;
     private readonly InputAction m_Game_Swap;
     private readonly InputAction m_Game_Interact;
+    private readonly InputAction m_Game_Hi5;
     public struct GameActions
     {
         private @Xbox m_Wrapper;
@@ -258,6 +279,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         public InputAction @Cam => m_Wrapper.m_Game_Cam;
         public InputAction @Swap => m_Wrapper.m_Game_Swap;
         public InputAction @Interact => m_Wrapper.m_Game_Interact;
+        public InputAction @Hi5 => m_Wrapper.m_Game_Hi5;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -279,6 +301,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_GameActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnInteract;
+                @Hi5.started -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
+                @Hi5.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
+                @Hi5.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -295,6 +320,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Hi5.started += instance.OnHi5;
+                @Hi5.performed += instance.OnHi5;
+                @Hi5.canceled += instance.OnHi5;
             }
         }
     }
@@ -362,6 +390,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         void OnCam(InputAction.CallbackContext context);
         void OnSwap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnHi5(InputAction.CallbackContext context);
     }
     public interface ILockPuzzleActions
     {

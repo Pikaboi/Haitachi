@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Hi5",
+                    "type": "Button",
+                    "id": "9da61066-77f7-4fb0-8b86-c90bbdc50700",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -126,6 +134,17 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c26149c1-5dee-472c-a67e-0027920ec4a6",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hi5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -134,69 +153,109 @@
             "id": "75976ec2-895c-4d6a-b5eb-7b0e7026986c",
             "actions": [
                 {
-                    "name": "Control",
-                    "type": "PassThrough",
-                    "id": "c274b44a-9e40-4c29-86e8-7544a76f0b1a",
-                    "expectedControlType": "Vector2",
+                    "name": "NumUp",
+                    "type": "Button",
+                    "id": "52a5e378-e728-463b-9ccc-6be086ff89fb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "NumDown",
+                    "type": "Button",
+                    "id": "8505515f-b08b-45c6-801d-d47a6f27cabd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LockLeft",
+                    "type": "Button",
+                    "id": "e6a4c3d4-1edf-40ad-bd0e-3f8124ddef2f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Lockright",
+                    "type": "Button",
+                    "id": "6016b7f6-2ad5-410c-81e5-5543fa3ef0da",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "626bcf2c-632b-4714-830e-4242f3bb3a4a",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Control",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "6936b21a-c58a-4b10-82b1-6287fe9d4f98",
+                    "name": "",
+                    "id": "6b7c563e-81e1-4148-adff-09f024fa3abc",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Control",
+                    "action": "NumUp",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "down",
-                    "id": "724c8236-d2fe-4835-9e5e-e4f0cfe5f61a",
+                    "name": "",
+                    "id": "e8112d72-3940-4e3c-ad18-f129b23bf9d2",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Control",
+                    "action": "NumDown",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "left",
-                    "id": "e1bc68a4-795f-49ab-88de-09415fff6606",
+                    "name": "",
+                    "id": "ea377ae6-5ca2-437f-9fb8-979e90396ba1",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Control",
+                    "action": "LockLeft",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "right",
-                    "id": "8ec5854e-1ff7-45b6-8d7a-1a0267455036",
+                    "name": "",
+                    "id": "bcd6f8ed-035b-4dad-924c-529b69e17b9d",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Control",
+                    "action": "Lockright",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "CompPuzzle",
+            "id": "52bfb9b6-6bdb-4d17-9a8f-b06e170705c0",
+            "actions": [
+                {
+                    "name": "Held",
+                    "type": "Button",
+                    "id": "c811a3a9-7828-43fe-b438-d8169d1f29b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e018d672-5848-46e8-ada2-3eecee578ba1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Held",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
