@@ -668,6 +668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cow man
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 85cd40e8286e9704dbe2ca6578f2efb5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85cd40e8286e9704dbe2ca6578f2efb5, type: 3}
 --- !u!1001 &308714127788619333
