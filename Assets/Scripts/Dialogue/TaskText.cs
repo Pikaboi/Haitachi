@@ -81,13 +81,18 @@ public class TaskText : MonoBehaviour
         {
            // Debug.Log("Talk to once");
             Menu.setToTalk();
+            Menu.setTag(gameObject.tag);
             //Find Who Made the message based on tag
             Menu.GetDialouge(GetComponent<DialogueTrigger>().dialouge);
             OnlyOnce = false;
         }
         
-    } 
-    void OnTriggerEnter(Collider other)
+    }
+    public void ResetTask()
+    {
+        OnlyOnce = true;
+    }
+        void OnTriggerEnter(Collider other)
     {
         //Debug.Log("we collided");
         //Allow the Z talk button to be active

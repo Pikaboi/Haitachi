@@ -27,7 +27,7 @@ public class TaskActivated : MonoBehaviour
     bool interactSuccess = false;
     bool contDialogue = true;
 
-
+    int TaskNum = 0;
 
     //For input system
     //Does it as long as its enabled
@@ -230,17 +230,86 @@ public class TaskActivated : MonoBehaviour
     {
         //Debug.Log("Starting dialouge with" + dialouge.Name);
         sentences.Clear();
-
+        Debug.Log(dialouge.sentences[0]);
         nameText.text = dialouge.Name;
 
         foreach (string sentence in dialouge.sentences)
         {
             sentences.Enqueue(sentence);
         }
-
+        ProgressionOnLevel();
         DisplayNextSentence();
     }
+    //A NOTE FOR BRADEN AND THE OTHERS
+    //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
+    //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
+    private void ProgressionOnLevel()
+    {
+        string sentence = sentences.Dequeue();
+        Debug.Log(sentence);
 
+        switch (TaskNum)
+        {
+            case 0: //talking to boss
+                if (sentence == "Go find Lucas")
+                {
+                    TaskNum = 1;
+                    sentences.Enqueue(sentence);
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
+                }
+                break;
+            case 1: //get papers from Lucas
+                if (sentence == "Go to Boss")
+                {
+                    TaskNum = 2;
+                    sentences.Enqueue(sentence);
+                }
+                else if (sentence == "Go find Lucas")
+                {
+                    sentences.Enqueue("Water the plants");
+                    //Debug.Log("Have the boss talk");
+                    //sentences.Dequeue();
+                    //sentences.Enqueue("Go Find Lucas dammit");
+                    //Debug.Log("the topic change");
+                    //TaskNum = 2;
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
+                }
+                break;
+
+            case 2: //talking to boss again
+                if (sentence == "Go to Boss")
+                {
+                    TaskNum = 3;
+                    sentences.Enqueue("Water the plants");
+                }
+                else if (sentence == "Go find Lucas")
+                {
+                    //Debug.Log("Have the boss talk");
+                    //sentences.Dequeue();
+                    sentences.Enqueue("Water the plants");
+
+                    //Debug.Log("the topic change");
+                    //TaskNum = 2;
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
+                }
+                break;
+            case 3: //talking to boss again
+                break;
+
+
+            default:
+                break;
+        }
+    }
 
     public void GetDialouge(Dialogue dialouge)
     {

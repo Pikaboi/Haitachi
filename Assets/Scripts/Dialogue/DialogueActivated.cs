@@ -32,6 +32,7 @@ public class DialogueActivated : MonoBehaviour
     int TaskNum = 0;
     bool TaskComplete = true;
 
+    bool TaskREquired = false;
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -136,7 +137,7 @@ public class DialogueActivated : MonoBehaviour
         isTalk = false;
         CanTalk = false;
         contDialogue = false;
-        if (taskText != null)
+        if (taskText != null && TaskREquired == true)
         {
             taskText.GiveTask();
 
@@ -288,6 +289,10 @@ public class DialogueActivated : MonoBehaviour
             
         }
     }
+
+    //A NOTE FOR BRADEN AND THE OTHERS
+    //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
+    //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
     private void ProgressionOnLevel()
     {
         switch (TaskNum)
@@ -298,17 +303,50 @@ public class DialogueActivated : MonoBehaviour
                     sentences.Enqueue("Go find Lucas");
                     sentences.Enqueue("I need some papers");
                     TaskNum = 1;
+                    TaskREquired = true;
 
+                }
+                if(nameText.text == "Lucas")
+                {
+                    sentences.Enqueue("the Boss wanted to talk to you");
+                    //sentences.Enqueue("Go find Lucas he should be at his desk");
                 }
 
 
                     break;
             case 1: //get papers from Lucas
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("I see you don't have those papers");
+                    sentences.Enqueue("Go find Lucas he should be at his desk");
+                    //TaskNum = 1;
 
+                }
+                if (nameText.text == "Lucas")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("Go give this to the boss...");
+                    TaskNum = 2;
+                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                }
                 break;
 
             case 2: //talking to boss again
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("Ah the papers good");
+                    sentences.Enqueue("now make yourself useful and water the plants");
+                    TaskNum = 3;
 
+                }
+                if (nameText.text == "Lucas")
+                {
+                    sentences.Enqueue("Oh you already gave something to biss? good?");
+               
+                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                }
                 break;
             case 3: //talking to boss again
                 break;
