@@ -237,9 +237,17 @@
             "id": "52bfb9b6-6bdb-4d17-9a8f-b06e170705c0",
             "actions": [
                 {
-                    "name": "Held",
+                    "name": "Move",
                     "type": "Button",
-                    "id": "c811a3a9-7828-43fe-b438-d8169d1f29b5",
+                    "id": "9236234f-3354-45b8-831d-4027e049075f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Hold",
+                    "type": "Button",
+                    "id": "84ba0eac-0b01-457a-a192-961cb1df20a9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -248,12 +256,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "e018d672-5848-46e8-ada2-3eecee578ba1",
+                    "id": "846b54ed-2804-4f1f-b5bc-362d22a5e593",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0aa3b6a-c9fc-468a-8217-481e41868141",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Held",
+                    "action": "Hold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -250,9 +250,17 @@ public class @Keyboard : IInputActionCollection, IDisposable
             ""id"": ""52bfb9b6-6bdb-4d17-9a8f-b06e170705c0"",
             ""actions"": [
                 {
-                    ""name"": ""Held"",
+                    ""name"": ""Move"",
                     ""type"": ""Button"",
-                    ""id"": ""c811a3a9-7828-43fe-b438-d8169d1f29b5"",
+                    ""id"": ""9236234f-3354-45b8-831d-4027e049075f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""84ba0eac-0b01-457a-a192-961cb1df20a9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -261,12 +269,23 @@ public class @Keyboard : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""e018d672-5848-46e8-ada2-3eecee578ba1"",
+                    ""id"": ""846b54ed-2804-4f1f-b5bc-362d22a5e593"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0aa3b6a-c9fc-468a-8217-481e41868141"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Held"",
+                    ""action"": ""Hold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -290,7 +309,8 @@ public class @Keyboard : IInputActionCollection, IDisposable
         m_LockPuzzle_Lockright = m_LockPuzzle.FindAction("Lockright", throwIfNotFound: true);
         // CompPuzzle
         m_CompPuzzle = asset.FindActionMap("CompPuzzle", throwIfNotFound: true);
-        m_CompPuzzle_Held = m_CompPuzzle.FindAction("Held", throwIfNotFound: true);
+        m_CompPuzzle_Move = m_CompPuzzle.FindAction("Move", throwIfNotFound: true);
+        m_CompPuzzle_Hold = m_CompPuzzle.FindAction("Hold", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -462,12 +482,14 @@ public class @Keyboard : IInputActionCollection, IDisposable
     // CompPuzzle
     private readonly InputActionMap m_CompPuzzle;
     private ICompPuzzleActions m_CompPuzzleActionsCallbackInterface;
-    private readonly InputAction m_CompPuzzle_Held;
+    private readonly InputAction m_CompPuzzle_Move;
+    private readonly InputAction m_CompPuzzle_Hold;
     public struct CompPuzzleActions
     {
         private @Keyboard m_Wrapper;
         public CompPuzzleActions(@Keyboard wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Held => m_Wrapper.m_CompPuzzle_Held;
+        public InputAction @Move => m_Wrapper.m_CompPuzzle_Move;
+        public InputAction @Hold => m_Wrapper.m_CompPuzzle_Hold;
         public InputActionMap Get() { return m_Wrapper.m_CompPuzzle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -477,16 +499,22 @@ public class @Keyboard : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_CompPuzzleActionsCallbackInterface != null)
             {
-                @Held.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHeld;
-                @Held.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHeld;
-                @Held.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHeld;
+                @Move.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnMove;
+                @Hold.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
+                @Hold.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
+                @Hold.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
             }
             m_Wrapper.m_CompPuzzleActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Held.started += instance.OnHeld;
-                @Held.performed += instance.OnHeld;
-                @Held.canceled += instance.OnHeld;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Hold.started += instance.OnHold;
+                @Hold.performed += instance.OnHold;
+                @Hold.canceled += instance.OnHold;
             }
         }
     }
@@ -508,6 +536,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
     }
     public interface ICompPuzzleActions
     {
-        void OnHeld(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnHold(InputAction.CallbackContext context);
     }
 }
