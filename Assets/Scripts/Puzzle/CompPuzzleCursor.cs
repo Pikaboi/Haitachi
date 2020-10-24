@@ -5,23 +5,27 @@ using UnityEngine.InputSystem;
 
 public class CompPuzzleCursor : MonoBehaviour
 {
-    GlobalController cont;
-    Camera cam;
+    public GameObject[] nodes;
 
-    private Vector2 mousePos;
+    GlobalController cont;
+
+    private Vector2 mousePos = new Vector2(500.0f, 350.0f);
+    private Vector2 moveData;
     public bool held;
+
+    public GameObject currentHeld;
 
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
 
         cont.keys.CompPuzzle.Enable();
+        cont.controller.CompPuzzle.Enable();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -32,6 +36,30 @@ public class CompPuzzleCursor : MonoBehaviour
         cont.keys.CompPuzzle.Hold.performed += ctx => held = true;
         cont.keys.CompPuzzle.Hold.canceled += ctx => held = false;
 
-        gameObject.GetComponent<RectTransform>().transform.position = mousePos;
+        cont.controller.CompPuzzle.Move.performed += ctx => moveData = ctx.ReadValue<Vector2>();
+        cont.controller.CompPuzzle.Move.canceled += ctx => moveData = Vector2.zero;
+        cont.controller.CompPuzzle.Hold.performed += ctx => held = true;
+        cont.controller.CompPuzzle.Hold.canceled += ctx => held = false;
+
+        gameObject.transform.position = mousePos;
+
+        Vector3 m = new Vector3(moveData.x, moveData.y, 0) * 1000 * Time.deltaTime;
+        transform.Translate(m, Space.World);
+
+        mousePos = new Vector2(transform.position.x, transform.position.y);
+
+        int count = 0;
+        foreach(GameObject go in nodes)
+        {
+            if (go.GetComponent<CompPuzzlePiece>().matched == true)
+            {
+                count++;
+            }
+        }
+
+        if(count == 8)
+        {
+            Debug.Log("Puzzle Over");
+        }
     }
 }

@@ -200,6 +200,52 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CompPuzzle"",
+            ""id"": ""794b1860-c4d2-456e-9b8c-48f087ae6998"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Button"",
+                    ""id"": ""998a9a01-43f0-458b-a34b-9d0299194ecb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""658c07bb-acb8-4b69-8b81-8a2e4da12586"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7d0c275a-0437-4c6b-88c8-e79d1a406304"",
+                    ""path"": ""<GamePad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c02253e1-02d5-416e-9ff5-092fba1e671e"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -217,6 +263,10 @@ public class @Xbox : IInputActionCollection, IDisposable
         m_LockPuzzle_NumDown = m_LockPuzzle.FindAction("NumDown", throwIfNotFound: true);
         m_LockPuzzle_LockLeft = m_LockPuzzle.FindAction("LockLeft", throwIfNotFound: true);
         m_LockPuzzle_Lockright = m_LockPuzzle.FindAction("Lockright", throwIfNotFound: true);
+        // CompPuzzle
+        m_CompPuzzle = asset.FindActionMap("CompPuzzle", throwIfNotFound: true);
+        m_CompPuzzle_Move = m_CompPuzzle.FindAction("Move", throwIfNotFound: true);
+        m_CompPuzzle_Hold = m_CompPuzzle.FindAction("Hold", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -384,6 +434,47 @@ public class @Xbox : IInputActionCollection, IDisposable
         }
     }
     public LockPuzzleActions @LockPuzzle => new LockPuzzleActions(this);
+
+    // CompPuzzle
+    private readonly InputActionMap m_CompPuzzle;
+    private ICompPuzzleActions m_CompPuzzleActionsCallbackInterface;
+    private readonly InputAction m_CompPuzzle_Move;
+    private readonly InputAction m_CompPuzzle_Hold;
+    public struct CompPuzzleActions
+    {
+        private @Xbox m_Wrapper;
+        public CompPuzzleActions(@Xbox wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_CompPuzzle_Move;
+        public InputAction @Hold => m_Wrapper.m_CompPuzzle_Hold;
+        public InputActionMap Get() { return m_Wrapper.m_CompPuzzle; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CompPuzzleActions set) { return set.Get(); }
+        public void SetCallbacks(ICompPuzzleActions instance)
+        {
+            if (m_Wrapper.m_CompPuzzleActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnMove;
+                @Hold.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
+                @Hold.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
+                @Hold.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
+            }
+            m_Wrapper.m_CompPuzzleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Hold.started += instance.OnHold;
+                @Hold.performed += instance.OnHold;
+                @Hold.canceled += instance.OnHold;
+            }
+        }
+    }
+    public CompPuzzleActions @CompPuzzle => new CompPuzzleActions(this);
     public interface IGameActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -398,5 +489,10 @@ public class @Xbox : IInputActionCollection, IDisposable
         void OnNumDown(InputAction.CallbackContext context);
         void OnLockLeft(InputAction.CallbackContext context);
         void OnLockright(InputAction.CallbackContext context);
+    }
+    public interface ICompPuzzleActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnHold(InputAction.CallbackContext context);
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - dialougeManager
   - LockPuzzleUI
   - GlobalController
+  - CompPuzzleUI
   layers:
   - Default
   - TransparentFX

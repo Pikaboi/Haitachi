@@ -187,6 +187,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CompPuzzle",
+            "id": "794b1860-c4d2-456e-9b8c-48f087ae6998",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "998a9a01-43f0-458b-a34b-9d0299194ecb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Hold",
+                    "type": "Button",
+                    "id": "658c07bb-acb8-4b69-8b81-8a2e4da12586",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7d0c275a-0437-4c6b-88c8-e79d1a406304",
+                    "path": "<GamePad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c02253e1-02d5-416e-9ff5-092fba1e671e",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
