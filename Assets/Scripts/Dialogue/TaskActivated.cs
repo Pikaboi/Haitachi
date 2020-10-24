@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueActivated : MonoBehaviour
+public class TaskActivated : MonoBehaviour
 {
+
     GameObject[] DialougeBoxes;
     GameObject[] MenuBoxes;
     private bool CanTalk;
@@ -18,7 +19,6 @@ public class DialogueActivated : MonoBehaviour
 
     public Queue<string> sentences;
 
-    private TaskText taskText;
     //this is for new input
     //Access to class
     Keyboard keys;
@@ -27,12 +27,8 @@ public class DialogueActivated : MonoBehaviour
     bool interactSuccess = false;
     bool contDialogue = true;
 
-    float dialSpeed = 0.1f;
-
     int TaskNum = 0;
-    bool TaskComplete = true;
 
-    bool TaskREquired = false;
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -76,14 +72,14 @@ public class DialogueActivated : MonoBehaviour
         // Unpauses game if paused
         Time.timeScale = 1;
 
-        DialougeBoxes = GameObject.FindGameObjectsWithTag("DialogueUI");
+        DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
         hideDialouge();
 
         CanTalk = false;
         stopTalk();
     }
 
-    
+
     public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("Starting conversation with " + dialogue.Name);
@@ -106,55 +102,48 @@ public class DialogueActivated : MonoBehaviour
             EndDialogue();
             return;
         }
-       
+        string sentence = sentences.Dequeue();
         // Debug.Log(sentence);
         // dialogueText.text = sentence;
-       
-        string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-       
+
     }
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             //Debug.Log("new letter");
-            yield return new WaitForSeconds(dialSpeed);
-            SpeedtheDialogue();
+            yield return new WaitForSeconds(0.01f);
+            
         }
-       // Debug.Log("checking on loop");
+        // Debug.Log("checking on loop");
         contDialogue = true;
     }
     void EndDialogue()
     {
-     //   Debug.Log("End of conversation.");
+        //Debug.Log("End of conversation.");
         //Time.timeScale = 1;
         isTalk = false;
         CanTalk = false;
         contDialogue = false;
-        if (taskText != null && TaskREquired == true)
-        {
-            taskText.GiveTask();
-
-        }
-        hideDialouge();
+        //hideDialouge();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
         if (CanTalk == true)
         {
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-               // Debug.Log("interact");
+                //Debug.Log("interact");
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
@@ -241,111 +230,76 @@ public class DialogueActivated : MonoBehaviour
     {
         //Debug.Log("Starting dialouge with" + dialouge.Name);
         sentences.Clear();
-
+        Debug.Log(dialouge.sentences[0]);
         nameText.text = dialouge.Name;
 
         foreach (string sentence in dialouge.sentences)
         {
             sentences.Enqueue(sentence);
         }
-
-        //if (Intertag == "Boss")
-        // {
-
-        //    if (TaskComplete == true)
-        //     {
-        //         sentences.Enqueue("Well done");
-        //         sentences.Enqueue("Have a cookie");
-        //
-        //         TaskComplete = false;
-        //     }
-
-
-
-        //}
         ProgressionOnLevel();
         DisplayNextSentence();
     }
-    
-
-    public void GetDialouge(Dialogue dialouge)
-    {
-        CurrentSpeech = dialouge;
-    }
-    private void SpeedtheDialogue()
-    {
-        dialSpeed = 0.1f;
-        if (interactSuccess)
-        {
-            dialSpeed = 0.01f;
-        }
-    }
-
-        public void SetTheTask(TaskText tasktransfer)
-    {
-        if (tasktransfer != null)
-        {
-            taskText = tasktransfer;
-            
-        }
-    }
-
     //A NOTE FOR BRADEN AND THE OTHERS
     //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
     //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
     private void ProgressionOnLevel()
     {
+        string sentence = sentences.Dequeue();
+        Debug.Log(sentence);
+
         switch (TaskNum)
         {
             case 0: //talking to boss
-                if (Intertag == "Boss")
+                if (sentence == "Go find Lucas")
                 {
-                    sentences.Enqueue("Go find Lucas");
-                    sentences.Enqueue("I need some papers");
                     TaskNum = 1;
-                    TaskREquired = true;
-
+                    sentences.Enqueue(sentence);
                 }
-                if(nameText.text == "Lucas")
+                else
                 {
-                    sentences.Enqueue("the Boss wanted to talk to you");
-                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                    sentences.Enqueue(sentence);
                 }
-
-
-                    break;
+                break;
             case 1: //get papers from Lucas
-                if (Intertag == "Boss")
+                if (sentence == "Go to Boss")
                 {
-                    taskText.ResetTask();
-                    sentences.Enqueue("I see you don't have those papers");
-                    sentences.Enqueue("Go find Lucas he should be at his desk");
-                    //TaskNum = 1;
-
-                }
-                if (nameText.text == "Lucas")
-                {
-                    taskText.ResetTask();
-                    sentences.Enqueue("Go give this to the boss...");
                     TaskNum = 2;
-                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                    sentences.Enqueue(sentence);
+                }
+                else if (sentence == "Go find Lucas")
+                {
+                    sentences.Enqueue("Water the plants");
+                    //Debug.Log("Have the boss talk");
+                    //sentences.Dequeue();
+                    //sentences.Enqueue("Go Find Lucas dammit");
+                    //Debug.Log("the topic change");
+                    //TaskNum = 2;
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
                 }
                 break;
 
             case 2: //talking to boss again
-                if (Intertag == "Boss")
+                if (sentence == "Go to Boss")
                 {
-                    taskText.ResetTask();
-                    sentences.Enqueue("Ah the papers good");
-                    sentences.Enqueue("now make yourself useful and water the plants");
                     TaskNum = 3;
-
+                    sentences.Enqueue("Water the plants");
                 }
-                if (nameText.text == "Lucas")
+                else if (sentence == "Go find Lucas")
                 {
-                    sentences.Enqueue("Oh you already gave something to biss? good?");
-               
-                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                    //Debug.Log("Have the boss talk");
+                    //sentences.Dequeue();
+                    sentences.Enqueue("Water the plants");
+
+                    //Debug.Log("the topic change");
+                    //TaskNum = 2;
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
                 }
                 break;
             case 3: //talking to boss again
@@ -356,4 +310,10 @@ public class DialogueActivated : MonoBehaviour
                 break;
         }
     }
+
+    public void GetDialouge(Dialogue dialouge)
+    {
+        CurrentSpeech = dialouge;
+    }
+
 }

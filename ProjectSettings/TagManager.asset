@@ -10,8 +10,11 @@ TagManager:
   - DialogueUI
   - dialougeManager
   - LockPuzzleUI
+  - TaskUI
+  - taskManager
   - GlobalController
   - CompPuzzleUI
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - UI
   - 
   - 
-  - Enemy
-  - PuzzleElement
+  - 
+  - 
   - 
   - 
   - 
