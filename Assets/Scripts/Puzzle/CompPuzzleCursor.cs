@@ -9,6 +9,8 @@ public class CompPuzzleCursor : MonoBehaviour
 
     GlobalController cont;
 
+    public StartCompPuzzle starter;
+
     private Vector2 mousePos = new Vector2(500.0f, 350.0f);
     private Vector2 moveData;
     public bool held;
@@ -18,9 +20,6 @@ public class CompPuzzleCursor : MonoBehaviour
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
-
-        cont.keys.CompPuzzle.Enable();
-        cont.controller.CompPuzzle.Enable();
     }
 
     // Start is called before the first frame update
@@ -59,7 +58,11 @@ public class CompPuzzleCursor : MonoBehaviour
 
         if(count == 8)
         {
-            Debug.Log("Puzzle Over");
+            cont.controller.CompPuzzle.Disable();
+            cont.controller.Game.Enable();
+            cont.keys.CompPuzzle.Disable();
+            cont.keys.Game.Enable();
+            starter.complete = true;
         }
     }
 }
