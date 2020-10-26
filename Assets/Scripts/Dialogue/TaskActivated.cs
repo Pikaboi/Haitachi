@@ -230,7 +230,7 @@ public class TaskActivated : MonoBehaviour
     {
         //Debug.Log("Starting dialouge with" + dialouge.Name);
         sentences.Clear();
-        Debug.Log(dialouge.sentences[0]);
+        //Debug.Log(dialouge.sentences[0]);
         nameText.text = dialouge.Name;
 
         foreach (string sentence in dialouge.sentences)
@@ -240,41 +240,69 @@ public class TaskActivated : MonoBehaviour
         ProgressionOnLevel();
         DisplayNextSentence();
     }
-    //A NOTE FOR BRADEN AND THE OTHERS
-    //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
-    //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
+
+    public void setTask(int n)
+    {
+        sentences.Clear();
+        //Debug.Log(dialouge.sentences[0]);
+        nameText.text = "!";
+
+        if(n ==2)
+        {
+            sentences.Enqueue("Go To Boss");
+        }
+        DisplayNextSentence();
+        //setToTalk();
+
+
+    }
+        //A NOTE FOR BRADEN AND THE OTHERS
+        //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
+        //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
     private void ProgressionOnLevel()
     {
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        //Debug.Log(sentence);
 
         switch (TaskNum)
         {
-            case 0: //talking to boss
+            case 0: //Branch 0
                 if (sentence == "Go find Lucas")
                 {
+                    //Debug.Log("Boss assigned");
+                    sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
-                    sentences.Enqueue(sentence);
+                    //sentences.Enqueue(sentence);
                 }
                 else
                 {
                     sentences.Enqueue(sentence);
                 }
                 break;
-            case 1: //get papers from Lucas
-                if (sentence == "Go to Boss")
-                {
-                    TaskNum = 2;
-                    sentences.Enqueue(sentence);
-                }
-                else if (sentence == "Go find Lucas")
-                {
-                    sentences.Enqueue("Water the plants");
+            case 1: //branch 1
+                    //if (sentence == "Go To Boss") //lucas
+                    //{
+                    //    //TaskNum = 2;
+                    //sentences.Enqueue(sentence);
+                    //}
+                    //else if (sentence == "Go find Lucas")
+                    // {
+                    //sentences.Enqueue("Water the plants");
                     //Debug.Log("Have the boss talk");
                     //sentences.Dequeue();
                     //sentences.Enqueue("Go Find Lucas dammit");
                     //Debug.Log("the topic change");
                     //TaskNum = 2;
+                    //   sentences.Enqueue(sentence);
+
+                // }
+                if (sentence == "Go find Lucas") //Boss
+                {
+
+                    //Debug.Log("New Assignment");
+                    //sentences.Enqueue(sentence);
+                    //TaskNum = 3;
+
                 }
                 else
                 {
@@ -282,27 +310,80 @@ public class TaskActivated : MonoBehaviour
                 }
                 break;
 
-            case 2: //talking to boss again
-                if (sentence == "Go to Boss")
+            case 2: //Task one Completed
+                if (sentence == "Go find Lucas") //Boss
                 {
+
+                    //Debug.Log("New Assignment");
+                    sentences.Enqueue(sentence);
                     TaskNum = 3;
-                    sentences.Enqueue("Water the plants");
+
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
+                }
+                break;
+            case 3: //Task two started
+                if (sentence == "Go To Boss")
+                {
+                    sentences.Enqueue(sentence);
+                    TaskNum = 4;
                 }
                 else if (sentence == "Go find Lucas")
                 {
-                    //Debug.Log("Have the boss talk");
-                    //sentences.Dequeue();
-                    sentences.Enqueue("Water the plants");
-
-                    //Debug.Log("the topic change");
-                    //TaskNum = 2;
+                    //Debug.Log("Boss assigned");
+                    //sentences.Enqueue("Get the files from cabinet");
+                    //TaskNum = 4;
+                    //sentences.Enqueue(sentence);
+                    sentences.Enqueue(sentence);
                 }
                 else
                 {
                     sentences.Enqueue(sentence);
                 }
                 break;
-            case 3: //talking to boss again
+            case 4: //Task two finished
+                if (sentence == "Go find Lucas")
+                {
+                    //Debug.Log("Boss assigned");
+                    sentences.Enqueue("Get the PC fixed");
+                    TaskNum = 5;
+                    //sentences.Enqueue(sentence);
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
+                }
+                break;
+            case 5: //Task three started
+                if (sentence == "Go find Lucas")
+                {
+                    //Debug.Log("Boss assigned");
+                    //sentences.Enqueue("Get the files from cabinet");
+                    //TaskNum = 1;
+                    //sentences.Enqueue(sentence);
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
+                }
+                break;
+            case 6: //Task three finished
+                if (sentence == "Go find Lucas")
+                {
+                    //Debug.Log("Boss assigned");
+                    sentences.Enqueue("Get some food");
+                    TaskNum = 7;
+                    //sentences.Enqueue(sentence);
+                }
+                else
+                {
+                    sentences.Enqueue(sentence);
+                }
+                break;
+            case 7: //promoted 
+
                 break;
 
 

@@ -13,6 +13,11 @@ public class StartCompPuzzle : MonoBehaviour
 
     public bool complete = false;
 
+    bool Taskcompleted = false;
+
+    public TaskActivated taskScript;
+    public DialogueActivated dialogueScript;
+
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
@@ -33,6 +38,12 @@ public class StartCompPuzzle : MonoBehaviour
             GetComponent<BoxCollider>().isTrigger = false;
             inZone = false;
             hidePaused();
+            if (!Taskcompleted)
+            {
+                dialogueScript.setTask(6);
+                taskScript.setTask(6);
+                Taskcompleted = true;
+            }
         }
 
         if (inZone)

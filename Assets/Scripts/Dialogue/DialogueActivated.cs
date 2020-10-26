@@ -289,7 +289,10 @@ public class DialogueActivated : MonoBehaviour
             
         }
     }
-
+    public void setTask(int num)
+    {
+        TaskNum = num;
+    }
     //A NOTE FOR BRADEN AND THE OTHERS
     //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
     //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
@@ -297,61 +300,274 @@ public class DialogueActivated : MonoBehaviour
     {
         switch (TaskNum)
         {
-            case 0: //talking to boss
+            case 0: //when the game starts
                 if (Intertag == "Boss")
                 {
-                    sentences.Enqueue("Go find Lucas");
-                    sentences.Enqueue("I need some papers");
+                    sentences.Enqueue("I wanted to talk with you, and before you ask...no you are not in trouble");
+                    sentences.Enqueue("This is for  your promotion, but you must prove to me");
+                    sentences.Enqueue("My first task to you is getting from files from the cabinet");
                     TaskNum = 1;
                     TaskREquired = true;
 
                 }
-                if(nameText.text == "Lucas")
+                if (nameText.text == "Reception")
                 {
+                    sentences.Enqueue("You should get going to the elevator");
+                    sentences.Enqueue("You on the upper floor");
+                }
+                if (nameText.text == "Anothony")
+                {
+                    sentences.Enqueue("Arent you suppose to be in a meeting?");
+                }
+                if (nameText.text == "Cassidy")
+                {
+                    sentences.Enqueue("Boss is at the usual spot");
+    
+                }
+                if (nameText.text == "Charlie")
+                {
+                    sentences.Enqueue("W-where is the boss?");
+                    sentences.Enqueue("S-sorry i don't know...");
+                }
+                if (nameText.text == "Dave")
+                {
+                    sentences.Enqueue("Arent you suppose to be in a meeting?");
+                    sentences.Enqueue("Eh? Where is the meeting?");
+                    sentences.Enqueue("It's in the meeting room to my right..");
+                }
+                if (nameText.text == "Ella")
+                {
+                    sentences.Enqueue("...boss is looking for you");
+                    sentences.Enqueue("...hope you aren't in trouble");
+                }
+                if (nameText.text == "Hayley")
+                {
+                    //CHANGE LATER
                     sentences.Enqueue("the Boss wanted to talk to you");
-                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                    sentences.Enqueue("I hope it isn't bad");
+                }
+                if (nameText.text == "Joshua")
+                {
+                    //CHANGE LATER
+                    sentences.Enqueue("the Boss wanted to talk to you");
+                    sentences.Enqueue("I hope it isn't bad");
+                }
+                if (nameText.text == "Katherine")
+                {
+                    //CHANGE LATER
+                    sentences.Enqueue("the Boss wanted to talk to you");
+                    sentences.Enqueue("I hope it isn't bad");
                 }
 
+                if (nameText.text == "Lucas")
+                {
+                    sentences.Enqueue("the Boss wanted to talk to you");
+                    sentences.Enqueue("I hope it isn't bad");
+                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                }
+                if (nameText.text == "Rebecca")
+                {
+                    sentences.Enqueue("boss was looking for you");
+                    sentences.Enqueue("You in big trouble now");
+                }
+                if (nameText.text == "Sarah")
+                {
+                    sentences.Enqueue("Oh yeah boss wants you");
+                }
+                if (nameText.text == "Thomas")
+                {
+                    sentences.Enqueue("Oh yeah boss was looking for ya");
+                }
+                if (nameText.text == "Zack")
+                {
+                    sentences.Enqueue("Boss is in his office");
+                }
+                break;
 
-                    break;
-            case 1: //get papers from Lucas
+            case 1: //task one started (the lock)
                 if (Intertag == "Boss")
                 {
                     taskText.ResetTask();
-                    sentences.Enqueue("I see you don't have those papers");
-                    sentences.Enqueue("Go find Lucas he should be at his desk");
+                    sentences.Enqueue("I dont see those files in your hands...");
+                    sentences.Enqueue("The cabinet is in the office area, you should be able to remember the combination");
+                    sentences.Enqueue("otherwise ask one of your co-workers");
+                    sentences.Enqueue("once you get those files come back to me");
                     //TaskNum = 1;
 
                 }
-                if (nameText.text == "Lucas")
+                if (nameText.text == "Anothony")
                 {
-                    taskText.ResetTask();
-                    sentences.Enqueue("Go give this to the boss...");
-                    TaskNum = 2;
-                    //sentences.Enqueue("Go find Lucas he should be at his desk");
+                    sentences.Enqueue("Huh? Files? Oh, it should be here...");
                 }
+                if (nameText.text == "Cassidy")
+                {
+                    sentences.Enqueue("conbination may be with Sarah..i think?");
+
+                }
+                if (nameText.text == "Charlie")
+                {
+                    sentences.Enqueue("Huh? C-cabinet? It's here somewhere b-but i dont know the combination?");
+                    sentences.Enqueue("S-sorry!");
+                }
+                if (nameText.text == "Dave")
+                {
+                    sentences.Enqueue("Cabinet? Fuck if i know, i just know it has a combination");
+
+                }
+                if (nameText.text == "Ella")
+                {
+                    sentences.Enqueue("...umm, its on your left, the cabinet");
+                    sentences.Enqueue("...the combination should be with one of the guys...");
+                }
+                if (nameText.text == "Joshua")
+                {
+      
+                    sentences.Enqueue("Oh the cabinet is at the corner");
+                    sentences.Enqueue("The combination is 6969...alright?");
+                }
+                if (nameText.text == "Sarah")
+                {
+                    //CHANGE LATER
+                    sentences.Enqueue("Oh the files, they are at my desk but i forgot the combination");
+                    sentences.Enqueue("Joshua may know since he set up the combination");
+                }
+               
                 break;
 
-            case 2: //talking to boss again
+            case 2: //Task one Completed
                 if (Intertag == "Boss")
                 {
                     taskText.ResetTask();
-                    sentences.Enqueue("Ah the papers good");
-                    sentences.Enqueue("now make yourself useful and water the plants");
+                    sentences.Enqueue("Ah the files, well done");
+                    sentences.Enqueue("now i require some paper needed to printed");
+                    sentences.Enqueue("can you retrieve some papers from lucas");
                     TaskNum = 3;
 
                 }
+                break;
+
+            case 3: //Task two started
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("i see no papers in your hands…");
+                    sentences.Enqueue("The one who has those papers is named Lucas, find his nameplate on the desk...");
+                    sentences.Enqueue("once you get those papers come back to me");
+                    //TaskNum = 1;
+
+                }
+                if (nameText.text == "Hayley")
+                {
+                    //CHANGE LATER
+                    sentences.Enqueue("Wait Lucas?");
+                    sentences.Enqueue("There is someone named Lucas in the office?");
+                }
+                if (nameText.text == "Joshua")
+                {
+                    //CHANGE LATER
+                    sentences.Enqueue("Lucas?");
+                    sentences.Enqueue("He is at work today thats all i can say");
+                }
+                if (nameText.text == "Katherine")
+                {
+                    //CHANGE LATER
+                    sentences.Enqueue("Oh lucas? You can find him yourself");
+                }
+
                 if (nameText.text == "Lucas")
                 {
-                    sentences.Enqueue("Oh you already gave something to biss? good?");
-               
+                    sentences.Enqueue("Oh you want the papers?");
+                    sentences.Enqueue("Here you go, give them to the boss!");
+                    TaskNum = 4;
                     //sentences.Enqueue("Go find Lucas he should be at his desk");
                 }
-                break;
-            case 3: //talking to boss again
+                if (nameText.text == "Rebecca")
+                {
+                    sentences.Enqueue("Where is Lucas? As if i will tell you");
+                }
+                if (nameText.text == "Sarah")
+                {
+                    sentences.Enqueue("Oh i saw lucas he should be at his desk");
+                }
+                if (nameText.text == "Thomas")
+                {
+                    sentences.Enqueue("Lucas is in his space, i saw him with some papers");
+                }
+                if (nameText.text == "Zack")
+                {
+                    sentences.Enqueue("He not in the toilets or in the meeting…");
+                }
                 break;
 
+            case 4: //Task two finished
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("I see you got the paper, great!");
+                    sentences.Enqueue("now the final task to prove you deserve that promotion");
+                    sentences.Enqueue("one of the pc broke down yesterday");
+                    sentences.Enqueue("go repair and report back to me");
+                    TaskNum = 5;
 
+                }
+                break;
+            case 5: //Task three started
+
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("im guessing you haven’t really found who computer to fix");
+                    sentences.Enqueue("i got some complains from Dave...on his computer");
+                    sentences.Enqueue("go talk to him, otherwise check his computer yourself...");
+                    
+
+                }
+                if (nameText.text == "Charlie")
+                {
+                    sentences.Enqueue("Huh? M-My computer is fine...");
+                    sentences.Enqueue("S-Sorry, maybe its someone else...");
+                }
+                if (nameText.text == "Dave")
+                {
+                    sentences.Enqueue("Finally! Its over at my desk...hurry up");
+
+                }
+                if (nameText.text == "Ella")
+                {
+                    sentences.Enqueue("...i think its dave, he was swearing very loudly yesterday");
+                    sentences.Enqueue("...maybe his computer broke?");
+                }
+                if (nameText.text == "Hayley")
+                {
+                    //CHANGE LATER
+                    sentences.Enqueue("What? Computer?");
+                    sentences.Enqueue("Fine is, like, fine");
+                }
+                if (nameText.text == "Sarah")
+                {
+                    sentences.Enqueue("I think the computer you are looking at is one of the males here...");
+                }
+                if (nameText.text == "Thomas")
+                {
+                    sentences.Enqueue("Computer fixing? Well I heard yelling in the office so...maybe there");
+                }
+                if (nameText.text == "Zack")
+                {
+                    sentences.Enqueue("Computers are usually in the office since we need them");
+                }
+                break;
+            case 6: //Task three completed
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("I see you got the paper, great!");
+                    sentences.Enqueue("now the final task to prove you deserve that promotion");
+                    sentences.Enqueue("one of the pc broke down yesterday");
+                    sentences.Enqueue("go repair and report back to me");
+
+
+                }
+                break;
             default:
                 break;
         }
