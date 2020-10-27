@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Changeprompt : MonoBehaviour
 {
-    public Text changingText;
+    public GameObject changingText;
 
     public int promptNum = 0;
     int num = 0;
-
+    bool interactable = false;
 
     //this is for new input
     //Access to class
@@ -59,7 +59,19 @@ public class Changeprompt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(interactSuccess
+        
+
+        if(interactable && interactSuccess)
+        {
+            changingText.GetComponent<Text>().text = "";
+
+            if(promptNum ==2)
+            {
+                promptNum = 0;
+
+            }
+        }
+
     }
 
     public void changeNum(int n)
@@ -71,20 +83,18 @@ public class Changeprompt : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //Debug.Log("ineract");
             changeNum(promptNum);
 
             switch (num)
             {
-
                 case 1: //Task one Completed
-                    changingText.text = "X to interact";
-                    promptNum = 2;
-
+                    changingText.GetComponent<Text>().text = "X to interact";
+                    interactable = true;
+                    
                     break;
                 case 2: //Task two started
-                    changingText.text = "Y to hifive";
-
+                    changingText.GetComponent<Text>().text = "Y to hifive";
+                    interactable = true;
                     break;
                 default:
                     break;
@@ -103,8 +113,12 @@ public class Changeprompt : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            changingText.text = "";
-
+            changingText.GetComponent<Text>().text = "";
+            if (promptNum == 1)
+            {
+                promptNum = 2;
+            }
+            //interactable = false;
             //Destroy(GetComponent<BoxCollider>());
             //GetComponent<Changeprompt>().enabled = false;
         }
