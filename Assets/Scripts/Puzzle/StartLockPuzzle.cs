@@ -63,7 +63,7 @@ public class StartLockPuzzle : MonoBehaviour
         }
     }
 
-    void hidePaused()
+    public void hidePaused()
     {
         foreach (GameObject g in puzzobjs)
         {

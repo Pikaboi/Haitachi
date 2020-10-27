@@ -33,6 +33,22 @@ public class LockPuzzle : MonoBehaviour
         cont.keys.LockPuzzle.NumDown.started += ctx => num--;
         cont.keys.LockPuzzle.LockLeft.started += ctx => NextSlot((int)lockNum - 1);
         cont.keys.LockPuzzle.Lockright.started += ctx => NextSlot((int)lockNum + 1);
+
+        cont.controller.LockPuzzle.Exit.performed += ctx => {
+            cont.controller.LockPuzzle.Disable();
+            cont.controller.Game.Enable();
+            cont.keys.LockPuzzle.Disable();
+            cont.keys.Game.Enable();
+            starter.hidePaused();
+        };
+
+        cont.keys.LockPuzzle.Exit.performed += ctx => {
+            cont.controller.LockPuzzle.Disable();
+            cont.controller.Game.Enable();
+            cont.keys.LockPuzzle.Disable();
+            cont.keys.Game.Enable();
+            starter.hidePaused();
+        };
     }
 
     // Start is called before the first frame update
