@@ -36,8 +36,6 @@ public class hifive : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
-
         if(other.gameObject.tag == "NPC")
         {
             colbool = true;
