@@ -25,8 +25,7 @@ public class LockPuzzle : MonoBehaviour
 
     private void OnEnable()
     {
-        cont.controller.LockPuzzle.NumUp.started += ctx => { num++; Debug.Log("it is operating"); };
-        cont.controller.LockPuzzle.NumUp.performed += ctx => { Debug.Log("it isnt operating"); };
+        cont.controller.LockPuzzle.NumUp.started += ctx => num++;
         cont.controller.LockPuzzle.NumDown.started += ctx => num--;
         cont.controller.LockPuzzle.LockLeft.started += ctx => NextSlot((int)lockNum - 1);
         cont.controller.LockPuzzle.Lockright.started += ctx => NextSlot((int)lockNum + 1);
