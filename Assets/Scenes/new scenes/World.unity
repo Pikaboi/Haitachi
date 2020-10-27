@@ -209,7 +209,7 @@ MonoBehaviour:
   dialouge:
     Name: Lucas
     sentences:
-    - Hey bro, how you doing
+    - erere
     - Working hard for that promotion
     - good, good..
 --- !u!114 &277417414
@@ -239,6 +239,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &277417416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277417412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!4 &277417419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
@@ -535,7 +549,7 @@ MonoBehaviour:
   dialouge:
     Name: Rebecca
     sentences:
-    - Good morning
+    - erere
     - Oh, its you..
 --- !u!136 &406148407
 CapsuleCollider:
@@ -551,6 +565,38 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &406148408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406148404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
+--- !u!224 &425520612 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+    type: 3}
+  m_PrefabInstance: {fileID: 2044521859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &425520613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7704639305278883534, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+    type: 3}
+  m_PrefabInstance: {fileID: 2044521859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &445348356 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3093750422710411612, guid: f0cda9dbb0c729e4c99bac1a869b2771,
@@ -888,7 +934,7 @@ MonoBehaviour:
   dialouge:
     Name: Ella
     sentences:
-    - Hi..
+    - erere
     - morning...
 --- !u!136 &782697368
 CapsuleCollider:
@@ -904,6 +950,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &782697369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782697365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1 &846824008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1132,7 @@ MonoBehaviour:
   dialouge:
     Name: Anthony
     sentences:
-    - Yo wassup, working hard as always i see
+    - erere
     - Don't overwork yourself dude
 --- !u!136 &915902221
 CapsuleCollider:
@@ -1088,6 +1148,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &915902222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915902218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1 &943980220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 85cd40e8286e9704dbe2ca6578f2efb5,
@@ -1153,6 +1227,20 @@ CapsuleCollider:
   m_Height: 2.0066345
   m_Direction: 1
   m_Center: {x: 0.0733242, y: 0.99117297, z: 0}
+--- !u!114 &943980225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943980220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
 --- !u!1001 &953239588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1278,7 +1366,7 @@ MonoBehaviour:
   dialouge:
     Name: Reception
     sentences:
-    - Good morning, welcome to the ### building
+    - erere
     - Lovely day isn't it?
 --- !u!136 &953239593
 CapsuleCollider:
@@ -1294,6 +1382,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &953239594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953239590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1001 &1025629939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1419,7 +1521,7 @@ MonoBehaviour:
   dialouge:
     Name: Sarah
     sentences:
-    - Hey good morning
+    - erere
     - Let us both do our best
 --- !u!136 &1025629944
 CapsuleCollider:
@@ -1435,6 +1537,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1025629945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025629941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1001 &1034108044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1714,7 +1830,7 @@ MonoBehaviour:
   dialouge:
     Name: Zach
     sentences:
-    - Ugh, what is it
+    - erere
 --- !u!136 &1109442577
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1729,6 +1845,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1109442578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109442574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1 &1233225412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,7 +2044,7 @@ MonoBehaviour:
   dialouge:
     Name: Cassidy
     sentences:
-    - Good morning
+    - erere
     - Another day as usual
     - mhm!
 --- !u!136 &1233824459
@@ -1931,6 +2061,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1233824460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233824456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1 &1312148039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +2107,7 @@ RectTransform:
   m_Children:
   - {fileID: 1509716163}
   - {fileID: 1837475241}
+  - {fileID: 425520612}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2316,7 +2461,7 @@ MonoBehaviour:
   dialouge:
     Name: Charlie
     sentences:
-    - G-Good morning
+    - erere
     - S-Sorry, am i distracting you from work?
 --- !u!136 &1502263347
 CapsuleCollider:
@@ -2332,6 +2477,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1502263348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502263344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!224 &1509716163 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8462719126777707802, guid: 16541c91403bd144789bd6a0da9028fe,
@@ -2463,7 +2622,7 @@ MonoBehaviour:
   dialouge:
     Name: Thomas
     sentences:
-    - Huh, is it lunchtime yet?
+    - erere
 --- !u!136 &1669875107
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2478,6 +2637,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1669875108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669875104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1001 &1710735324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2817,7 +2990,7 @@ MonoBehaviour:
   dialouge:
     Name: Hayley
     sentences:
-    - Like good morning
+    - erere
     - What? Is my make up smudged
     - i see...
 --- !u!136 &1858406188
@@ -2834,6 +3007,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1858406189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858406185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1001 &1860951796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3038,7 +3225,7 @@ MonoBehaviour:
   dialouge:
     Name: Joshua
     sentences:
-    - Oh hey there Joe
+    - erere
     - Working hard for that promotion
 --- !u!136 &1903244400
 CapsuleCollider:
@@ -3054,6 +3241,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1903244401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903244397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1001 &1912171702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3298,7 +3499,7 @@ MonoBehaviour:
   dialouge:
     Name: Dave
     sentences:
-    - Great another day at work
+    - erere
     - Working hard for that promotion
 --- !u!136 &1949022098
 CapsuleCollider:
@@ -3314,6 +3515,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1949022099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949022095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1001 &1953872295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3568,7 +3783,7 @@ MonoBehaviour:
   dialouge:
     Name: Katherine
     sentences:
-    - Hey what do you want?
+    - erere
 --- !u!136 &2018371695
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3583,6 +3798,20 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &2018371696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018371692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 425520613}
+  promptNum: 1
 --- !u!1001 &2024610534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3662,6 +3891,126 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03219fc8c69ed994888891056848fbee, type: 3}
+--- !u!1001 &2044521859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1312148040}
+    m_Modifications:
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 806
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 78.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883520, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704639305278883523, guid: ae8f09015e0074b4099ffbe5b4ce8497,
+        type: 3}
+      propertyPath: m_Name
+      value: promptText
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7704639305278883521, guid: ae8f09015e0074b4099ffbe5b4ce8497, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: ae8f09015e0074b4099ffbe5b4ce8497, type: 3}
 --- !u!1001 &2110912253
 PrefabInstance:
   m_ObjectHideFlags: 0
