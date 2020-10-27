@@ -57,6 +57,14 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Closegame"",
+                    ""type"": ""Button"",
+                    ""id"": ""9213864e-5d31-4721-9c7f-d328031c5547"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -158,6 +166,17 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""action"": ""Hi5"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f12de08a-9ca0-4384-839f-b34a8fce3ff7"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Closegame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -193,6 +212,14 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""name"": ""Lockright"",
                     ""type"": ""Button"",
                     ""id"": ""6016b7f6-2ad5-410c-81e5-5543fa3ef0da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""354eca70-a1ed-45a5-b02b-d939a3ee0b5f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -242,6 +269,17 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""action"": ""Lockright"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52731373-d298-476a-b394-cf37f20af2b2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -261,6 +299,14 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""name"": ""Hold"",
                     ""type"": ""Button"",
                     ""id"": ""84ba0eac-0b01-457a-a192-961cb1df20a9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""3dd5c12b-6014-4e13-adc5-68986123a7e1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -288,6 +334,17 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""action"": ""Hold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""27b8c84e-d928-4dd6-834d-148793c6add3"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -301,16 +358,19 @@ public class @Keyboard : IInputActionCollection, IDisposable
         m_Game_Swap = m_Game.FindAction("Swap", throwIfNotFound: true);
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
         m_Game_Hi5 = m_Game.FindAction("Hi5", throwIfNotFound: true);
+        m_Game_Closegame = m_Game.FindAction("Closegame", throwIfNotFound: true);
         // LockPuzzle
         m_LockPuzzle = asset.FindActionMap("LockPuzzle", throwIfNotFound: true);
         m_LockPuzzle_NumUp = m_LockPuzzle.FindAction("NumUp", throwIfNotFound: true);
         m_LockPuzzle_NumDown = m_LockPuzzle.FindAction("NumDown", throwIfNotFound: true);
         m_LockPuzzle_LockLeft = m_LockPuzzle.FindAction("LockLeft", throwIfNotFound: true);
         m_LockPuzzle_Lockright = m_LockPuzzle.FindAction("Lockright", throwIfNotFound: true);
+        m_LockPuzzle_Exit = m_LockPuzzle.FindAction("Exit", throwIfNotFound: true);
         // CompPuzzle
         m_CompPuzzle = asset.FindActionMap("CompPuzzle", throwIfNotFound: true);
         m_CompPuzzle_Move = m_CompPuzzle.FindAction("Move", throwIfNotFound: true);
         m_CompPuzzle_Hold = m_CompPuzzle.FindAction("Hold", throwIfNotFound: true);
+        m_CompPuzzle_Exit = m_CompPuzzle.FindAction("Exit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -365,6 +425,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Swap;
     private readonly InputAction m_Game_Interact;
     private readonly InputAction m_Game_Hi5;
+    private readonly InputAction m_Game_Closegame;
     public struct GameActions
     {
         private @Keyboard m_Wrapper;
@@ -374,6 +435,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
         public InputAction @Swap => m_Wrapper.m_Game_Swap;
         public InputAction @Interact => m_Wrapper.m_Game_Interact;
         public InputAction @Hi5 => m_Wrapper.m_Game_Hi5;
+        public InputAction @Closegame => m_Wrapper.m_Game_Closegame;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,6 +460,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Hi5.started -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
                 @Hi5.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
                 @Hi5.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
+                @Closegame.started -= m_Wrapper.m_GameActionsCallbackInterface.OnClosegame;
+                @Closegame.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnClosegame;
+                @Closegame.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnClosegame;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,6 +482,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Hi5.started += instance.OnHi5;
                 @Hi5.performed += instance.OnHi5;
                 @Hi5.canceled += instance.OnHi5;
+                @Closegame.started += instance.OnClosegame;
+                @Closegame.performed += instance.OnClosegame;
+                @Closegame.canceled += instance.OnClosegame;
             }
         }
     }
@@ -429,6 +497,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
     private readonly InputAction m_LockPuzzle_NumDown;
     private readonly InputAction m_LockPuzzle_LockLeft;
     private readonly InputAction m_LockPuzzle_Lockright;
+    private readonly InputAction m_LockPuzzle_Exit;
     public struct LockPuzzleActions
     {
         private @Keyboard m_Wrapper;
@@ -437,6 +506,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
         public InputAction @NumDown => m_Wrapper.m_LockPuzzle_NumDown;
         public InputAction @LockLeft => m_Wrapper.m_LockPuzzle_LockLeft;
         public InputAction @Lockright => m_Wrapper.m_LockPuzzle_Lockright;
+        public InputAction @Exit => m_Wrapper.m_LockPuzzle_Exit;
         public InputActionMap Get() { return m_Wrapper.m_LockPuzzle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -458,6 +528,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Lockright.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
                 @Lockright.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
                 @Lockright.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
+                @Exit.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_LockPuzzleActionsCallbackInterface = instance;
             if (instance != null)
@@ -474,6 +547,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Lockright.started += instance.OnLockright;
                 @Lockright.performed += instance.OnLockright;
                 @Lockright.canceled += instance.OnLockright;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
         }
     }
@@ -484,12 +560,14 @@ public class @Keyboard : IInputActionCollection, IDisposable
     private ICompPuzzleActions m_CompPuzzleActionsCallbackInterface;
     private readonly InputAction m_CompPuzzle_Move;
     private readonly InputAction m_CompPuzzle_Hold;
+    private readonly InputAction m_CompPuzzle_Exit;
     public struct CompPuzzleActions
     {
         private @Keyboard m_Wrapper;
         public CompPuzzleActions(@Keyboard wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_CompPuzzle_Move;
         public InputAction @Hold => m_Wrapper.m_CompPuzzle_Hold;
+        public InputAction @Exit => m_Wrapper.m_CompPuzzle_Exit;
         public InputActionMap Get() { return m_Wrapper.m_CompPuzzle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -505,6 +583,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Hold.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
                 @Hold.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
                 @Hold.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
+                @Exit.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_CompPuzzleActionsCallbackInterface = instance;
             if (instance != null)
@@ -515,6 +596,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Hold.started += instance.OnHold;
                 @Hold.performed += instance.OnHold;
                 @Hold.canceled += instance.OnHold;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
         }
     }
@@ -526,6 +610,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
         void OnSwap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnHi5(InputAction.CallbackContext context);
+        void OnClosegame(InputAction.CallbackContext context);
     }
     public interface ILockPuzzleActions
     {
@@ -533,10 +618,12 @@ public class @Keyboard : IInputActionCollection, IDisposable
         void OnNumDown(InputAction.CallbackContext context);
         void OnLockLeft(InputAction.CallbackContext context);
         void OnLockright(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
     public interface ICompPuzzleActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnHold(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
 }
