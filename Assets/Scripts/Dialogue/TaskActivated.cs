@@ -247,8 +247,8 @@ public class TaskActivated : MonoBehaviour
         sentences.Clear();
         //Debug.Log(dialouge.sentences[0]);
         nameText.text = "!";
-        TaskNum = 2;
-        if (n ==2)
+        TaskNum = n;
+        if (n ==2 || n == 6)
         {
             sentences.Enqueue("Go To Boss");
 
