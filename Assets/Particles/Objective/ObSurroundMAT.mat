@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ObSurroundMAT
+  m_Shader: {fileID: -6465566751694194690, guid: 7db9083dc96e37f4ba07fb597844719a,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_38D6FB69: 0.1
+    - Vector1_5EB42BC8: -1.66
+    - Vector1_89FF1940: 3.16
+    - Vector1_A30CE37A: 0.34
+    m_Colors:
+    - Color_91F6B1DA: {r: 1.9766746, g: 0.9417664, b: 0.19663255, a: 0}

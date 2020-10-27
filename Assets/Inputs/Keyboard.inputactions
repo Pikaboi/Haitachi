@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Closegame",
+                    "type": "Button",
+                    "id": "9213864e-5d31-4721-9c7f-d328031c5547",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -145,6 +153,17 @@
                     "action": "Hi5",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f12de08a-9ca0-4384-839f-b34a8fce3ff7",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Closegame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -180,6 +199,14 @@
                     "name": "Lockright",
                     "type": "Button",
                     "id": "6016b7f6-2ad5-410c-81e5-5543fa3ef0da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Exit",
+                    "type": "Button",
+                    "id": "354eca70-a1ed-45a5-b02b-d939a3ee0b5f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -229,6 +256,17 @@
                     "action": "Lockright",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52731373-d298-476a-b394-cf37f20af2b2",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Exit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -248,6 +286,14 @@
                     "name": "Hold",
                     "type": "Button",
                     "id": "84ba0eac-0b01-457a-a192-961cb1df20a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Exit",
+                    "type": "Button",
+                    "id": "3dd5c12b-6014-4e13-adc5-68986123a7e1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -273,6 +319,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27b8c84e-d928-4dd6-834d-148793c6add3",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

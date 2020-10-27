@@ -152,6 +152,14 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2a90054-8d3f-4d9d-83d1-af7e440c2914"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -198,6 +206,17 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""action"": ""Lockright"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2898c6c2-a9cd-4d3f-8b76-8f74b25e3647"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -217,6 +236,14 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""name"": ""Hold"",
                     ""type"": ""Button"",
                     ""id"": ""658c07bb-acb8-4b69-8b81-8a2e4da12586"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""07ffe741-94f8-4de8-9bf2-67a8065cf323"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -244,6 +271,17 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""action"": ""Hold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""733fd067-2ef7-4bcd-9217-52486e02e9f6"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -263,10 +301,12 @@ public class @Xbox : IInputActionCollection, IDisposable
         m_LockPuzzle_NumDown = m_LockPuzzle.FindAction("NumDown", throwIfNotFound: true);
         m_LockPuzzle_LockLeft = m_LockPuzzle.FindAction("LockLeft", throwIfNotFound: true);
         m_LockPuzzle_Lockright = m_LockPuzzle.FindAction("Lockright", throwIfNotFound: true);
+        m_LockPuzzle_Exit = m_LockPuzzle.FindAction("Exit", throwIfNotFound: true);
         // CompPuzzle
         m_CompPuzzle = asset.FindActionMap("CompPuzzle", throwIfNotFound: true);
         m_CompPuzzle_Move = m_CompPuzzle.FindAction("Move", throwIfNotFound: true);
         m_CompPuzzle_Hold = m_CompPuzzle.FindAction("Hold", throwIfNotFound: true);
+        m_CompPuzzle_Exit = m_CompPuzzle.FindAction("Exit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -385,6 +425,7 @@ public class @Xbox : IInputActionCollection, IDisposable
     private readonly InputAction m_LockPuzzle_NumDown;
     private readonly InputAction m_LockPuzzle_LockLeft;
     private readonly InputAction m_LockPuzzle_Lockright;
+    private readonly InputAction m_LockPuzzle_Exit;
     public struct LockPuzzleActions
     {
         private @Xbox m_Wrapper;
@@ -393,6 +434,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         public InputAction @NumDown => m_Wrapper.m_LockPuzzle_NumDown;
         public InputAction @LockLeft => m_Wrapper.m_LockPuzzle_LockLeft;
         public InputAction @Lockright => m_Wrapper.m_LockPuzzle_Lockright;
+        public InputAction @Exit => m_Wrapper.m_LockPuzzle_Exit;
         public InputActionMap Get() { return m_Wrapper.m_LockPuzzle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -414,6 +456,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Lockright.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
                 @Lockright.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
                 @Lockright.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnLockright;
+                @Exit.started -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_LockPuzzleActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_LockPuzzleActionsCallbackInterface = instance;
             if (instance != null)
@@ -430,6 +475,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Lockright.started += instance.OnLockright;
                 @Lockright.performed += instance.OnLockright;
                 @Lockright.canceled += instance.OnLockright;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
         }
     }
@@ -440,12 +488,14 @@ public class @Xbox : IInputActionCollection, IDisposable
     private ICompPuzzleActions m_CompPuzzleActionsCallbackInterface;
     private readonly InputAction m_CompPuzzle_Move;
     private readonly InputAction m_CompPuzzle_Hold;
+    private readonly InputAction m_CompPuzzle_Exit;
     public struct CompPuzzleActions
     {
         private @Xbox m_Wrapper;
         public CompPuzzleActions(@Xbox wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_CompPuzzle_Move;
         public InputAction @Hold => m_Wrapper.m_CompPuzzle_Hold;
+        public InputAction @Exit => m_Wrapper.m_CompPuzzle_Exit;
         public InputActionMap Get() { return m_Wrapper.m_CompPuzzle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -461,6 +511,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Hold.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
                 @Hold.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
                 @Hold.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnHold;
+                @Exit.started -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_CompPuzzleActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_CompPuzzleActionsCallbackInterface = instance;
             if (instance != null)
@@ -471,6 +524,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Hold.started += instance.OnHold;
                 @Hold.performed += instance.OnHold;
                 @Hold.canceled += instance.OnHold;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
         }
     }
@@ -489,10 +545,12 @@ public class @Xbox : IInputActionCollection, IDisposable
         void OnNumDown(InputAction.CallbackContext context);
         void OnLockLeft(InputAction.CallbackContext context);
         void OnLockright(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
     public interface ICompPuzzleActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnHold(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
 }

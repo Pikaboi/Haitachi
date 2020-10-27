@@ -36,6 +36,8 @@ public class Movement : MonoBehaviour
         cont.controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
         cont.controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
 
+        cont.keys.Game.Closegame.performed += ctx => Application.Quit();
+
         Vector3 m = new Vector3(movedata.x, 0, movedata.y) * 10 * Time.deltaTime;
         transform.Translate(m, Space.Self);
     }

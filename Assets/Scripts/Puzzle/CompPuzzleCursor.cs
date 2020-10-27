@@ -40,6 +40,22 @@ public class CompPuzzleCursor : MonoBehaviour
         cont.controller.CompPuzzle.Hold.performed += ctx => held = true;
         cont.controller.CompPuzzle.Hold.canceled += ctx => held = false;
 
+        cont.controller.CompPuzzle.Exit.performed += ctx => {
+            cont.controller.CompPuzzle.Disable();
+            cont.controller.Game.Enable();
+            cont.keys.CompPuzzle.Disable();
+            cont.keys.Game.Enable();
+            starter.hidePaused();
+        };
+
+        cont.keys.CompPuzzle.Exit.performed += ctx => {
+            cont.controller.CompPuzzle.Disable();
+            cont.controller.Game.Enable();
+            cont.keys.CompPuzzle.Disable();
+            cont.keys.Game.Enable();
+            starter.hidePaused();
+        };
+
         gameObject.transform.position = mousePos;
 
         Vector3 m = new Vector3(moveData.x, moveData.y, 0) * 1000 * Time.deltaTime;
