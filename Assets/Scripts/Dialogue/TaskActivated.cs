@@ -82,7 +82,7 @@ public class TaskActivated : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting conversation with " + dialogue.Name);
+       /// Debug.Log("Starting conversation with " + dialogue.Name);
         nameText.text = dialogue.Name;
         sentences.Clear();
 
@@ -103,7 +103,7 @@ public class TaskActivated : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        // Debug.Log(sentence);
+        Debug.Log(sentence);
         // dialogueText.text = sentence;
 
         StopAllCoroutines();
@@ -143,13 +143,14 @@ public class TaskActivated : MonoBehaviour
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                //Debug.Log("interact");
+                //Debug.Log(TaskNum);
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
                 }
                 if (isTalk == false)
                 {
+                   // Debug.Log("interact");
 
                     //Time.timeScale = 0;
                     showDialouge();
@@ -246,11 +247,13 @@ public class TaskActivated : MonoBehaviour
         sentences.Clear();
         //Debug.Log(dialouge.sentences[0]);
         nameText.text = "!";
-
-        if(n ==2)
+        TaskNum = 2;
+        if (n ==2)
         {
             sentences.Enqueue("Go To Boss");
+
         }
+        //isTalk = true;
         DisplayNextSentence();
         //setToTalk();
 
@@ -262,7 +265,7 @@ public class TaskActivated : MonoBehaviour
     private void ProgressionOnLevel()
     {
         string sentence = sentences.Dequeue();
-        //Debug.Log(sentence);
+        
 
         switch (TaskNum)
         {
@@ -315,7 +318,7 @@ public class TaskActivated : MonoBehaviour
                 {
 
                     //Debug.Log("New Assignment");
-                    sentences.Enqueue(sentence);
+                    sentences.Enqueue("Go find Lucas");
                     TaskNum = 3;
 
                 }
@@ -327,6 +330,7 @@ public class TaskActivated : MonoBehaviour
             case 3: //Task two started
                 if (sentence == "Go To Boss")
                 {
+                    //Debug.Log("New Assignment");
                     sentences.Enqueue(sentence);
                     TaskNum = 4;
                 }
