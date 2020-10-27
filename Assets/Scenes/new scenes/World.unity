@@ -492,6 +492,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rebecca
       objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -845,6 +850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ella
       objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -1028,6 +1038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Anthony
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -1235,6 +1250,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Co-worker
       objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -1375,6 +1395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sarah
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -1671,6 +1696,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zach
       objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -1870,6 +1900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cassidy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -2273,6 +2308,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charlie
       objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -2332,6 +2372,24 @@ CapsuleCollider:
   m_Height: 2.2473931
   m_Direction: 1
   m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!1 &1502768464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 94733965173362682, guid: 9bcad682317815b4c9e100ec2f79a4be,
+    type: 3}
+  m_PrefabInstance: {fileID: 1860951796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1502768465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502768464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937d2b9f53e4a0846b6e9ae3b18712ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1509716163 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8462719126777707802, guid: 16541c91403bd144789bd6a0da9028fe,
@@ -2419,6 +2477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thomas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -2559,6 +2622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lucas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -2774,6 +2842,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hayley
       objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -2901,16 +2974,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5176421781364145500, guid: 9bcad682317815b4c9e100ec2f79a4be,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654130772317216210, guid: 9bcad682317815b4c9e100ec2f79a4be,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 311
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bcad682317815b4c9e100ec2f79a4be, type: 3}
 --- !u!1001 &1903244395
@@ -2994,6 +3057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Joshua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -3254,6 +3322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
@@ -3524,6 +3597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Katherine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
