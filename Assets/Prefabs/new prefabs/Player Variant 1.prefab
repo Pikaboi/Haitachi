@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5171122252384542829}
   - component: {fileID: 8984139874100853885}
   - component: {fileID: 6654130772815873531}
+  - component: {fileID: 7942573292748924080}
   m_Layer: 0
   m_Name: Player Variant 1
   m_TagString: Player
@@ -93,6 +94,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 100
+--- !u!136 &7942573292748924080
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94733965173362682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.28066236
+  m_Height: 1.2871339
+  m_Direction: 1
+  m_Center: {x: -0.035293985, y: 1.1068451, z: 7.052849e-17}
 --- !u!1 &6654130772317216208
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +172,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -268,6 +283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.49314514
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 2c6397ede7ca4b04f8aee79baab07f66,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 2c6397ede7ca4b04f8aee79baab07f66,
         type: 3}

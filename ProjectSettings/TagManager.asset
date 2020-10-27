@@ -15,6 +15,7 @@ TagManager:
   - GlobalController
   - CompPuzzleUI
   - Boss
+  - NPC
   layers:
   - Default
   - TransparentFX
