@@ -82,7 +82,7 @@ public class TaskActivated : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting conversation with " + dialogue.Name);
+       /// Debug.Log("Starting conversation with " + dialogue.Name);
         nameText.text = dialogue.Name;
         sentences.Clear();
 
@@ -143,14 +143,14 @@ public class TaskActivated : MonoBehaviour
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                Debug.Log(TaskNum);
+                //Debug.Log(TaskNum);
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
                 }
                 if (isTalk == false)
                 {
-                    Debug.Log("interact");
+                   // Debug.Log("interact");
 
                     //Time.timeScale = 0;
                     showDialouge();
