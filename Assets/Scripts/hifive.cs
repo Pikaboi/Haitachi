@@ -45,6 +45,6 @@ public class hifive : MonoBehaviour
 
     private void Hi5()
     {
-        
+        CurrentNPC.GetComponent<Infector>().beginInfect();
     }
 }
