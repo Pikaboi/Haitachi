@@ -303,7 +303,7 @@ public class DialogueActivated : MonoBehaviour
             case 0: //when the game starts
                 if (Intertag == "Boss")
                 {
-                    sentences.Enqueue("I wanted to talk with you, and before you ask...no you are not in trouble");
+                    sentences.Enqueue("I wanted to talk with you, and before you ask, you are not in trouble");
                     sentences.Enqueue("This is for  your promotion, but you must prove to me");
                     sentences.Enqueue("My first task to you is getting from files from the cabinet");
                     TaskNum = 1;
@@ -411,7 +411,7 @@ public class DialogueActivated : MonoBehaviour
                 }
                 if (nameText.text == "Dave")
                 {
-                    sentences.Enqueue("Cabinet? Fuck if i know, i just know it has a combination");
+                    sentences.Enqueue("Cabinet? I dont know, i just know it has a combination");
 
                 }
                 if (nameText.text == "Ella")
@@ -560,10 +560,11 @@ public class DialogueActivated : MonoBehaviour
                 if (Intertag == "Boss")
                 {
                     taskText.ResetTask();
-                    sentences.Enqueue("I see you got the paper, great!");
-                    sentences.Enqueue("now the final task to prove you deserve that promotion");
-                    sentences.Enqueue("one of the pc broke down yesterday");
-                    sentences.Enqueue("go repair and report back to me");
+                    sentences.Enqueue("You fixed the computer? amazing!!");
+                    sentences.Enqueue("Congratulation, i now give you your well deserved promotion");
+                    sentences.Enqueue("And with that go early to lunch you deserved it!");
+                    TaskNum = 7;
+
 
 
                 }
