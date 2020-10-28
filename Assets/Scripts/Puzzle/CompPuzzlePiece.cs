@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CompPuzzlePiece : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class CompPuzzlePiece : MonoBehaviour
     {
         if(cursor.GetComponent<CompPuzzleCursor>().held == true && cursor.GetComponent<CompPuzzleCursor>().currentHeld == null)
         {
-            if (Vector3.Distance(transform.position, cursor.transform.position) <= 10.0f)
+            if (Vector3.Distance(transform.position, cursor.transform.position) <= 20.0f)
             {
                 beingHeld = true;
                 cursor.GetComponent<CompPuzzleCursor>().currentHeld = gameObject;
@@ -38,6 +39,7 @@ public class CompPuzzlePiece : MonoBehaviour
         if(Vector3.Distance(transform.position, endGoal.transform.position) <= 15.0f)
         {
             matched = true;
+            gameObject.transform.position = new Vector3(-100.0f, -100.0f, 0.0f);
         }
         
     }
