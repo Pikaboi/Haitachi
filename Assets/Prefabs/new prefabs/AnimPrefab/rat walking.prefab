@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 2094385325066684038}
   m_Layer: 0
   m_Name: rat walking
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

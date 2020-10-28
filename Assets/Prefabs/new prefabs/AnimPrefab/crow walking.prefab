@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 4088953031969227123}
   m_Layer: 0
   m_Name: crow walking
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
