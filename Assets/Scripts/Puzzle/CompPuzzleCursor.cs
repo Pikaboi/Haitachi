@@ -61,6 +61,26 @@ public class CompPuzzleCursor : MonoBehaviour
         Vector3 m = new Vector3(moveData.x, moveData.y, 0) * 1000 * Time.deltaTime;
         transform.Translate(m, Space.World);
 
+        if(gameObject.transform.position.x < 0)
+        {
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        }
+
+        if (gameObject.transform.position.y < 0)
+        {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
+
+        if (gameObject.transform.position.x > 1000)
+        {
+            transform.position = new Vector3(1000, transform.position.y, transform.position.z);
+        }
+
+        if (gameObject.transform.position.y > 790)
+        {
+            transform.position = new Vector3(transform.position.x, 790, transform.position.z);
+        }
+
         mousePos = new Vector2(transform.position.x, transform.position.y);
 
         int count = 0;
@@ -72,7 +92,7 @@ public class CompPuzzleCursor : MonoBehaviour
             }
         }
 
-        if(count == 8)
+        if(count == 4)
         {
             cont.controller.CompPuzzle.Disable();
             cont.controller.Game.Enable();
