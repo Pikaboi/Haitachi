@@ -25,12 +25,12 @@ public class LockPuzzle : MonoBehaviour
 
     private void OnEnable()
     {
-        cont.controller.LockPuzzle.NumUp.started += ctx => num++;
-        cont.controller.LockPuzzle.NumDown.started += ctx => num--;
-        cont.controller.LockPuzzle.LockLeft.started += ctx => NextSlot((int)lockNum - 1);
-        cont.controller.LockPuzzle.Lockright.started += ctx => NextSlot((int)lockNum + 1);
-        cont.keys.LockPuzzle.NumUp.started += ctx => num++;
-        cont.keys.LockPuzzle.NumDown.started += ctx => num--;
+        cont.controller.LockPuzzle.NumUp.started += ctx => num+=0.5f;
+        cont.controller.LockPuzzle.NumDown.started += ctx => num-=0.5f;
+        cont.controller.LockPuzzle.LockLeft.started += ctx => NextSlot(lockNum - 0.5f);
+        cont.controller.LockPuzzle.Lockright.started += ctx => NextSlot(lockNum + 0.5f);
+        cont.keys.LockPuzzle.NumUp.started += ctx => num+=0.5f;
+        cont.keys.LockPuzzle.NumDown.started += ctx => num-=0.5f;
         cont.keys.LockPuzzle.LockLeft.started += ctx => NextSlot((int)lockNum - 1);
         cont.keys.LockPuzzle.Lockright.started += ctx => NextSlot((int)lockNum + 1);
 
@@ -81,7 +81,7 @@ public class LockPuzzle : MonoBehaviour
         }
     }
 
-    void NextSlot(int newLockNum)
+    void NextSlot(float newLockNum)
     {
         lockNum = newLockNum;
         num = float.Parse(texts[(int)lockNum].text);
