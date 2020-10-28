@@ -31,8 +31,8 @@ public class LockPuzzle : MonoBehaviour
         cont.controller.LockPuzzle.Lockright.started += ctx => NextSlot(lockNum + 0.5f);
         cont.keys.LockPuzzle.NumUp.started += ctx => num+=0.5f;
         cont.keys.LockPuzzle.NumDown.started += ctx => num-=0.5f;
-        cont.keys.LockPuzzle.LockLeft.started += ctx => NextSlot((int)lockNum - 1);
-        cont.keys.LockPuzzle.Lockright.started += ctx => NextSlot((int)lockNum + 1);
+        cont.keys.LockPuzzle.LockLeft.started += ctx => NextSlot(lockNum - 0.5f);
+        cont.keys.LockPuzzle.Lockright.started += ctx => NextSlot(lockNum + 0.5f);
 
         cont.controller.LockPuzzle.Exit.performed += ctx => {
             cont.controller.LockPuzzle.Disable();
