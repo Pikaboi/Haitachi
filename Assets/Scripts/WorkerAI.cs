@@ -24,6 +24,8 @@ public class WorkerAI : MonoBehaviour
     public NavMeshAgent agent;
     Vector3 movePos;
 
+    public Transform FirstTrans;
+    public Transform SecondTrans;
 
     Vector3 First;
     Vector3 Second;
@@ -41,8 +43,12 @@ public class WorkerAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
 
-        First = new Vector3(9.1f, -0.4166666f, 23.0f);
-        Second = new Vector3(-13.06f, -0.4166666f, -5.71f);
+        //First = new Vector3(9.1f, -0.4166666f, 23.0f);
+        //Second = new Vector3(-13.06f, -0.4166666f, -5.71f);
+
+        First = FirstTrans.transform.position;
+        Second = SecondTrans.transform.position;
+
         m_Animator.SetBool("Iswalking", true);
         movePos = First;
         agent.SetDestination(movePos);
@@ -51,7 +57,7 @@ public class WorkerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movePos == transform.position)
+        if (movePos.x == transform.position.x)
         {
             m_Animator.SetBool("Iswalking", true);
             //movePos = target.transform.position;
@@ -92,18 +98,14 @@ public class WorkerAI : MonoBehaviour
 
         if (collision.collider.tag == "Player")
         {
-            //RotationDirection();
-            //agent.SetDestination(target.transform.position);
+
             m_Animator.SetBool("ishifive", true);
-            //m_Animator.SetBool("Iswalking", false);
-            //agent.isStopped = true;
 
         }
         if (collision.collider.tag == "Block")
         {
             isWalking = false;
-            //RotationDirection();
-            //m_Animator.SetBool("ishifive", true);
+
 
         }
 
@@ -114,9 +116,7 @@ public class WorkerAI : MonoBehaviour
         if (collision.collider.tag == "Player")
         {
             
-           // 
-            //agent.isStopped = false;
-            m_Animator.SetBool("ishifive", false);
+            //m_Animator.SetBool("ishifive", false);
         }
 
     }
@@ -124,7 +124,7 @@ public class WorkerAI : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            m_Animator.SetBool("Iswalking", false);
+            //m_Animator.SetBool("Iswalking", false);
             agent.isStopped = true;
         }
     }
@@ -134,7 +134,7 @@ public class WorkerAI : MonoBehaviour
         {
            // Debug.Log("exit");
             agent.isStopped = false;
-            m_Animator.SetBool("Iswalking", true);
+           // m_Animator.SetBool("Iswalking", true);
         }
     }
 }
