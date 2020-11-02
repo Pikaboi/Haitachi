@@ -43,13 +43,13 @@ public class CamFollow : MonoBehaviour
 
     private void Update()
     {
-        cont.keys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.keys.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>() * 10;
         cont.keys.Game.Cam.canceled += ctx => movedata = Vector2.zero;
 
-        cont.controller.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.controller.Game.Cam.performed += ctx => movedata = ctx.ReadValue<Vector2>() * 100;
         cont.controller.Game.Cam.canceled += ctx => movedata = Vector2.zero;
 
-        Vector2 m = new Vector2(movedata.x, movedata.y) * 10 * Time.deltaTime;
+        Vector2 m = new Vector2(movedata.x, movedata.y) * Time.deltaTime;
         currentX = m.x;
         currentY = m.y;
 
