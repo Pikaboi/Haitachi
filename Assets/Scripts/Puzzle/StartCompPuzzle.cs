@@ -82,11 +82,17 @@ public class StartCompPuzzle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        inZone = true;
+        if ((dialogueScript.getTask() == 5) && (other.gameObject.tag == "Player"))
+        {
+            inZone = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        inZone = false;
+        if ((dialogueScript.getTask() == 5) && (other.gameObject.tag == "Player"))
+        {
+            inZone = false;
+        }
     }
 }

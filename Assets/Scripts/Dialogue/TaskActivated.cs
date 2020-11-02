@@ -259,9 +259,13 @@ public class TaskActivated : MonoBehaviour
 
 
     }
-        //A NOTE FOR BRADEN AND THE OTHERS
-        //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
-        //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
+    public int getTask()
+    {
+        return TaskNum;
+    }
+    //A NOTE FOR BRADEN AND THE OTHERS
+    //HOW THE CODE WORKS IS BY ORDER ON HOW YOU WANT THE GAME TO PLAY DIFFERENTLY
+    //MEANING THINK OF THE MANY BRANCHES PATHS THE PLAYER COULD GO WITH AND APPLY
     private void ProgressionOnLevel()
     {
         string sentence = sentences.Dequeue();
