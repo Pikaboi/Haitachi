@@ -427,7 +427,7 @@ public class DialogueActivated : MonoBehaviour
                 {
       
                     sentences.Enqueue("Oh the cabinet is at the corner");
-                    sentences.Enqueue("The combination is 6969...alright?");
+                    sentences.Enqueue("The combination is 4286...alright?");
                 }
                 if (nameText.text == "Sarah")
                 {
