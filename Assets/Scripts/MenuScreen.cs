@@ -8,11 +8,10 @@ public class MenuScreen : MonoBehaviour
 {
     GlobalController cont;
 
-    public Text text;
+    public GameObject text;
 
     private Vector2 mousePos = new Vector2(500.0f, 350.0f);
     private bool start = false;
-    private bool mouseStart = false;
 
     void Awake()
     {
@@ -36,16 +35,12 @@ public class MenuScreen : MonoBehaviour
         cont.controller.Menu.Start.performed += ctx => start = true;
         cont.controller.Menu.Start.canceled += ctx => start = false;
 
-        transform.position = new Vector3(mousePos.x, mousePos.y);
+        transform.position = new Vector3(mousePos.x, mousePos.y, 0);
 
         if(Vector3.Distance(transform.position, text.transform.position) <= 20.0f)
         {
-            cont.keys.Menu.Hold.performed += ctx => mouseStart = true;
-            cont.keys.Menu.Hold.canceled += ctx => mouseStart = false;
-            if (mouseStart == true)
-            {
-                SceneManager.LoadScene(1);
-            }
+            cont.keys.Menu.Hold.performed += ctx => start = true;
+            cont.keys.Menu.Hold.canceled += ctx => start = false;
         }
 
         if(start == true)

@@ -302,7 +302,7 @@ public class @Xbox : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""613f7876-b5c8-4a21-b059-de13fb115c07"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
