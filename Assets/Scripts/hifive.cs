@@ -32,6 +32,7 @@ public class hifive : MonoBehaviour
         if (colbool == true)
         {
             cont.controller.Game.Hi5.started += ctx => Hi5();
+            cont.keys.Game.Hi5.started += ctx => Hi5();
         }
     }
     private void OnTriggerEnter(Collider other)

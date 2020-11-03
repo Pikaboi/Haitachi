@@ -26,7 +26,10 @@ public class Infector : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Infector>() != null)
         {
-            other.gameObject.GetComponent<Infector>().beginInfect();
+            if (sys.isPlaying == true)
+            {
+                other.gameObject.GetComponent<Infector>().beginInfect();
+            }
         }
     }
 }
