@@ -276,21 +276,14 @@ public class TaskActivated : MonoBehaviour
 
 
     }
-    private void SetWorkersToDead()
+    public void SetWorkersToDead()
     {
-        if(isdead == false)
+        foreach (GameObject g in NPCbox) {
+           g.SetActive(false);
+        }
+        foreach (GameObject g in InfectedBox)
         {
-
-            foreach (GameObject g in NPCbox)
-            {
-                if (g.GetComponent<Infector>().sys.isPlaying == true)
-                {
-                    g.SetActive(false);
-
-                    isdead = true;
-                    Debug.Log(isdead);
-                }
-            }
+            g.SetActive(true);
         }
     }
     public int getTask()
@@ -314,6 +307,7 @@ public class TaskActivated : MonoBehaviour
                     //Debug.Log("Boss assigned");
                     sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
+                    SetWorkersToDead();
                     //sentences.Enqueue(sentence);
                 }
                 break;
@@ -473,7 +467,7 @@ public class TaskActivated : MonoBehaviour
                     //Debug.Log("Boss assigned");
                     sentences.Enqueue("Go to Boss");
                     TaskNum = 8;
-                    SetWorkersToDead();
+                   
                     //sentences.Enqueue(sentence);
                 }
                 else if(sentence == "Go To Boss")

@@ -3265,6 +3265,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 111818952874239928, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 111818953508757965, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
     - target: {fileID: 1223873675522570386, guid: da1dff349ed2d4d4c98170047870ffdc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3323,7 +3333,67 @@ PrefabInstance:
     - target: {fileID: 1223873675522570387, guid: da1dff349ed2d4d4c98170047870ffdc,
         type: 3}
       propertyPath: m_Name
-      value: Workers (2)
+      value: WorkersDead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854831921281664846, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797279001458172927, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3977993580162815213, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3977993580728461006, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496820840155110736, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496820840879244194, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496820840957225474, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870613659603068022, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870613659603068022, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755312114419721271, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196188745992237715, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971325845009032809, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
       objectReference: {fileID: 0}
     - target: {fileID: 8666688668619899597, guid: da1dff349ed2d4d4c98170047870ffdc,
         type: 3}
@@ -3391,6 +3461,16 @@ PrefabInstance:
       value: Infected
       objectReference: {fileID: 0}
     - target: {fileID: 8666688670378735984, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128909911442131378, guid: da1dff349ed2d4d4c98170047870ffdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Infected
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128909913399727879, guid: da1dff349ed2d4d4c98170047870ffdc,
         type: 3}
       propertyPath: m_TagString
       value: Infected
@@ -3480,6 +3560,27 @@ PrefabInstance:
     - {fileID: 1223873675986681106, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
     - {fileID: 1223873675808823252, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
     - {fileID: 1223873675718242282, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243606645462568, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243606645462575, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243605944935052, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243605944935043, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243606725977885, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243606725977884, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243605821022516, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 454243605821022517, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 2901148849038446787, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 2692591140336712493, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 2901148847509261873, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 1003408559413305004, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 1003408559978032271, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 4613826098105812161, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 2692591140008666520, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 2901148848971987299, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 6073007676077858315, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 3527716354725834910, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 2032645470825662286, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 4779385305132414417, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
+    - {fileID: 1223873675175108786, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da1dff349ed2d4d4c98170047870ffdc, type: 3}
 --- !u!1 &943980220 stripped
 GameObject:
