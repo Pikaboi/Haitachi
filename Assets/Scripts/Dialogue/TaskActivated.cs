@@ -514,8 +514,6 @@ public class TaskActivated : MonoBehaviour
                     //sentences.Enqueue(sentence);
                 }
                 break;
-
-
             default:
                 break;
         }

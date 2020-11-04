@@ -17,6 +17,7 @@ TagManager:
   - Boss
   - NPC
   - Infected
+  - EndScren
   layers:
   - Default
   - TransparentFX
