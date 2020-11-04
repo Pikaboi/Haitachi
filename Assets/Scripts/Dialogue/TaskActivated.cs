@@ -287,7 +287,8 @@ public class TaskActivated : MonoBehaviour
                 {
                     g.SetActive(false);
 
-                    InfectedBox[each].SetActive(true);
+                    isdead = true;
+                    Debug.Log(isdead);
                 }
             }
         }
