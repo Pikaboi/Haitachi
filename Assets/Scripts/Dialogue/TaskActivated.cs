@@ -255,12 +255,14 @@ public class TaskActivated : MonoBehaviour
     {
         CanTalk = true;
         contDialogue = true;
+        isTalk = false;
     }
 
     public void stopTalk()
     {
         CanTalk = false;
         contDialogue = true;
+        isTalk = true;
     }
 
     public void setTag(string newtag)
