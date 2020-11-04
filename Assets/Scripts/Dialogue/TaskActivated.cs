@@ -330,7 +330,6 @@ public class TaskActivated : MonoBehaviour
                     //Debug.Log("Boss assigned");
                     sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
-                    SetWorkersToDead();
                     //sentences.Enqueue(sentence);
                 }
                 break;
@@ -490,7 +489,7 @@ public class TaskActivated : MonoBehaviour
                     //Debug.Log("Boss assigned");
                     sentences.Enqueue("Go to Boss");
                     TaskNum = 8;
-                   
+                    SetWorkersToDead();
                     //sentences.Enqueue(sentence);
                 }
                 else if(sentence == "Go To Boss")
