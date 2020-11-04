@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class LockPuzzle : MonoBehaviour
 {
     public Text[] texts;
-
+    public AudioSource lockSound;
     public StartLockPuzzle starter;
 
     GlobalController cont;
@@ -25,12 +25,12 @@ public class LockPuzzle : MonoBehaviour
 
     private void OnEnable()
     {
-        cont.controller.LockPuzzle.NumUp.started += ctx => num+=0.5f;
-        cont.controller.LockPuzzle.NumDown.started += ctx => num-=0.5f;
+        cont.controller.LockPuzzle.NumUp.started += ctx => { num += 0.5f; lockSound.Play(); };
+        cont.controller.LockPuzzle.NumDown.started += ctx => { num -= 0.5f; lockSound.Play();};
         cont.controller.LockPuzzle.LockLeft.started += ctx => NextSlot(lockNum - 0.5f);
         cont.controller.LockPuzzle.Lockright.started += ctx => NextSlot(lockNum + 0.5f);
-        cont.keys.LockPuzzle.NumUp.started += ctx => num+=0.5f;
-        cont.keys.LockPuzzle.NumDown.started += ctx => num-=0.5f;
+        cont.keys.LockPuzzle.NumUp.started += ctx => { num += 0.5f; lockSound.Play();};
+        cont.keys.LockPuzzle.NumDown.started += ctx => { num -= 0.5f; lockSound.Play(); };
         cont.keys.LockPuzzle.LockLeft.started += ctx => NextSlot(lockNum - 0.5f);
         cont.keys.LockPuzzle.Lockright.started += ctx => NextSlot(lockNum + 0.5f);
 
@@ -54,7 +54,7 @@ public class LockPuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        lockSound.Stop();
     }
 
     // Update is called once per frame

@@ -347,6 +347,71 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""75ddd082-4858-4ede-9a49-d6b8aeef6e45"",
+            ""actions"": [
+                {
+                    ""name"": ""Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""bc48b809-e016-40c1-9f72-acbfb96c6e5e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1c9f001-da6b-4441-a96b-33026782678f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Closegame"",
+                    ""type"": ""Button"",
+                    ""id"": ""b438255b-0d2c-4c9e-b5a1-6c6ee74b08a5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""05010477-5f95-4ca5-a36d-e95ae49e0fdf"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aec16bbd-6607-4f92-bd24-907021763af4"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da458f98-0140-49b4-8944-b4058897faa9"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Closegame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -371,6 +436,11 @@ public class @Keyboard : IInputActionCollection, IDisposable
         m_CompPuzzle_Move = m_CompPuzzle.FindAction("Move", throwIfNotFound: true);
         m_CompPuzzle_Hold = m_CompPuzzle.FindAction("Hold", throwIfNotFound: true);
         m_CompPuzzle_Exit = m_CompPuzzle.FindAction("Exit", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_Hold = m_Menu.FindAction("Hold", throwIfNotFound: true);
+        m_Menu_Move = m_Menu.FindAction("Move", throwIfNotFound: true);
+        m_Menu_Closegame = m_Menu.FindAction("Closegame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -603,6 +673,55 @@ public class @Keyboard : IInputActionCollection, IDisposable
         }
     }
     public CompPuzzleActions @CompPuzzle => new CompPuzzleActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_Hold;
+    private readonly InputAction m_Menu_Move;
+    private readonly InputAction m_Menu_Closegame;
+    public struct MenuActions
+    {
+        private @Keyboard m_Wrapper;
+        public MenuActions(@Keyboard wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Hold => m_Wrapper.m_Menu_Hold;
+        public InputAction @Move => m_Wrapper.m_Menu_Move;
+        public InputAction @Closegame => m_Wrapper.m_Menu_Closegame;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @Hold.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnHold;
+                @Hold.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnHold;
+                @Hold.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnHold;
+                @Move.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMove;
+                @Closegame.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnClosegame;
+                @Closegame.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnClosegame;
+                @Closegame.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnClosegame;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Hold.started += instance.OnHold;
+                @Hold.performed += instance.OnHold;
+                @Hold.canceled += instance.OnHold;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Closegame.started += instance.OnClosegame;
+                @Closegame.performed += instance.OnClosegame;
+                @Closegame.canceled += instance.OnClosegame;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface IGameActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -625,5 +744,11 @@ public class @Keyboard : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnHold(InputAction.CallbackContext context);
         void OnExit(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnHold(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnClosegame(InputAction.CallbackContext context);
     }
 }

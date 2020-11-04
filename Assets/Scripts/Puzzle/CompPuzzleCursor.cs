@@ -9,6 +9,8 @@ public class CompPuzzleCursor : MonoBehaviour
 
     GlobalController cont;
 
+    public AudioSource mouseSource;
+
     public StartCompPuzzle starter;
 
     private Vector2 mousePos = new Vector2(500.0f, 350.0f);
@@ -25,6 +27,7 @@ public class CompPuzzleCursor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mouseSource.Stop();
     }
 
     // Update is called once per frame
@@ -32,12 +35,12 @@ public class CompPuzzleCursor : MonoBehaviour
     {
         cont.keys.CompPuzzle.Move.performed += ctx => mousePos = ctx.ReadValue<Vector2>();
         cont.keys.CompPuzzle.Move.canceled += ctx => mousePos = Vector2.zero;
-        cont.keys.CompPuzzle.Hold.performed += ctx => held = true;
+        cont.keys.CompPuzzle.Hold.performed += ctx => {held = true; mouseSource.Play(); };
         cont.keys.CompPuzzle.Hold.canceled += ctx => held = false;
 
         cont.controller.CompPuzzle.Move.performed += ctx => moveData = ctx.ReadValue<Vector2>();
         cont.controller.CompPuzzle.Move.canceled += ctx => moveData = Vector2.zero;
-        cont.controller.CompPuzzle.Hold.performed += ctx => held = true;
+        cont.controller.CompPuzzle.Hold.performed += ctx => { held = true; mouseSource.Play(); };
         cont.controller.CompPuzzle.Hold.canceled += ctx => held = false;
 
         cont.controller.CompPuzzle.Exit.performed += ctx => {
