@@ -147,7 +147,7 @@ public class TaskActivated : MonoBehaviour
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                Debug.Log(TaskNum);
+                //Debug.Log(TaskNum);
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
@@ -225,6 +225,7 @@ public class TaskActivated : MonoBehaviour
     public void stopTalk()
     {
         CanTalk = false;
+        contDialogue = true;
     }
 
     public void setTag(string newtag)
@@ -236,7 +237,7 @@ public class TaskActivated : MonoBehaviour
     {
         //Debug.Log("Starting dialouge with" + dialouge.Name);
         sentences.Clear();
-        Debug.Log(dialouge.sentences[0]);
+        //Debug.Log(dialouge.sentences[0]);
         nameText.text = dialouge.Name;
 
         foreach (string sentence in dialouge.sentences)
@@ -293,18 +294,6 @@ public class TaskActivated : MonoBehaviour
                     sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
                     //sentences.Enqueue(sentence);
-                }
-                else if(sentence == "Go To Boss")
-                {
-
-                }
-                else if(sentence == "Deliver Coffee to the boss")
-                {
-
-                }
-                else
-                {
-                    sentences.Enqueue(sentence);
                 }
                 break;
             case 1: //branch 1

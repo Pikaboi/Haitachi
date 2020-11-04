@@ -143,6 +143,7 @@ public class DialogueActivated : MonoBehaviour
         contDialogue = false;
         if (taskText != null && TaskREquired == true)
         {
+            
             taskText.GiveTask();
 
         }
@@ -444,7 +445,7 @@ public class DialogueActivated : MonoBehaviour
                 break;
 
             case 2: //Task one Completed
-                taskText.ResetTask();
+                //taskText.ResetTask();
                 if (Intertag == "Boss")
                 {
 
