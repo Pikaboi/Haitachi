@@ -279,11 +279,15 @@ public class TaskActivated : MonoBehaviour
     public void SetWorkersToDead()
     {
         foreach (GameObject g in NPCbox) {
-           g.SetActive(false);
+            if (g.GetComponent<Infector>().sys.isPlaying == true)
+            {
+                Debug.Log(g);
+                g.SetActive(false);
+            }
         }
-        foreach (GameObject g in InfectedBox)
+        foreach (GameObject i in InfectedBox)
         {
-            g.SetActive(true);
+            i.SetActive(true);
         }
     }
     public int getTask()
