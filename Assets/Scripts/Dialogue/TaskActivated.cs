@@ -8,9 +8,12 @@ public class TaskActivated : MonoBehaviour
 
     GameObject[] DialougeBoxes;
     GameObject[] MenuBoxes;
+
+    public GameObject workers;
     private bool CanTalk;
     private string Intertag;
     private bool isTalk;
+    private bool isdead = false;
 
     Dialogue CurrentSpeech;
 
@@ -103,7 +106,7 @@ public class TaskActivated : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        //Debug.Log(sentence);
         // dialogueText.text = sentence;
 
         StopAllCoroutines();
@@ -131,6 +134,7 @@ public class TaskActivated : MonoBehaviour
         isTalk = false;
         CanTalk = false;
         contDialogue = false;
+
         //hideDialouge();
     }
 
@@ -143,14 +147,15 @@ public class TaskActivated : MonoBehaviour
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                //Debug.Log(TaskNum);
+                Debug.Log(TaskNum);
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
                 }
                 if (isTalk == false)
                 {
-                   // Debug.Log("interact");
+                    //Debug.Log("interact");
+                    //Debug.Log(TaskNum);
 
                     //Time.timeScale = 0;
                     showDialouge();
@@ -231,7 +236,7 @@ public class TaskActivated : MonoBehaviour
     {
         //Debug.Log("Starting dialouge with" + dialouge.Name);
         sentences.Clear();
-        //Debug.Log(dialouge.sentences[0]);
+        Debug.Log(dialouge.sentences[0]);
         nameText.text = dialouge.Name;
 
         foreach (string sentence in dialouge.sentences)
@@ -259,6 +264,13 @@ public class TaskActivated : MonoBehaviour
 
 
     }
+    private void SetWorkersToDead()
+    {
+        if(isdead == false)
+        {
+            workers.SetActive(false);
+        }
+    }
     public int getTask()
     {
         return TaskNum;
@@ -269,8 +281,9 @@ public class TaskActivated : MonoBehaviour
     private void ProgressionOnLevel()
     {
         string sentence = sentences.Dequeue();
-        
 
+        //Debug.Log(sentence);
+        //Debug.Log(TaskNum);
         switch (TaskNum)
         {
             case 0: //Branch 0
@@ -280,6 +293,14 @@ public class TaskActivated : MonoBehaviour
                     sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
                     //sentences.Enqueue(sentence);
+                }
+                else if(sentence == "Go To Boss")
+                {
+
+                }
+                else if(sentence == "Deliver Coffee to the boss")
+                {
+
                 }
                 else
                 {
@@ -308,7 +329,16 @@ public class TaskActivated : MonoBehaviour
 
                     //Debug.Log("New Assignment");
                     //sentences.Enqueue(sentence);
+                    //sentences.Enqueue(sentence);
                     //TaskNum = 3;
+
+                }
+                else if(sentence == "Go To Boss")
+                {
+
+                }
+                else if(sentence == "Deliver Coffee to the boss")
+                {
 
                 }
                 else
@@ -322,8 +352,17 @@ public class TaskActivated : MonoBehaviour
                 {
 
                     //Debug.Log("New Assignment");
+                    //Debug.Log(sentence);
                     sentences.Enqueue("Go find Lucas");
                     TaskNum = 3;
+
+                }
+                else if(sentence == "Go To Boss")
+                {
+
+                }
+                else if(sentence == "Deliver Coffee to the boss")
+                {
 
                 }
                 else
@@ -346,6 +385,10 @@ public class TaskActivated : MonoBehaviour
                     //sentences.Enqueue(sentence);
                     sentences.Enqueue(sentence);
                 }
+                else if(sentence == "Deliver Coffee to the boss")
+                {
+
+                }
                 else
                 {
                     sentences.Enqueue(sentence);
@@ -358,6 +401,14 @@ public class TaskActivated : MonoBehaviour
                     sentences.Enqueue("Get the PC fixed");
                     TaskNum = 5;
                     //sentences.Enqueue(sentence);
+                }
+                else if(sentence == "Go To Boss")
+                {
+
+                }
+                else if(sentence == "Deliver Coffee to the boss")
+                {
+
                 }
                 else
                 {
@@ -372,6 +423,14 @@ public class TaskActivated : MonoBehaviour
                     //TaskNum = 1;
                     //sentences.Enqueue(sentence);
                 }
+                else if(sentence == "Go To Boss")
+                {
+
+                }
+                else if(sentence == "Deliver Coffee to the boss")
+                {
+
+                }
                 else
                 {
                     sentences.Enqueue(sentence);
@@ -381,9 +440,17 @@ public class TaskActivated : MonoBehaviour
                 if (sentence == "Go find Lucas")
                 {
                     //Debug.Log("Boss assigned");
-                    sentences.Enqueue("Get some food");
+                    sentences.Enqueue("Get the coffee");
                     TaskNum = 7;
                     //sentences.Enqueue(sentence);
+                }
+                else if(sentence == "Go To Boss")
+                {
+
+                }
+                else if(sentence == "Deliver Coffee to the boss")
+                {
+
                 }
                 else
                 {
@@ -391,7 +458,35 @@ public class TaskActivated : MonoBehaviour
                 }
                 break;
             case 7: //promoted 
+                if (sentence == "Deliver Coffee to the boss")
+                {
+                    //Debug.Log("Boss assigned");
+                    sentences.Enqueue("Go to Boss");
+                    TaskNum = 8;
+                    SetWorkersToDead();
+                    //sentences.Enqueue(sentence);
+                }
+                else if(sentence == "Go To Boss")
+                {
 
+                }
+                else if(sentence == "Go find Lucas")
+                {
+                }
+                else if (sentence == "Deliver Coffee to the boss")
+                {
+
+                }
+                    break;
+            case 8: //promoted 
+                if (sentence == "Go find Lucas")
+                {
+                    //Debug.Log("Boss assigned")
+                    //sentences.Enqueue("Get the coffee");
+                    TaskNum = 9;
+                    Debug.Log("THEEND");
+                    //sentences.Enqueue(sentence);
+                }
                 break;
 
 

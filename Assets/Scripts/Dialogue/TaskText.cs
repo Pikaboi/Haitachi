@@ -79,7 +79,7 @@ public class TaskText : MonoBehaviour
     {
         if (OnlyOnce)
         {
-           // Debug.Log("Talk to once");
+           Debug.Log("Talk to once");
             Menu.setToTalk();
             Menu.setTag(gameObject.tag);
             //Find Who Made the message based on tag
@@ -105,6 +105,6 @@ public class TaskText : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         //Turn off the talk button
-        Menu.stopTalk();
+        //Menu.stopTalk();
     }
 }

@@ -13,6 +13,8 @@ public class DialogueActivated : MonoBehaviour
 
     Dialogue CurrentSpeech;
 
+    public AudioSource TalkSFX;
+
     public Text nameText;
     public Text dialogueText;
 
@@ -71,6 +73,7 @@ public class DialogueActivated : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TalkSFX.Stop();
         sentences = new Queue<string>();
 
         // Unpauses game if paused
@@ -122,6 +125,7 @@ public class DialogueActivated : MonoBehaviour
         
         foreach (char letter in sentence.ToCharArray())
         {
+            TalkSFX.Play();
             dialogueText.text += letter;
             //Debug.Log("new letter");
             yield return new WaitForSeconds(dialSpeed);
@@ -440,12 +444,15 @@ public class DialogueActivated : MonoBehaviour
                 break;
 
             case 2: //Task one Completed
+                taskText.ResetTask();
                 if (Intertag == "Boss")
                 {
+
                     taskText.ResetTask();
                     sentences.Enqueue("Ah the files, well done!");
                     sentences.Enqueue("Now i require some paper that needs to be printed.");
                     sentences.Enqueue("Can you retrieve some papers from Lucas?");
+
                     TaskNum = 3;
 
                 }
@@ -566,15 +573,37 @@ public class DialogueActivated : MonoBehaviour
                 if (Intertag == "Boss")
                 {
                     taskText.ResetTask();
+
                     sentences.Enqueue("You fixed the computer? Amazing!!");
                     sentences.Enqueue("Congratulations, I can now confidently give you your well deserved promotion!");
                     sentences.Enqueue("And with that, go early to lunch. You deserved it!");
+
                     TaskNum = 7;
 
 
 
                 }
                 break;
+            case 7: //get coffeee
+                if (nameText.text == "Reception")
+                {
+                    sentences.Enqueue("Hm? Coffee?");
+                    sentences.Enqueue("Oh the boss's coffee, its right here");
+                    sentences.Enqueue("here you go");
+                    TaskNum = 8;
+                }
+                break;
+            case 8: //get coffeee
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("Thanks for the coffee...*cough*");
+                    sentences.Enqueue("Sorry i dont feel good...i think im gonna go home");
+                    sentences.Enqueue("...did something happpen?");
+                    TaskNum = 9;
+                }
+                break;
+
             default:
                 break;
         }

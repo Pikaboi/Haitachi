@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     public float movespeed;
     public Rigidbody rb;
 
+    public AudioSource walkSFX;
+
     private Vector2 movedata;
 
     bool onController = true;
@@ -31,9 +33,9 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cont.keys.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.keys.Game.Move.performed += ctx => {movedata = ctx.ReadValue<Vector2>(); walkSFX.Play(); };
         cont.keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
-        cont.controller.Game.Move.performed += ctx => movedata = ctx.ReadValue<Vector2>();
+        cont.controller.Game.Move.performed += ctx => { movedata = ctx.ReadValue<Vector2>(); walkSFX.Play(); };
         cont.controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
 
         cont.keys.Game.Closegame.performed += ctx => Application.Quit();
