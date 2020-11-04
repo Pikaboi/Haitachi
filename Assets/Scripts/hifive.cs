@@ -11,6 +11,7 @@ public class hifive : MonoBehaviour
     GameObject CurrentNPC;
 
     public ParticleSystem particle;
+    public AudioSource hifivesource;
 
     public Animator m_Animator;
 
@@ -27,7 +28,8 @@ public class hifive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        hifivesource.Stop();
+        particle.Stop();
     }
 
     // Update is called once per frame
@@ -58,6 +60,9 @@ public class hifive : MonoBehaviour
 
     private void Hi5()
     {
+        particle.transform.position = new Vector3(CurrentNPC.transform.position.x, CurrentNPC.transform.position.y + 10.0f, CurrentNPC.transform.position.z);
+        particle.Play();
+        hifivesource.Play();
         m_Animator.SetBool("isHigh", true);
         CurrentNPC.GetComponent<Infector>().beginInfect();
     }
