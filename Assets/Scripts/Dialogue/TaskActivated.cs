@@ -36,6 +36,8 @@ public class TaskActivated : MonoBehaviour
     int TaskNum = 0;
     int each = 0;
 
+    int dyingBoxCount = 0;
+
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -78,7 +80,6 @@ public class TaskActivated : MonoBehaviour
 
         // Unpauses game if paused
         Time.timeScale = 1;
-
         DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
         InfectedBox = GameObject.FindGameObjectsWithTag("Infected");
         hideDialouge();
@@ -303,7 +304,6 @@ public class TaskActivated : MonoBehaviour
     public void SetWorkersToDead()
     {
         foreach (GameObject g in dyingBox) {
-            Debug.Log(g);
             g.SetActive(false);
             g.GetComponent<Infector>().corpse.SetActive(true);
             g.GetComponent<Infector>().corpse.transform.GetChild(1).gameObject.SetActive(true);
@@ -523,5 +523,4 @@ public class TaskActivated : MonoBehaviour
     {
         CurrentSpeech = dialouge;
     }
-
 }
