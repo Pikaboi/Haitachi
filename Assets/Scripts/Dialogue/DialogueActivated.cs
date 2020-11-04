@@ -439,9 +439,9 @@ public class DialogueActivated : MonoBehaviour
                 break;
 
             case 2: //Task one Completed
+                taskText.ResetTask();
                 if (Intertag == "Boss")
                 {
-                    taskText.ResetTask();
                     sentences.Enqueue("Ah the files, well done");
                     sentences.Enqueue("now i require some paper needed to printed");
                     sentences.Enqueue("can you retrieve some papers from lucas");
@@ -566,13 +566,33 @@ public class DialogueActivated : MonoBehaviour
                     taskText.ResetTask();
                     sentences.Enqueue("You fixed the computer? amazing!!");
                     sentences.Enqueue("Congratulation, i now give you your well deserved promotion");
-                    sentences.Enqueue("And with that go early to lunch you deserved it!");
+                    sentences.Enqueue("But do me a small favor, get me some coffee the reception desk!");
                     TaskNum = 7;
 
 
 
                 }
                 break;
+            case 7: //get coffeee
+                if (nameText.text == "Reception")
+                {
+                    sentences.Enqueue("Hm? Coffee?");
+                    sentences.Enqueue("Oh the boss's coffee, its right here");
+                    sentences.Enqueue("here you go");
+                    TaskNum = 8;
+                }
+                break;
+            case 8: //get coffeee
+                if (Intertag == "Boss")
+                {
+                    taskText.ResetTask();
+                    sentences.Enqueue("Thanks for the coffee...*cough*");
+                    sentences.Enqueue("Sorry i dont feel good...i think im gonna go home");
+                    sentences.Enqueue("...did something happpen?");
+                    TaskNum = 9;
+                }
+                break;
+
             default:
                 break;
         }
