@@ -8,6 +8,8 @@ public class TaskActivated : MonoBehaviour
 
     GameObject[] DialougeBoxes;
     GameObject[] MenuBoxes;
+    GameObject[] NPCbox;
+    GameObject[] InfectedBox;
 
     public GameObject workers;
     private bool CanTalk;
@@ -76,8 +78,10 @@ public class TaskActivated : MonoBehaviour
         Time.timeScale = 1;
 
         DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
+        NPCbox = GameObject.FindGameObjectsWithTag("NPC");
+        InfectedBox = GameObject.FindGameObjectsWithTag("Infected");
         hideDialouge();
-
+        hideInfect();
         CanTalk = false;
         stopTalk();
     }
@@ -197,9 +201,15 @@ public class TaskActivated : MonoBehaviour
             g.SetActive(false);
         }
     }
-
-    // Shows objects with ShowOnPause tag
-    public void showPaused()
+    public void hideInfect()
+    {
+        foreach (GameObject g in InfectedBox)
+        {
+            g.SetActive(false);
+        }
+    }
+        // Shows objects with ShowOnPause tag
+        public void showPaused()
     {
         foreach (GameObject g in MenuBoxes)
         {
@@ -269,7 +279,15 @@ public class TaskActivated : MonoBehaviour
     {
         if(isdead == false)
         {
-            workers.SetActive(false);
+
+            foreach (GameObject g in NPCbox)
+            {
+                if (g.GetComponent<Infector>().sys.isPlaying == true)
+                {
+                    g.SetActive(true);
+                    InfectedBox[]
+                }
+            }
         }
     }
     public int getTask()
