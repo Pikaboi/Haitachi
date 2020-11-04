@@ -10,6 +10,8 @@ public class hifive : MonoBehaviour
     bool colbool = false;
     GameObject CurrentNPC;
 
+    public ParticleSystem particle;
+
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
