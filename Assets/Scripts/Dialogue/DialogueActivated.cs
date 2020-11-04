@@ -34,6 +34,9 @@ public class DialogueActivated : MonoBehaviour
     int TaskNum = 0;
     bool TaskComplete = true;
 
+
+    GameObject endscreen;
+
     bool TaskREquired = false;
     //For input system
     //Does it as long as its enabled
@@ -81,6 +84,10 @@ public class DialogueActivated : MonoBehaviour
 
         DialougeBoxes = GameObject.FindGameObjectsWithTag("DialogueUI");
         hideDialouge();
+
+
+        endscreen = GameObject.FindGameObjectWithTag("EndScren");
+        
 
         CanTalk = false;
         stopTalk();
@@ -141,6 +148,10 @@ public class DialogueActivated : MonoBehaviour
         isTalk = false;
         CanTalk = false;
         contDialogue = false;
+        if(TaskNum==9)
+        {
+            endscreen.GetComponent<Endscreen>().startFade();
+        }
         if (taskText != null && TaskREquired == true)
         {
             
@@ -603,9 +614,8 @@ public class DialogueActivated : MonoBehaviour
                     sentences.Enqueue("Sorry i dont feel good...i think im gonna go home");
                     sentences.Enqueue("...did something happpen?");
                     TaskNum = 9;
-
-                    GameObject endscreen = GameObject.FindGameObjectWithTag("EndScren");
-                    endscreen.GetComponent<Endscreen>().startFade();
+                   
+                    
                 }
                 break;
             default:
