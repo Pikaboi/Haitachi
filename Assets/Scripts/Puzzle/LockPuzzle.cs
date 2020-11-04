@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class LockPuzzle : MonoBehaviour
 {
     public Text[] texts;
+    public Image[] images;
     public AudioSource lockSound;
     public StartLockPuzzle starter;
 
@@ -64,6 +65,14 @@ public class LockPuzzle : MonoBehaviour
         lockNum = Mathf.Clamp(lockNum, 0.0f, 3.0f);
 
         texts[(int)lockNum].text = "" + (int)num;
+        images[(int)lockNum].color = new Color(255, 255, 255);
+
+        foreach (Image obj in images) {
+            if(obj != images[(int)lockNum])
+            {
+                obj.color = new Color(125, 125, 125);
+            }
+        }
 
         string answerstr = "";
         for (int i = 0; i < texts.Length; i++)
