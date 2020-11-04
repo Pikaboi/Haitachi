@@ -126,7 +126,7 @@ public class @Xbox : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""481da6f5-66b5-4864-92f1-6082d60c66a1"",
-                    ""path"": ""<GamePad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -340,7 +340,7 @@ public class @Xbox : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""21dcdcdc-2656-408e-9ad9-ec05a3542293"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<GamePad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
