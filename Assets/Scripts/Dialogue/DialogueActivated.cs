@@ -13,6 +13,8 @@ public class DialogueActivated : MonoBehaviour
 
     Dialogue CurrentSpeech;
 
+    public AudioSource TalkSFX;
+
     public Text nameText;
     public Text dialogueText;
 
@@ -71,6 +73,7 @@ public class DialogueActivated : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TalkSFX.Stop();
         sentences = new Queue<string>();
 
         // Unpauses game if paused
@@ -122,6 +125,7 @@ public class DialogueActivated : MonoBehaviour
         
         foreach (char letter in sentence.ToCharArray())
         {
+            TalkSFX.Play();
             dialogueText.text += letter;
             //Debug.Log("new letter");
             yield return new WaitForSeconds(dialSpeed);
