@@ -36,6 +36,8 @@ public class TaskActivated : MonoBehaviour
     int TaskNum = 0;
     int each = 0;
 
+    int dyingBoxCount = 0;
+
     //For input system
     //Does it as long as its enabled
     void Awake()
@@ -170,6 +172,8 @@ public class TaskActivated : MonoBehaviour
                 }
             }
         }
+
+        dyingBoxCount = numcount;
 
         if (CanTalk == true)
         {
@@ -511,6 +515,8 @@ public class TaskActivated : MonoBehaviour
                     //sentences.Enqueue("Get the coffee");
                     TaskNum = 9;
                     Debug.Log("THEEND");
+                    GameObject endscreen = GameObject.FindGameObjectWithTag("EndScren");
+                    endscreen.GetComponent<Endscreen>().startFade();
                     //sentences.Enqueue(sentence);
                 }
                 break;
@@ -522,6 +528,12 @@ public class TaskActivated : MonoBehaviour
     public void GetDialouge(Dialogue dialouge)
     {
         CurrentSpeech = dialouge;
+    }
+
+    public int getDeadCount()
+    {
+        Debug.Log(dyingBoxCount);
+        return dyingBoxCount;
     }
 
 }
