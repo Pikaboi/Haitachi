@@ -57,6 +57,14 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""End"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b911b8c-904b-4d03-a211-bd4bc1d900e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -112,6 +120,17 @@ public class @Xbox : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Hi5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""481da6f5-66b5-4864-92f1-6082d60c66a1"",
+                    ""path"": ""<GamePad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""End"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -341,6 +360,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         m_Game_Swap = m_Game.FindAction("Swap", throwIfNotFound: true);
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
         m_Game_Hi5 = m_Game.FindAction("Hi5", throwIfNotFound: true);
+        m_Game_End = m_Game.FindAction("End", throwIfNotFound: true);
         // LockPuzzle
         m_LockPuzzle = asset.FindActionMap("LockPuzzle", throwIfNotFound: true);
         m_LockPuzzle_NumUp = m_LockPuzzle.FindAction("NumUp", throwIfNotFound: true);
@@ -411,6 +431,7 @@ public class @Xbox : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Swap;
     private readonly InputAction m_Game_Interact;
     private readonly InputAction m_Game_Hi5;
+    private readonly InputAction m_Game_End;
     public struct GameActions
     {
         private @Xbox m_Wrapper;
@@ -420,6 +441,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         public InputAction @Swap => m_Wrapper.m_Game_Swap;
         public InputAction @Interact => m_Wrapper.m_Game_Interact;
         public InputAction @Hi5 => m_Wrapper.m_Game_Hi5;
+        public InputAction @End => m_Wrapper.m_Game_End;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -444,6 +466,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Hi5.started -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
                 @Hi5.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
                 @Hi5.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnHi5;
+                @End.started -= m_Wrapper.m_GameActionsCallbackInterface.OnEnd;
+                @End.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnEnd;
+                @End.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnEnd;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -463,6 +488,9 @@ public class @Xbox : IInputActionCollection, IDisposable
                 @Hi5.started += instance.OnHi5;
                 @Hi5.performed += instance.OnHi5;
                 @Hi5.canceled += instance.OnHi5;
+                @End.started += instance.OnEnd;
+                @End.performed += instance.OnEnd;
+                @End.canceled += instance.OnEnd;
             }
         }
     }
@@ -629,6 +657,7 @@ public class @Xbox : IInputActionCollection, IDisposable
         void OnSwap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnHi5(InputAction.CallbackContext context);
+        void OnEnd(InputAction.CallbackContext context);
     }
     public interface ILockPuzzleActions
     {

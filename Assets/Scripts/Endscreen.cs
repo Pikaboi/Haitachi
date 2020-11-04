@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Endscreen : MonoBehaviour
 {
@@ -9,11 +10,14 @@ public class Endscreen : MonoBehaviour
     public GameObject endtext;
     public GameObject endtext2;
 
+    GlobalController cont;
+
     // Start is called before the first frame update
     void Start()
     {
         endtext.SetActive(false);
         endtext2.SetActive(false);
+        cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class Endscreen : MonoBehaviour
         if(gameObject.GetComponent<Image>().color.a > 0.5f)
         {
             setVisible();
+            cont.keys.Game.End.performed += ctx => SceneManager.LoadScene(0);
+            cont.controller.Game.End.performed += ctx => SceneManager.LoadScene(0);
         }
     }
 

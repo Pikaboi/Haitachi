@@ -65,6 +65,14 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""End"",
+                    ""type"": ""Button"",
+                    ""id"": ""2c30a59d-5118-46fa-a1f3-c62594c96f95"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -175,6 +183,17 @@ public class @Keyboard : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Closegame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""41f085d6-3551-41d7-a65c-ce3706073cf6"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""End"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -424,6 +443,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
         m_Game_Hi5 = m_Game.FindAction("Hi5", throwIfNotFound: true);
         m_Game_Closegame = m_Game.FindAction("Closegame", throwIfNotFound: true);
+        m_Game_End = m_Game.FindAction("End", throwIfNotFound: true);
         // LockPuzzle
         m_LockPuzzle = asset.FindActionMap("LockPuzzle", throwIfNotFound: true);
         m_LockPuzzle_NumUp = m_LockPuzzle.FindAction("NumUp", throwIfNotFound: true);
@@ -496,6 +516,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Interact;
     private readonly InputAction m_Game_Hi5;
     private readonly InputAction m_Game_Closegame;
+    private readonly InputAction m_Game_End;
     public struct GameActions
     {
         private @Keyboard m_Wrapper;
@@ -506,6 +527,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Game_Interact;
         public InputAction @Hi5 => m_Wrapper.m_Game_Hi5;
         public InputAction @Closegame => m_Wrapper.m_Game_Closegame;
+        public InputAction @End => m_Wrapper.m_Game_End;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -533,6 +555,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Closegame.started -= m_Wrapper.m_GameActionsCallbackInterface.OnClosegame;
                 @Closegame.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnClosegame;
                 @Closegame.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnClosegame;
+                @End.started -= m_Wrapper.m_GameActionsCallbackInterface.OnEnd;
+                @End.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnEnd;
+                @End.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnEnd;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -555,6 +580,9 @@ public class @Keyboard : IInputActionCollection, IDisposable
                 @Closegame.started += instance.OnClosegame;
                 @Closegame.performed += instance.OnClosegame;
                 @Closegame.canceled += instance.OnClosegame;
+                @End.started += instance.OnEnd;
+                @End.performed += instance.OnEnd;
+                @End.canceled += instance.OnEnd;
             }
         }
     }
@@ -730,6 +758,7 @@ public class @Keyboard : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnHi5(InputAction.CallbackContext context);
         void OnClosegame(InputAction.CallbackContext context);
+        void OnEnd(InputAction.CallbackContext context);
     }
     public interface ILockPuzzleActions
     {

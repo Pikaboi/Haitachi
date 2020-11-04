@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "If you or anyone you know who has been in the vicinity of the building,
     please self-isolate and alert medical professionals immediately. \r\n\r\nThank
-    you."
+    you.\n\nPress Any Key / B to return to menu."
 --- !u!222 &204821454
 CanvasRenderer:
   m_ObjectHideFlags: 0
