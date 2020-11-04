@@ -46,12 +46,21 @@ public class MenuScreen : MonoBehaviour
         {
             cont.keys.Menu.Hold.performed += ctx => start = true;
             cont.keys.Menu.Hold.canceled += ctx => start = false;
+            text.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+        } else
+        {
+            text.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
 
         if (Vector3.Distance(transform.position, quitter.transform.position) <= 10.0f)
         {
             cont.keys.Menu.Hold.performed += ctx => quit = true;
             cont.keys.Menu.Hold.canceled += ctx => quit = false;
+            quitter.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+        }
+        else
+        {
+            quitter.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
 
         if (start == true)
