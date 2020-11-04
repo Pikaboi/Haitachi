@@ -13253,6 +13253,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8984139874100853885, guid: 9bcad682317815b4c9e100ec2f79a4be,
+        type: 3}
+      propertyPath: walkSFX
+      value: 
+      objectReference: {fileID: 1326086788}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bcad682317815b4c9e100ec2f79a4be, type: 3}
 --- !u!1 &1906252507
@@ -13915,6 +13920,11 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 54828999}
+    - target: {fileID: 458211746588395877, guid: 03219fc8c69ed994888891056848fbee,
+        type: 3}
+      propertyPath: TalkSFX
+      value: 
+      objectReference: {fileID: 585228562}
     - target: {fileID: 458211746588395878, guid: 03219fc8c69ed994888891056848fbee,
         type: 3}
       propertyPath: m_LocalPosition.x
