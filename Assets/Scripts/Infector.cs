@@ -5,6 +5,7 @@ using UnityEngine;
 public class Infector : MonoBehaviour
 {
     public ParticleSystem sys;
+    public bool dying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Infector : MonoBehaviour
     public void beginInfect()
     {
         sys.Play();
+        dying = true;
     }
 
     private void OnTriggerEnter(Collider other)

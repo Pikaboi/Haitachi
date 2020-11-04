@@ -9,6 +9,7 @@ public class TaskActivated : MonoBehaviour
     GameObject[] DialougeBoxes;
     GameObject[] MenuBoxes;
     GameObject[] NPCbox;
+    GameObject[] dyingBox;
     GameObject[] InfectedBox;
 
     public GameObject workers;
@@ -79,7 +80,6 @@ public class TaskActivated : MonoBehaviour
         Time.timeScale = 1;
 
         DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
-        NPCbox = GameObject.FindGameObjectsWithTag("NPC");
         InfectedBox = GameObject.FindGameObjectsWithTag("Infected");
         hideDialouge();
         hideInfect();
@@ -146,6 +146,18 @@ public class TaskActivated : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        NPCbox = GameObject.FindGameObjectsWithTag("NPC");
+
+        foreach (GameObject g in NPCbox) {
+            if(g.GetComponent<Infector>() != null)
+            {
+                Infector inf = g.GetComponent<Infector>();
+                if(inf.dying == true)
+                {
+
+                }
+            }
+        }
 
         if (CanTalk == true)
         {
@@ -278,13 +290,13 @@ public class TaskActivated : MonoBehaviour
     }
     public void SetWorkersToDead()
     {
-        foreach (GameObject g in NPCbox) {
-                Debug.Log(g);
-                g.SetActive(false);
-        }
         foreach (GameObject i in InfectedBox)
         {
             i.SetActive(true);
+        }
+        foreach (GameObject g in NPCbox) {
+                Debug.Log(g);
+                g.SetActive(false);
         }
     }
     public int getTask()
