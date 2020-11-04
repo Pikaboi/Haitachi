@@ -12,6 +12,8 @@ public class hifive : MonoBehaviour
 
     public ParticleSystem particle;
 
+    public Animator m_Animator;
+
     void Awake()
     {
         cont = GameObject.FindGameObjectWithTag("GlobalController").GetComponent<GlobalController>();
@@ -46,8 +48,17 @@ public class hifive : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "NPC")
+        {
+            m_Animator.SetBool("isHigh", false);
+        }
+    }
+
     private void Hi5()
     {
+        m_Animator.SetBool("isHigh", true);
         CurrentNPC.GetComponent<Infector>().beginInfect();
     }
 }
