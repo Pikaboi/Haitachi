@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     private Vector2 movedata;
 
     bool onController = true;
+    public Animator m_Animator;
 
     void Awake()
     {
@@ -33,10 +34,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cont.keys.Game.Move.performed += ctx => {movedata = ctx.ReadValue<Vector2>(); walkSFX.Play(); };
-        cont.keys.Game.Move.canceled += ctx => movedata = Vector2.zero;
-        cont.controller.Game.Move.performed += ctx => { movedata = ctx.ReadValue<Vector2>(); walkSFX.Play(); };
-        cont.controller.Game.Move.canceled += ctx => movedata = Vector2.zero;
+        cont.keys.Game.Move.performed += ctx => { movedata = ctx.ReadValue<Vector2>(); walkSFX.Play(); m_Animator.SetBool("isWalk", true); };
+        cont.keys.Game.Move.canceled += ctx => { movedata = Vector2.zero; m_Animator.SetBool("isWalk", false); };
+        cont.controller.Game.Move.performed += ctx => { movedata = ctx.ReadValue<Vector2>(); walkSFX.Play(); m_Animator.SetBool("isWalk", true); };
+        cont.controller.Game.Move.canceled += ctx => {movedata = Vector2.zero; m_Animator.SetBool("isWalk", false); };
 
         cont.keys.Game.Closegame.performed += ctx => Application.Quit();
 

@@ -16,6 +16,7 @@ public class Changeprompt : MonoBehaviour
     Xbox controller;
     //Use this to check the button is pressed
     bool interactSuccess = false;
+    public Animator m_Animator;
 
     //For input system
     //Does it as long as its enabled
@@ -84,7 +85,7 @@ public class Changeprompt : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             changeNum(promptNum);
-
+            m_Animator.SetBool("isHigh", true);
             switch (num)
             {
                 case 1: //Task one Completed
@@ -113,6 +114,7 @@ public class Changeprompt : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            m_Animator.SetBool("isHigh", false);
             changingText.GetComponent<Text>().text = "";
             if (promptNum == 1)
             {
