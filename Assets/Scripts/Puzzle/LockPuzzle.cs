@@ -70,7 +70,7 @@ public class LockPuzzle : MonoBehaviour
         foreach (Image obj in images) {
             if(obj != images[(int)lockNum])
             {
-                obj.color = new Color(125, 125, 125);
+                obj.color = new Color(0.5f, 0.5f, 0.5f);
             }
         }
 
