@@ -12,13 +12,12 @@ public class CompPuzzlePiece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(cursor.GetComponent<CompPuzzleCursor>().held == true && cursor.GetComponent<CompPuzzleCursor>().currentHeld == null)
+        if (cursor.GetComponent<CompPuzzleCursor>().held == true && cursor.GetComponent<CompPuzzleCursor>().currentHeld == null)
         {
             if (Vector3.Distance(transform.position, cursor.transform.position) <= 20.0f)
             {
