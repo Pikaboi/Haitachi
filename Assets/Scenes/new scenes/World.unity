@@ -5143,7 +5143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endtext: {fileID: 2015299847}
   endtext2: {fileID: 204821451}
-  act: {fileID: 130954592}
 --- !u!1001 &1183627986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8469,7 +8468,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "The Death Toll of the Virus has sadly increased today. The virus has now
-    claimed the lives of  employees working in the ##### Office Headquarters. \r\n"
+    claimed the lives of a few employees working in the ##### Office Headquarters.
+    \r\n"
 --- !u!222 &2015299850
 CanvasRenderer:
   m_ObjectHideFlags: 0

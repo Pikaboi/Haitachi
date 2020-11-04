@@ -176,8 +176,6 @@ public class TaskActivated : MonoBehaviour
             }
         }
 
-        dyingBoxCount = numcount;
-
         if (CanTalk == true)
         {
             // Pressess the Z button to interact
@@ -310,7 +308,6 @@ public class TaskActivated : MonoBehaviour
     public void SetWorkersToDead()
     {
         foreach (GameObject g in dyingBox) {
-            Debug.Log(g);
             g.SetActive(false);
             g.GetComponent<Infector>().corpse.SetActive(true);
             g.GetComponent<Infector>().corpse.transform.GetChild(1).gameObject.SetActive(true);
@@ -531,11 +528,4 @@ public class TaskActivated : MonoBehaviour
     {
         CurrentSpeech = dialouge;
     }
-
-    public int getDeadCount()
-    {
-        Debug.Log(dyingBoxCount);
-        return dyingBoxCount;
-    }
-
 }
