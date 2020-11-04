@@ -308,8 +308,9 @@ public class DialogueActivated : MonoBehaviour
                 if (Intertag == "Boss")
                 {
                     sentences.Enqueue("I wanted to talk with you, and before you ask, you are not in trouble.");
-                    sentences.Enqueue("This is for your promotion, your working had but I need to trust you with tasks.");
-                    sentences.Enqueue("My first task for you is getting some files from the cabinet. It's locked, you remember the combination?");
+                    sentences.Enqueue("This is for your promotion, your working hard but I need to trust you with tasks.");
+                    sentences.Enqueue("My first task for you is getting some files from the cabinet.");
+                    sentences.Enqueue("It's locked, you remember the combination?");
                     TaskNum = 1;
                     TaskREquired = true;
 
@@ -337,7 +338,7 @@ public class DialogueActivated : MonoBehaviour
                 {
                     sentences.Enqueue("Aren't you suppose to be in a meeting?");
                     sentences.Enqueue("Eh? Where is the meeting?");
-                    sentences.Enqueue("It's in the meeting room to my right..");
+                    sentences.Enqueue("It's in the meeting room to my right...");
                 }
                 if (nameText.text == "Ella")
                 {
@@ -353,13 +354,13 @@ public class DialogueActivated : MonoBehaviour
                 if (nameText.text == "Joshua")
                 {
                     //CHANGE LATER
-                    sentences.Enqueue("the Boss wanted to talk to you");
+                    sentences.Enqueue("the Boss wanted to talk to you.");
                     sentences.Enqueue("I hope it isn't bad");
                 }
                 if (nameText.text == "Katherine")
                 {
                     //CHANGE LATER
-                    sentences.Enqueue("The Boss wanted to talk to you,");
+                    sentences.Enqueue("The Boss wanted to talk to you.");
                     sentences.Enqueue("I hope it isn't bad.");
                 }
 
@@ -372,7 +373,7 @@ public class DialogueActivated : MonoBehaviour
                 if (nameText.text == "Rebecca")
                 {
                     sentences.Enqueue("Boss was looking for you.");
-                    sentences.Enqueue("You in big trouble now!");
+                    sentences.Enqueue("Your in big trouble now!");
                 }
                 if (nameText.text == "Sarah")
                 {
@@ -393,7 +394,7 @@ public class DialogueActivated : MonoBehaviour
                 {
                     taskText.ResetTask();
                     sentences.Enqueue("I dont see those files in your hands...");
-                    sentences.Enqueue("The cabinet is in the office area, you should be able to remember the combination.");
+                    sentences.Enqueue("The cabinet is in the office area, you should remember the combination.");
                     sentences.Enqueue("Otherwise ask your co-workers if the locks been changed.");
                     sentences.Enqueue("Once you get the files come back to me.");
                     //TaskNum = 1;
@@ -420,7 +421,7 @@ public class DialogueActivated : MonoBehaviour
                 }
                 if (nameText.text == "Ella")
                 {
-                    sentences.Enqueue("...Umm, its on your Left, the cabinet.");
+                    sentences.Enqueue("...Umm, its on your Right, the cabinet.");
                     sentences.Enqueue("...The combination should be with one of the guys...");
                 }
                 if (nameText.text == "Joshua")
@@ -443,7 +444,7 @@ public class DialogueActivated : MonoBehaviour
                 {
                     taskText.ResetTask();
                     sentences.Enqueue("Ah the files, well done!");
-                    sentences.Enqueue("Now i require some paper needed to printed.");
+                    sentences.Enqueue("Now i require some paper that needs to be printed.");
                     sentences.Enqueue("Can you retrieve some papers from Lucas?");
                     TaskNum = 3;
 
@@ -491,7 +492,7 @@ public class DialogueActivated : MonoBehaviour
                 }
                 if (nameText.text == "Sarah")
                 {
-                    sentences.Enqueue("Oh I saw Lucas he should be at the Group Meeting Room.");
+                    sentences.Enqueue("Oh I saw Lucas, he should be at the Group Meeting Room.");
                 }
                 if (nameText.text == "Thomas")
                 {
@@ -509,7 +510,8 @@ public class DialogueActivated : MonoBehaviour
                     taskText.ResetTask();
                     sentences.Enqueue("I see you got the paper, great!");
                     sentences.Enqueue("Now the final task to prove you deserve that promotion.");
-                    sentences.Enqueue("One of the Computer's needs it's files organized. It also seems to have a Computer Virus.");
+                    sentences.Enqueue("One of the Computer's needs it's files organized.");
+                    sentences.Enqueue("It also seems to have a Computer Virus.");
                     sentences.Enqueue("Go fix the Computer and report back to me.");
                     TaskNum = 5;
 
@@ -520,7 +522,7 @@ public class DialogueActivated : MonoBehaviour
                 if (Intertag == "Boss")
                 {
                     taskText.ResetTask();
-                    sentences.Enqueue("I'm guessing you haven’t really found who computer to fix?");
+                    sentences.Enqueue("I'm guessing you haven’t really found which computer to fix?");
                     sentences.Enqueue("I got the complaints from Dave on it.");
                     sentences.Enqueue("Go talk to him, otherwise check his computer yourself.");
                     
@@ -564,9 +566,9 @@ public class DialogueActivated : MonoBehaviour
                 if (Intertag == "Boss")
                 {
                     taskText.ResetTask();
-                    sentences.Enqueue("You fixed the computer? amazing!!");
-                    sentences.Enqueue("Congratulation, I can now confidentely give you your well deserved promotion!");
-                    sentences.Enqueue("And with that go early to lunch you deserved it!");
+                    sentences.Enqueue("You fixed the computer? Amazing!!");
+                    sentences.Enqueue("Congratulations, I can now confidently give you your well deserved promotion!");
+                    sentences.Enqueue("And with that, go early to lunch. You deserved it!");
                     TaskNum = 7;
 
 
