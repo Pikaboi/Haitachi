@@ -33,6 +33,7 @@ public class TaskActivated : MonoBehaviour
     bool contDialogue = true;
 
     int TaskNum = 0;
+    int each = 0;
 
     //For input system
     //Does it as long as its enabled
@@ -284,8 +285,9 @@ public class TaskActivated : MonoBehaviour
             {
                 if (g.GetComponent<Infector>().sys.isPlaying == true)
                 {
-                    g.SetActive(true);
-                    InfectedBox[]
+                    g.SetActive(false);
+
+                    InfectedBox[each].SetActive(true);
                 }
             }
         }

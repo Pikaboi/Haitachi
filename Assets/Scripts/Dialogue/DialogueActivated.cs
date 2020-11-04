@@ -588,6 +588,7 @@ public class DialogueActivated : MonoBehaviour
             case 7: //get coffeee
                 if (nameText.text == "Reception")
                 {
+                    taskText.ResetTask();
                     sentences.Enqueue("Hm? Coffee?");
                     sentences.Enqueue("Oh the boss's coffee, its right here");
                     sentences.Enqueue("here you go");
