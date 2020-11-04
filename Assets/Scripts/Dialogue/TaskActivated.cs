@@ -9,6 +9,7 @@ public class TaskActivated : MonoBehaviour
     GameObject[] DialougeBoxes;
     GameObject[] MenuBoxes;
     GameObject[] NPCbox;
+    GameObject[] dyingBox;
     GameObject[] InfectedBox;
 
     public GameObject workers;
@@ -79,7 +80,6 @@ public class TaskActivated : MonoBehaviour
         Time.timeScale = 1;
 
         DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
-        NPCbox = GameObject.FindGameObjectsWithTag("NPC");
         InfectedBox = GameObject.FindGameObjectsWithTag("Infected");
         hideDialouge();
         hideInfect();
@@ -146,13 +146,37 @@ public class TaskActivated : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        NPCbox = GameObject.FindGameObjectsWithTag("NPC");
+        dyingBox = new GameObject[14];
+        /*int count = 0;
+        foreach (GameObject g in NPCbox) {
+            if(g.GetComponent<Infector>() != null)
+            {
+                count++;
+            }
+        }
+        dyingBox = new GameObject[count];*/
+
+        int numcount = 0;
+        foreach (GameObject g in NPCbox)
+        {
+            if (g.GetComponent<Infector>() != null)
+            {
+                Infector inf = g.GetComponent<Infector>();
+                if (inf.dying)
+                {
+                    dyingBox[numcount] = g;
+                    numcount++;
+                }
+            }
+        }
 
         if (CanTalk == true)
         {
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                Debug.Log(TaskNum);
+                //Debug.Log(TaskNum);
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
@@ -231,14 +255,12 @@ public class TaskActivated : MonoBehaviour
     {
         CanTalk = true;
         contDialogue = true;
-        isTalk = false;
     }
 
     public void stopTalk()
     {
         CanTalk = false;
         contDialogue = true;
-        isTalk = true;
     }
 
     public void setTag(string newtag)
@@ -280,12 +302,11 @@ public class TaskActivated : MonoBehaviour
     }
     public void SetWorkersToDead()
     {
-        foreach (GameObject g in NPCbox) {
-           g.SetActive(false);
-        }
-        foreach (GameObject g in InfectedBox)
-        {
-            g.SetActive(true);
+        foreach (GameObject g in dyingBox) {
+            Debug.Log(g);
+            g.SetActive(false);
+            g.GetComponent<Infector>().corpse.SetActive(true);
+            g.GetComponent<Infector>().corpse.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
     public int getTask()
@@ -309,7 +330,6 @@ public class TaskActivated : MonoBehaviour
                     //Debug.Log("Boss assigned");
                     sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
-                    //SetWorkersToDead();
                     //sentences.Enqueue(sentence);
                 }
                 break;
@@ -470,7 +490,6 @@ public class TaskActivated : MonoBehaviour
                     sentences.Enqueue("Go to Boss");
                     TaskNum = 8;
                     SetWorkersToDead();
-
                     //sentences.Enqueue(sentence);
                 }
                 else if(sentence == "Go To Boss")
