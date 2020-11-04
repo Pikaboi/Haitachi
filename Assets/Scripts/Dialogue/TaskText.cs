@@ -105,6 +105,6 @@ public class TaskText : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         //Turn off the talk button
-        Menu.stopTalk();
+        //Menu.stopTalk();
     }
 }

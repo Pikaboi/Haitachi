@@ -371,6 +371,7 @@ public class DialogueActivated : MonoBehaviour
 
                 if (nameText.text == "Lucas")
                 {
+
                     sentences.Enqueue("The Boss wanted to talk to you.");
                     sentences.Enqueue("I hope it isn't bad.");
                     //sentences.Enqueue("Go find Lucas he should be at his desk");
@@ -489,6 +490,7 @@ public class DialogueActivated : MonoBehaviour
 
                 if (nameText.text == "Lucas")
                 {
+                    taskText.ResetTask();
                     sentences.Enqueue("Oh you want the papers?");
                     sentences.Enqueue("Here you go, give them to the boss!");
                     TaskNum = 4;

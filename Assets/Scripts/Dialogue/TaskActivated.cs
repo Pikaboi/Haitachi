@@ -152,7 +152,7 @@ public class TaskActivated : MonoBehaviour
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                //Debug.Log(TaskNum);
+                Debug.Log(TaskNum);
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
@@ -231,12 +231,14 @@ public class TaskActivated : MonoBehaviour
     {
         CanTalk = true;
         contDialogue = true;
+        isTalk = false;
     }
 
     public void stopTalk()
     {
         CanTalk = false;
         contDialogue = true;
+        isTalk = true;
     }
 
     public void setTag(string newtag)
@@ -307,7 +309,7 @@ public class TaskActivated : MonoBehaviour
                     //Debug.Log("Boss assigned");
                     sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
-                    SetWorkersToDead();
+                    //SetWorkersToDead();
                     //sentences.Enqueue(sentence);
                 }
                 break;
@@ -467,7 +469,8 @@ public class TaskActivated : MonoBehaviour
                     //Debug.Log("Boss assigned");
                     sentences.Enqueue("Go to Boss");
                     TaskNum = 8;
-                   
+                    SetWorkersToDead();
+
                     //sentences.Enqueue(sentence);
                 }
                 else if(sentence == "Go To Boss")
