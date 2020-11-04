@@ -608,11 +608,11 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6852212871398669596, guid: 19ced65287a487c409a4afa3082c1c2a, type: 3}
-  - {fileID: -7827253080319898763, guid: 19ced65287a487c409a4afa3082c1c2a, type: 3}
-  - {fileID: 71317994377080818, guid: 19ced65287a487c409a4afa3082c1c2a, type: 3}
-  - {fileID: 7937610496388087580, guid: 19ced65287a487c409a4afa3082c1c2a, type: 3}
-  - {fileID: -8051411286055897481, guid: 19ced65287a487c409a4afa3082c1c2a, type: 3}
+  - {fileID: 2100000, guid: 9351aad4e78151d40972928ef177d910, type: 2}
+  - {fileID: 2100000, guid: 9351aad4e78151d40972928ef177d910, type: 2}
+  - {fileID: 2100000, guid: b95d8837cf1726a44916ad31427682b1, type: 2}
+  - {fileID: 2100000, guid: b95d8837cf1726a44916ad31427682b1, type: 2}
+  - {fileID: 2100000, guid: 9351aad4e78151d40972928ef177d910, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1035,6 +1035,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &943980225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366270656380464833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 3132364009902757984}
 --- !u!114 &3132364010382540680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,21 +1081,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskScript: {fileID: 0}
---- !u!114 &943980225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6366270656380464833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
-  m_Animator: {fileID: 3132364009902757984}
 --- !u!1 &6366270657452426973
 GameObject:
   m_ObjectHideFlags: 0
