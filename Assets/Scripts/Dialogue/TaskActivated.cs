@@ -147,14 +147,26 @@ public class TaskActivated : MonoBehaviour
     void Update()
     {
         NPCbox = GameObject.FindGameObjectsWithTag("NPC");
-
+        dyingBox = new GameObject[14];
+        /*int count = 0;
         foreach (GameObject g in NPCbox) {
             if(g.GetComponent<Infector>() != null)
             {
-                Infector inf = g.GetComponent<Infector>();
-                if(inf.dying == true)
-                {
+                count++;
+            }
+        }
+        dyingBox = new GameObject[count];*/
 
+        int numcount = 0;
+        foreach (GameObject g in NPCbox)
+        {
+            if (g.GetComponent<Infector>() != null)
+            {
+                Infector inf = g.GetComponent<Infector>();
+                if (inf.dying)
+                {
+                    dyingBox[numcount] = g;
+                    numcount++;
                 }
             }
         }
@@ -290,13 +302,11 @@ public class TaskActivated : MonoBehaviour
     }
     public void SetWorkersToDead()
     {
-        foreach (GameObject i in InfectedBox)
-        {
-            i.SetActive(true);
-        }
-        foreach (GameObject g in NPCbox) {
-                Debug.Log(g);
-                g.SetActive(false);
+        foreach (GameObject g in dyingBox) {
+            Debug.Log(g);
+            g.SetActive(false);
+            g.GetComponent<Infector>().corpse.SetActive(true);
+            g.GetComponent<Infector>().corpse.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
     public int getTask()

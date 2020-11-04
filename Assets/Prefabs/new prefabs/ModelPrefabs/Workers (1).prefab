@@ -1,63 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!136 &1223873676783174380
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669664538577}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873676783174368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669664538577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873676783174382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669664538577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873676783174381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669664538577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Rebecca
-    sentences:
-    - Good morning!
-    - Oh, its you...
 --- !u!1 &454243605451497514
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,831 +28,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5628684477584068567}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1223873675059045291
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669006270088}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675059045295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669006270088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873675059045301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669006270088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873675059045300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669006270088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Joshua
-    sentences:
-    - Oh hey there Joe!
-    - Working hard for that promotion?
---- !u!1 &454243605602628623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454243605602628622}
-  m_Layer: 8
-  m_Name: Transform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454243605602628622
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454243605602628623}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.16, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5628684477739364574}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1223873675471393015
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669302767044}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675471393003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669302767044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873675471393009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669302767044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873675471393008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669302767044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Hayley
-    sentences:
-    - Like good morning!!
-    - What? Is my make up smudged?
-    - I see...
---- !u!114 &454243605821022517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669302767044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  rb: {fileID: 0}
-  moveSpeed: 10
-  rotSpeed: 100
-  agent: {fileID: 454243605821022516}
-  FirstTrans: {fileID: 454243606697576058}
-  SecondTrans: {fileID: 454243605451497513}
---- !u!195 &454243605821022516
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669302767044}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!136 &1223873675103707209
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668928249198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675103707211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668928249198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873675103707210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668928249198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Dave
-    sentences:
-    - Great, another day at work!
-    - Working hard for that promotion?
---- !u!114 &1223873675103707213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668928249198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!136 &1223873675986681104
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668888338469}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675986681106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668888338469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873675986681105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668888338469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Cassidy
-    sentences:
-    - Good morning!
-    - Another day as usual.
-    - mhm!
---- !u!114 &1223873675986681108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668888338469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &454243605944935052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668888338469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  rb: {fileID: 0}
-  moveSpeed: 10
-  rotSpeed: 100
-  agent: {fileID: 454243605944935043}
-  FirstTrans: {fileID: 454243606270816537}
-  SecondTrans: {fileID: 454243606132499685}
---- !u!195 &454243605944935043
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668888338469}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!1 &454243606132499686
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454243606132499685}
-  m_Layer: 8
-  m_Name: Transform (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454243606132499685
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454243606132499686}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7, y: 0, z: -12.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5628684478007796278}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1223873675281945208
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669257367421}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675281945210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669257367421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873675281945209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669257367421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Thomas
-    sentences:
-    - Huh, is it lunchtime yet?
---- !u!114 &1223873675281945212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669257367421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!136 &1223873675177263028
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669127103113}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675177263016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669127103113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873675177263030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669127103113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873675177263029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669127103113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Katherine
-    sentences:
-    - Hey! What do you want?
---- !u!1 &454243606270816538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454243606270816537}
-  m_Layer: 8
-  m_Name: Transform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454243606270816537
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454243606270816538}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.56, y: 0, z: -1.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5628684478007796278}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1223873676243951602
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670207963847}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.7379819
-  m_Height: 3.4759645
-  m_Direction: 1
-  m_Center: {x: 0.6435311, y: 0.62369585, z: -0.042651657}
---- !u!114 &1223873676243951603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670207963847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Reception
-    sentences:
-    - Good morning, welcome to the ### building.
-    - Lovely day isn't it?
---- !u!114 &1223873676243951606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670207963847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873676243951612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670207963847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!136 &1223873676640819740
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669215819071}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873676640819735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669215819071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873676640819742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669215819071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Lucas
-    sentences:
-    - Hey bro, how you doing?
-    - Working hard for that promotion?
-    - Good, good...
---- !u!114 &1223873676640819741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669215819071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!136 &1223873675808823242
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668692675311}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675808823243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668692675311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Zach
-    sentences:
-    - Ugh, what is it!?
---- !u!114 &1223873675808823246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668692675311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873675808823252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668692675311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!1 &454243606587364532
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454243606587364523}
-  m_Layer: 8
-  m_Name: Transform (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454243606587364523
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454243606587364532}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0, z: -32.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5628684477739364574}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1223873676139436246
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669977097707}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873676139436234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669977097707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873676139436240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669977097707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873676139436247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669977097707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Anthony
-    sentences:
-    - Yo wassup, working hard as always I see.
-    - Don't overwork yourself dude!
---- !u!195 &454243606645462568
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669977097707}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &454243606645462575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688669977097707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  rb: {fileID: 0}
-  moveSpeed: 10
-  rotSpeed: 100
-  agent: {fileID: 454243606645462568}
-  FirstTrans: {fileID: 454243606735378103}
-  SecondTrans: {fileID: 454243607380882385}
 --- !u!1 &454243606697576059
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,282 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5628684477584068567}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1223873675718242280
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668619899597}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873675718242282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668619899597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873675718242281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668619899597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Charlie
-    sentences:
-    - G-Good morning!
-    - S-Sorry, am i distracting you from work?
---- !u!114 &1223873675718242284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668619899597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!195 &454243606725977885
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668619899597}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &454243606725977884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688668619899597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  rb: {fileID: 0}
-  moveSpeed: 10
-  rotSpeed: 100
-  agent: {fileID: 454243606725977885}
-  FirstTrans: {fileID: 454243605602628622}
-  SecondTrans: {fileID: 454243606587364523}
---- !u!1 &454243606735378096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454243606735378103}
-  m_Layer: 8
-  m_Name: Transform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454243606735378103
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454243606735378096}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 3.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5628684476381251576}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1223873676538975299
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670378735984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873676538975303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670378735984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873676538975309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670378735984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873676538975308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670378735984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Ella
-    sentences:
-    - Hi..
-    - Morning...
---- !u!136 &1223873676328847651
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670152352784}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.094451
-  m_Height: 2.2473931
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
---- !u!114 &1223873676328847655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670152352784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
-  promptNum: 1
---- !u!114 &1223873676328847661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670152352784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskScript: {fileID: 0}
---- !u!114 &1223873676328847660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666688670152352784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouge:
-    Name: Sarah
-    sentences:
-    - Hey! Good morning!
-    - Let us both do our best!
---- !u!1 &454243607380882386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454243607380882385}
-  m_Layer: 8
-  m_Name: Transform (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454243607380882385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454243607380882386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.2, y: 0, z: 4.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5628684476381251576}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223873675522570387
 GameObject:
@@ -1260,6 +104,1000 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1223873675718242280
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668619899597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &454243606725977884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668619899597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  rb: {fileID: 0}
+  m_Animator: {fileID: 0}
+  moveSpeed: 10
+  rotSpeed: 100
+  agent: {fileID: 454243606725977885}
+  FirstTrans: {fileID: 0}
+  SecondTrans: {fileID: 0}
+--- !u!195 &454243606725977885
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668619899597}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1223873675718242281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668619899597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Charlie
+    sentences:
+    - G-Good morning!
+    - S-Sorry, am i distracting you from work?
+--- !u!114 &1223873675718242282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668619899597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!114 &1223873675718242284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668619899597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!136 &1223873675808823242
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668692675311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873675808823243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668692675311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Zach
+    sentences:
+    - Ugh, what is it!?
+--- !u!114 &1223873675808823246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668692675311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873675808823252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668692675311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!136 &1223873675986681104
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668888338469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!195 &454243605944935043
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668888338469}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &454243605944935052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668888338469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  rb: {fileID: 0}
+  m_Animator: {fileID: 0}
+  moveSpeed: 10
+  rotSpeed: 100
+  agent: {fileID: 454243605944935043}
+  FirstTrans: {fileID: 0}
+  SecondTrans: {fileID: 0}
+--- !u!114 &1223873675986681105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668888338469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Cassidy
+    sentences:
+    - Good morning!
+    - Another day as usual.
+    - mhm!
+--- !u!114 &1223873675986681106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668888338469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!114 &1223873675986681108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668888338469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!136 &1223873675103707209
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668928249198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873675103707210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668928249198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Dave
+    sentences:
+    - Great, another day at work!
+    - Working hard for that promotion?
+--- !u!114 &1223873675103707211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668928249198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!114 &1223873675103707213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688668928249198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!136 &1223873675059045291
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669006270088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873675059045295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669006270088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873675059045300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669006270088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Joshua
+    sentences:
+    - Oh hey there Joe!
+    - Working hard for that promotion?
+--- !u!114 &1223873675059045301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669006270088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!136 &1223873675177263028
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669127103113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873675177263016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669127103113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873675177263029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669127103113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Katherine
+    sentences:
+    - Hey! What do you want?
+--- !u!114 &1223873675177263030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669127103113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!136 &1223873676640819740
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669215819071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873676640819735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669215819071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873676640819741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669215819071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!114 &1223873676640819742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669215819071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Lucas
+    sentences:
+    - Hey bro, how you doing?
+    - Working hard for that promotion?
+    - Good, good...
+--- !u!136 &1223873675281945208
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669257367421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873675281945209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669257367421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Thomas
+    sentences:
+    - Huh, is it lunchtime yet?
+--- !u!114 &1223873675281945210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669257367421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!114 &1223873675281945212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669257367421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!136 &1223873675471393015
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669302767044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!195 &454243605821022516
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669302767044}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &454243605821022517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669302767044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  rb: {fileID: 0}
+  m_Animator: {fileID: 0}
+  moveSpeed: 10
+  rotSpeed: 100
+  agent: {fileID: 454243605821022516}
+  FirstTrans: {fileID: 454243606697576058}
+  SecondTrans: {fileID: 454243605451497513}
+--- !u!114 &1223873675471393003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669302767044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873675471393008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669302767044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Hayley
+    sentences:
+    - Like good morning!!
+    - What? Is my make up smudged?
+    - I see...
+--- !u!114 &1223873675471393009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669302767044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!136 &1223873676783174380
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669664538577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873676783174368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669664538577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873676783174381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669664538577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Rebecca
+    sentences:
+    - Good morning!
+    - Oh, its you...
+--- !u!114 &1223873676783174382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669664538577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!136 &1223873676139436246
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669977097707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!195 &454243606645462568
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669977097707}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &454243606645462575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669977097707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a15b6e5c7795894694c79772ea39a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  rb: {fileID: 0}
+  m_Animator: {fileID: 0}
+  moveSpeed: 10
+  rotSpeed: 100
+  agent: {fileID: 454243606645462568}
+  FirstTrans: {fileID: 0}
+  SecondTrans: {fileID: 0}
+--- !u!114 &1223873676139436234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669977097707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873676139436240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669977097707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!114 &1223873676139436247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688669977097707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Anthony
+    sentences:
+    - Yo wassup, working hard as always I see.
+    - Don't overwork yourself dude!
+--- !u!136 &1223873676328847651
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670152352784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873676328847655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670152352784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873676328847660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670152352784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Sarah
+    sentences:
+    - Hey! Good morning!
+    - Let us both do our best!
+--- !u!114 &1223873676328847661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670152352784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!136 &1223873676243951602
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670207963847}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7379819
+  m_Height: 3.4759645
+  m_Direction: 1
+  m_Center: {x: 0.6435311, y: 0.62369585, z: -0.042651657}
+--- !u!114 &1223873676243951603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670207963847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Reception
+    sentences:
+    - Good morning, welcome to the ### building.
+    - Lovely day isn't it?
+--- !u!114 &1223873676243951606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670207963847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873676243951612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670207963847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
+--- !u!136 &1223873676538975299
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670378735984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.094451
+  m_Height: 2.2473931
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62369657, z: -0.042651653}
+--- !u!114 &1223873676538975303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670378735984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f1af29b1b3254ca2a114fcee03b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changingText: {fileID: 0}
+  promptNum: 1
+  m_Animator: {fileID: 0}
+--- !u!114 &1223873676538975308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670378735984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d90547b90740246bc74aa0eb365201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+    Name: Ella
+    sentences:
+    - Hi..
+    - Morning...
+--- !u!114 &1223873676538975309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666688670378735984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb4970ad04da44499c804dfe7c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskScript: {fileID: 0}
 --- !u!1001 &597314412798063085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1355,7 +1193,7 @@ PrefabInstance:
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
@@ -2995,15 +2833,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
---- !u!1 &8666688669257367421 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223873675281945157}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5628684477638774126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223873675281945157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8666688669257367421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
     type: 3}
   m_PrefabInstance: {fileID: 1223873675281945157}
   m_PrefabAsset: {fileID: 0}
@@ -3385,7 +3223,7 @@ PrefabInstance:
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
@@ -3929,15 +3767,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
---- !u!4 &5628684477666817836 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223873675386562567}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8666688669215819071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223873675386562567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5628684477666817836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
     type: 3}
   m_PrefabInstance: {fileID: 1223873675386562567}
   m_PrefabAsset: {fileID: 0}
@@ -4036,7 +3874,7 @@ PrefabInstance:
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
@@ -4415,7 +4253,7 @@ PrefabInstance:
     - target: {fileID: 6347591083148299896, guid: 1f76c48e65739d84386d86a4f092ace5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6347591083148299896, guid: 1f76c48e65739d84386d86a4f092ace5,
         type: 3}
@@ -4864,15 +4702,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
---- !u!4 &5628684477584068567 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223873675471393020}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8666688669302767044 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223873675471393020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5628684477584068567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
     type: 3}
   m_PrefabInstance: {fileID: 1223873675471393020}
   m_PrefabAsset: {fileID: 0}
@@ -4991,7 +4829,7 @@ PrefabInstance:
     - target: {fileID: 2822079084629922584, guid: ed2dfa6ccca73cb4589414b1a1ae94fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2822079084629922584, guid: ed2dfa6ccca73cb4589414b1a1ae94fe,
         type: 3}
@@ -6009,7 +5847,7 @@ PrefabInstance:
     - target: {fileID: 2822079084629922584, guid: ed2dfa6ccca73cb4589414b1a1ae94fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2822079084629922584, guid: ed2dfa6ccca73cb4589414b1a1ae94fe,
         type: 3}
@@ -6533,15 +6371,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
---- !u!4 &5628684478007796278 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223873675986681117}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8666688668888338469 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223873675986681117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5628684478007796278 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
     type: 3}
   m_PrefabInstance: {fileID: 1223873675986681117}
   m_PrefabAsset: {fileID: 0}
@@ -6900,15 +6738,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
---- !u!1 &8666688669977097707 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223873676139436243}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5628684476381251576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223873676139436243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8666688669977097707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
     type: 3}
   m_PrefabInstance: {fileID: 1223873676139436243}
   m_PrefabAsset: {fileID: 0}
@@ -7292,15 +7130,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
---- !u!4 &5628684476141994196 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223873676243951615}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8666688670207963847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223873676243951615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5628684476141994196 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
     type: 3}
   m_PrefabInstance: {fileID: 1223873676243951615}
   m_PrefabAsset: {fileID: 0}
@@ -7399,7 +7237,7 @@ PrefabInstance:
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1783603563625750529, guid: d413ea1100fef04439ffee42741075a7,
         type: 3}
@@ -8310,15 +8148,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1989391350373108129, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5c2021a587de8245983325c8bd6f0c7, type: 3}
---- !u!4 &5628684476512291683 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223873676538975304}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8666688670378735984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7546434228202581304, guid: f5c2021a587de8245983325c8bd6f0c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223873676538975304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5628684476512291683 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6836754687070035755, guid: f5c2021a587de8245983325c8bd6f0c7,
     type: 3}
   m_PrefabInstance: {fileID: 1223873676538975304}
   m_PrefabAsset: {fileID: 0}
@@ -8879,7 +8717,7 @@ PrefabInstance:
     - target: {fileID: 6347591083148299896, guid: 1f76c48e65739d84386d86a4f092ace5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6347591083148299896, guid: 1f76c48e65739d84386d86a4f092ace5,
         type: 3}
@@ -9047,7 +8885,7 @@ PrefabInstance:
     - target: {fileID: 1266610262857927927, guid: b86b98d90dd4f5f46890e30cf468e47f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266610262857927927, guid: b86b98d90dd4f5f46890e30cf468e47f,
         type: 3}
@@ -9496,7 +9334,7 @@ PrefabInstance:
     - target: {fileID: 8337234719116661695, guid: ec98d915c900d4946a365fe4a8b0dc95,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8337234719116661695, guid: ec98d915c900d4946a365fe4a8b0dc95,
         type: 3}
@@ -9614,7 +9452,7 @@ PrefabInstance:
     - target: {fileID: 1266610262857927927, guid: b86b98d90dd4f5f46890e30cf468e47f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266610262857927927, guid: b86b98d90dd4f5f46890e30cf468e47f,
         type: 3}
@@ -9938,7 +9776,7 @@ PrefabInstance:
     - target: {fileID: 2822079084629922584, guid: ed2dfa6ccca73cb4589414b1a1ae94fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2822079084629922584, guid: ed2dfa6ccca73cb4589414b1a1ae94fe,
         type: 3}
@@ -10297,7 +10135,7 @@ PrefabInstance:
     - target: {fileID: 6347591083148299896, guid: 1f76c48e65739d84386d86a4f092ace5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6347591083148299896, guid: 1f76c48e65739d84386d86a4f092ace5,
         type: 3}

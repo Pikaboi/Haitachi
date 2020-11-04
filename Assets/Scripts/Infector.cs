@@ -6,6 +6,7 @@ public class Infector : MonoBehaviour
 {
     public ParticleSystem sys;
     public bool dying = false;
+    public GameObject corpse;
     // Start is called before the first frame update
     void Start()
     {
