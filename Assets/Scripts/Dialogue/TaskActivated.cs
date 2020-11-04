@@ -8,6 +8,8 @@ public class TaskActivated : MonoBehaviour
 
     GameObject[] DialougeBoxes;
     GameObject[] MenuBoxes;
+    GameObject[] NPCbox;
+    GameObject[] InfectedBox;
 
     public GameObject workers;
     private bool CanTalk;
@@ -31,6 +33,7 @@ public class TaskActivated : MonoBehaviour
     bool contDialogue = true;
 
     int TaskNum = 0;
+    int each = 0;
 
     //For input system
     //Does it as long as its enabled
@@ -76,8 +79,10 @@ public class TaskActivated : MonoBehaviour
         Time.timeScale = 1;
 
         DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
+        NPCbox = GameObject.FindGameObjectsWithTag("NPC");
+        InfectedBox = GameObject.FindGameObjectsWithTag("Infected");
         hideDialouge();
-
+        hideInfect();
         CanTalk = false;
         stopTalk();
     }
@@ -147,7 +152,7 @@ public class TaskActivated : MonoBehaviour
             // Pressess the Z button to interact
             if (interactSuccess && contDialogue)
             {
-                Debug.Log(TaskNum);
+                //Debug.Log(TaskNum);
                 if (gameObject.GetComponent<AudioSource>() != null)
                 {
                     gameObject.GetComponent<AudioSource>().PlayOneShot(gameObject.GetComponent<AudioSource>().clip);
@@ -197,9 +202,15 @@ public class TaskActivated : MonoBehaviour
             g.SetActive(false);
         }
     }
-
-    // Shows objects with ShowOnPause tag
-    public void showPaused()
+    public void hideInfect()
+    {
+        foreach (GameObject g in InfectedBox)
+        {
+            g.SetActive(false);
+        }
+    }
+        // Shows objects with ShowOnPause tag
+        public void showPaused()
     {
         foreach (GameObject g in MenuBoxes)
         {
@@ -225,6 +236,7 @@ public class TaskActivated : MonoBehaviour
     public void stopTalk()
     {
         CanTalk = false;
+        contDialogue = true;
     }
 
     public void setTag(string newtag)
@@ -236,7 +248,7 @@ public class TaskActivated : MonoBehaviour
     {
         //Debug.Log("Starting dialouge with" + dialouge.Name);
         sentences.Clear();
-        Debug.Log(dialouge.sentences[0]);
+        //Debug.Log(dialouge.sentences[0]);
         nameText.text = dialouge.Name;
 
         foreach (string sentence in dialouge.sentences)
@@ -268,7 +280,16 @@ public class TaskActivated : MonoBehaviour
     {
         if(isdead == false)
         {
-            workers.SetActive(false);
+
+            foreach (GameObject g in NPCbox)
+            {
+                if (g.GetComponent<Infector>().sys.isPlaying == true)
+                {
+                    g.SetActive(false);
+
+                    InfectedBox[each].SetActive(true);
+                }
+            }
         }
     }
     public int getTask()
@@ -293,18 +314,6 @@ public class TaskActivated : MonoBehaviour
                     sentences.Enqueue("Get the files from cabinet");
                     TaskNum = 1;
                     //sentences.Enqueue(sentence);
-                }
-                else if(sentence == "Go To Boss")
-                {
-
-                }
-                else if(sentence == "Deliver Coffee to the boss")
-                {
-
-                }
-                else
-                {
-                    sentences.Enqueue(sentence);
                 }
                 break;
             case 1: //branch 1

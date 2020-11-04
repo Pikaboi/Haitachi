@@ -16,6 +16,7 @@ TagManager:
   - CompPuzzleUI
   - Boss
   - NPC
+  - Infected
   layers:
   - Default
   - TransparentFX
