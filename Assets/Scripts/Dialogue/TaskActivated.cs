@@ -12,8 +12,6 @@ public class TaskActivated : MonoBehaviour
     GameObject[] dyingBox;
     GameObject[] InfectedBox;
 
-    GameObject endscreen;
-
     public GameObject workers;
     private bool CanTalk;
     private string Intertag;
@@ -82,8 +80,6 @@ public class TaskActivated : MonoBehaviour
 
         // Unpauses game if paused
         Time.timeScale = 1;
-
-        endscreen = GameObject.FindGameObjectWithTag("EndScren");
         DialougeBoxes = GameObject.FindGameObjectsWithTag("TaskUI");
         InfectedBox = GameObject.FindGameObjectsWithTag("Infected");
         hideDialouge();
@@ -515,7 +511,6 @@ public class TaskActivated : MonoBehaviour
                     //sentences.Enqueue("Get the coffee");
                     TaskNum = 9;
                     Debug.Log("THEEND");
-                    endscreen.GetComponent<Endscreen>().startFade();
                     //sentences.Enqueue(sentence);
                 }
                 break;

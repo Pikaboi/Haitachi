@@ -603,6 +603,9 @@ public class DialogueActivated : MonoBehaviour
                     sentences.Enqueue("Sorry i dont feel good...i think im gonna go home");
                     sentences.Enqueue("...did something happpen?");
                     TaskNum = 9;
+
+                    GameObject endscreen = GameObject.FindGameObjectWithTag("EndScren");
+                    endscreen.GetComponent<Endscreen>().startFade();
                 }
                 break;
             default:
